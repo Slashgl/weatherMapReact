@@ -1,0 +1,105 @@
+.popup {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(78, 112, 123, 0.42);
+  backdrop-filter: blur(16px);
+  &__close {
+    cursor: pointer;
+    &:after {
+      content: '';
+      position: absolute;
+      right: -30px;
+      top: -15px;
+      width: 30px;
+      height: 2px;
+      background-color: #FFFFFF;
+      transform: rotate(45deg);
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      right: -30px;
+      top: -15px;
+      width: 30px;
+      height: 2px;
+      background-color: #FFFFFF;
+      transform: rotate(135deg);
+    }
+  }
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 621px;
+    height: 289px;
+  }
+  &__search {
+    width: calc(621px - 48px);
+    height: 44px;
+    border-radius: 16px 16px 0 0;
+    background: #F3F3F3;
+    outline: none;
+    border: none;
+    padding-left: 46px;
+  }
+  &__input {
+    &:before {
+      content: url("../../img/magnifier.svg");
+      position: absolute;
+      top: 13px;
+      left: 18px;
+    }
+  }
+  &__results {
+    position: relative;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 0 0 16px 16px;
+    padding: 17px 17px;
+    margin: 0;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    cursor: pointer;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 589px;
+      margin-top: 40px;
+      height: 0;
+      border: 1px solid rgba(84, 84, 88, 0.65);
+    }
+  }
+  &__name {
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+  }
+  &__country {
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(60, 60, 67, 0.6);
+  }
+  &__button {
+    cursor: pointer;
+    width: 621px;
+    height: 41px;
+    background: #ABBFCE;
+    border-radius: 31px;
+    margin-top: 40px;
+    border: none;
+    &:hover {
+      background: #3AA9FF;
+    }
+  }
+  .checked {
+    content: url("../../img/Vectorchecked.svg");
+    margin-left: auto;
+  }
+}
