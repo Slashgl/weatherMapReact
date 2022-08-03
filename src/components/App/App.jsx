@@ -1,30 +1,27 @@
-
-import './App.scss';
+import React, {useState} from "react";
 import Forecast from "../Forecast/Forecast";
-import Header from "../Header/header";
+import Header from "../Header/Header";
 import AsideBar from "../AsideBar/AsideBar";
 import WeatherToday from "../Weather-Today/Weather-Today";
 import WeatherBoards from "../WeatherBoards/WeatherBoards";
 import Popup from "../Popup/Popup";
-import {useState} from "react";
 
-function App() {
+import styles from './App.module.scss';
+const App = () => {
     const [modalActive, setModalActive] = useState(false);
     return (
-        <div className='App'>
-            <div className='content-left'>
+        <div className={styles.App}>
+            <div>
                 <Header/>
-                <div className='content-left__table'>
+                <div className={styles.table}>
                     <Forecast/>
-                    <div className='content-right__table'>
+                    <div>
                         <WeatherToday/>
                         <WeatherBoards/>
                     </div>
                 </div>
             </div>
-            <div className='content-right'>
-                <AsideBar setModalActive={setModalActive}/>
-            </div>
+            <AsideBar setModalActive={setModalActive}/>
             <Popup active={modalActive} setActive={setModalActive}/>
         </div>
     )

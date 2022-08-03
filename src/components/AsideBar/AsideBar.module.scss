@@ -1,32 +1,31 @@
+@import "src/assets/variables/variables.scss";
 .aside {
   width: 562px;
   height: 100vh;
+  padding: 26px 20px 0 20px;
+  color: $white;
   background: rgba(0, 148, 255, 0.15);
   backdrop-filter: blur(340px);
-  padding: 26px 20px 0 20px;
-  color: white;
   input {
     width: 100%;
     height: 44px;
-    background: #FFFFFF;
+    margin-bottom: 30px;
     border-radius: 47px;
     border: none;
     outline: none;
-    margin-bottom: 30px;
   }
   &__myLocation {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 200px;
     border-radius: 14px;
-    cursor: pointer;
-    background: url("../../img/btnMyLocation.png") no-repeat center;
+    background: url("../../assets/img/btnMyLocation.png") no-repeat center;
     background-size: cover;
   }
   &__left {
     margin: 25px 0 0 20px;
-
   }
   &__right {
     margin: 25px 20px 0 0;

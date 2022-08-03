@@ -1,13 +1,13 @@
+@import "src/assets/variables/variables";
 .forecast {
-  margin: 38px 0 0 40px;
-  list-style: none;
   width: 535px;
   height: 706px;
+  margin: 38px 0 0 40px;
+  padding: 0 25px 0 17px;
+  list-style: none;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(290px);
   border-radius: 15px;
-  color: #424242;
-  padding: 0 25px 0 17px;
   &__items {
     padding: 0;
   }
@@ -24,7 +24,7 @@
       top: 50px;
       width: 100%;
       opacity: 0.5;
-      border: 0.2px solid #424242;
+      border: 0.2px solid $greyBlack;
     }
   }
   &__left {
@@ -51,14 +51,14 @@
   &__line {
     width: 165px;
     height: 4px;
-    background-color: darkblue;
-    border-radius: 44px;
     margin: 0 20px 0 20px;
+    background-color: $black;
+    border-radius: 44px;
   }
 }
 .title {
   padding-top: 14px;
   font-size: 15px;
-  color: #424242;
+  color: $greyBlack;
   text-align: center;
 }

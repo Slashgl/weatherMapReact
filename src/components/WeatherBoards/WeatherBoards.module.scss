@@ -4,25 +4,24 @@
   flex-wrap: wrap;
   width: 628px;
   margin: 53px 0 0 37px;
-
 }
 .board {
   width: 200px;
   height: 200px;
+  margin-bottom: 53px;
   background: rgba(255, 255, 255, 0.1);
   border: 0.616817px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(290px);
   border-radius: 18.5045px;
-  margin-bottom: 53px;
   .logo {
     margin-right: 8px;
   }
   &__item {
-    padding: 18px 0 0 20px;
-    height: 168px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 168px;
+    padding: 18px 0 0 20px;
   }
   &__title {
     font-size: 18.5045px;
@@ -35,8 +34,8 @@
     font-size: 27.14px;
   }
   &__description {
-    font-size: 22.2054px;
     vertical-align: bottom;
+    font-size: 22.2054px;
   }
   &__compass {
     width: 140px;

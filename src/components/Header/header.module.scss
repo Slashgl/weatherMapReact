@@ -1,5 +1,6 @@
+@import "src/assets/variables/variables";
 .header {
-  color: white;
+  color: $white;
   text-align: center;
   &__title {
     font-size: 37px;

@@ -1,20 +1,22 @@
+@import "src/assets/variables/variables";
 .today {
-  margin: 38px 19px 0 37px;
   width: 628px;
   height: 200px;
-  color: #373C42;
+  margin: 38px 19px 0 37px;
+  color: $gray;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(290px);
   border-radius: 15px;
   &__title {
     width: 340px;
-    font-size: 18px;
     padding: 10px 0 0 10px;
+    font-size: 18px;
   }
+  &
   &__items {
-    list-style: none;
     display: flex;
     justify-content: space-between;
+    list-style: none;
     padding: 0;
     margin: 16px 17px 0 10px;
   }
