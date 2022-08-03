@@ -6,11 +6,10 @@ import AsideBar from "../AsideBar/AsideBar";
 import WeatherToday from "../Weather-Today/Weather-Today";
 import WeatherBoards from "../WeatherBoards/WeatherBoards";
 import Popup from "../Popup/Popup";
+import {useState} from "react";
 
 function App() {
-    function clicked () {
-
-    }
+    const [modalActive, setModalActive] = useState(false);
     return (
         <div className='App'>
             <div className='content-left'>
@@ -24,9 +23,9 @@ function App() {
                 </div>
             </div>
             <div className='content-right'>
-                <AsideBar clicked={clicked}/>
+                <AsideBar setModalActive={setModalActive}/>
             </div>
-            {clicked ? <Popup/> : null}
+            <Popup active={modalActive} setActive={setModalActive}/>
         </div>
     )
 }

@@ -1,10 +1,10 @@
 .popup {
-  visibility: hidden;
   position: absolute;
   width: 100%;
   height: 100vh;
   background: rgba(78, 112, 123, 0.42);
   backdrop-filter: blur(16px);
+  transform: scale(0);
   &__close {
     cursor: pointer;
     &:after {
@@ -102,4 +102,7 @@
     content: url("../../img/Vectorchecked.svg");
     margin-left: auto;
   }
+}
+.popup.active {
+  transform: scale(1);
 }

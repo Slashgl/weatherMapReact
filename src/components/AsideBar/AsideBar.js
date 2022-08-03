@@ -1,10 +1,10 @@
 import React from "react";
 import './AsideBar.scss';
 
-function AsideBar({clicked}) {
+function AsideBar({setModalActive}) {
     return(
         <div className='aside'>
-            <input type='text' placeholder='Search for a city or airport' onClick={clicked}/>
+            <input type='text' placeholder='Search for a city or airport' onClick={() => setModalActive(true)}/>
             <div className='aside__myLocation'>
                 <div className='aside__left'>
                     <div className='aside__title'>My location</div>
