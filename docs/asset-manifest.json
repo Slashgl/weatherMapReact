@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.344c7f48.css",
+    "main.js": "/static/js/main.dbc654d9.js",
+    "static/media/bg.png": "/static/media/bg.3970d3eced4cec608996.png",
+    "static/media/btnMyLocation.png": "/static/media/btnMyLocation.056f94d568bd22428c26.png",
+    "static/media/compass.svg": "/static/media/compass.597796537877badab1aa14de03220496.svg",
+    "static/media/humidity.svg": "/static/media/humidity.44d3605a2d1b534aefc3c1f3483003dd.svg",
+    "static/media/thermometer.svg": "/static/media/thermometer.c773cde347c491d9b6d6ce18b50c6301.svg",
+    "static/media/sun.max.fill.svg": "/static/media/sun.max.fill.20556e69084facadd679f51b56bcb8dd.svg",
+    "static/media/sunrise.fill.svg": "/static/media/sunrise.fill.1194ddfa7a71b4edb9e122ffc92d77be.svg",
+    "static/media/wind.svg": "/static/media/wind.2fa8e52ae96f93b689eb89027226b9e3.svg",
+    "static/media/magnifier.svg": "/static/media/magnifier.70cbe689024083a5152c.svg",
+    "static/media/Subtract.svg": "/static/media/Subtract.168e4f3157818d67ee5a96c3899d5dd7.svg",
+    "static/media/eye.fill.svg": "/static/media/eye.fill.60459360d8b1a560d953bbe152183ad3.svg",
+    "static/media/Vector.svg": "/static/media/Vector.934d275bd3a105977d5284bd2d8147ec.svg",
+    "index.html": "/index.html",
+    "static/media/Vectorchecked.svg": "/static/media/Vectorchecked.b1072914a0c99da33000.svg",
+    "main.344c7f48.css.map": "/static/css/main.344c7f48.css.map",
+    "main.dbc654d9.js.map": "/static/js/main.dbc654d9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.344c7f48.css",
+    "static/js/main.dbc654d9.js"
+  ]
+}
