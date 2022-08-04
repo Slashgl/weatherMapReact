@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const Index = ({setModalActive}) => {
+const AsideBar = ({setModalActive}) => {
     return(
         <div className={styles.aside}>
             <input type='text' placeholder='Search for a city or airport' onClick={() => setModalActive(true)}/>
@@ -19,4 +19,4 @@ const Index = ({setModalActive}) => {
         </div>
     )
 }
-export default Index;
+export default AsideBar;

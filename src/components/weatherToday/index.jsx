@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const Index = () => {
+const WeatherToday = () => {
     return(
         <div className={styles.today}>
             <div className={styles.today__title}>Cloudy conditions from 1AM-9AM, with
@@ -61,4 +61,4 @@ const Index = () => {
         </div>
     )
 }
-export default Index;
+export default WeatherToday;

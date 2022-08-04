@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss'
 
-const Index = ({active, setActive}) => {
+const Popup = ({active, setActive}) => {
     return (
         active ? <div className={styles.popup} onClick={() => setActive(false)}>
             <div className={styles.popup__content} onClick={(e) => e.stopPropagation()}>
@@ -15,4 +15,4 @@ const Index = ({active, setActive}) => {
         </div> : null
     )
 }
-export default Index
+export default Popup

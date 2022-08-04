@@ -10,7 +10,7 @@ import logoTemp from '../../assets/img/thermometer.svg'
 import logoHumidity from '../../assets/img/humidity.svg'
 import logoVisibility from '../../assets/img/eye.fill.svg'
 
-const Index = () => {
+const WeatherBoards = () => {
     return (<div className={styles.boards}>
             <div className={styles.board}>
                 <div className={styles.board__item}>
@@ -88,4 +88,4 @@ const Index = () => {
 
     )
 }
-export default Index;
+export default WeatherBoards;
