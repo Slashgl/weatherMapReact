@@ -64,7 +64,6 @@
 
   &__results {
     position: relative;
-    height: 100%;
     padding: 17px 17px;
     margin: 0;
     background: $white;
@@ -75,6 +74,7 @@
     cursor: pointer;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-bottom: 16px;
     &:after {
