@@ -1,2 +1,2 @@
 
-https://weather-react-git-main-makson.vercel.app/
+https://weather-map-react.vercel.app/
