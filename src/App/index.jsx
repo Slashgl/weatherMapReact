@@ -9,6 +9,7 @@ import styles from './App.module.scss';
 
 const App = () => {
     const [modalActive, setModalActive] = useState(false);
+
     return (
         <div className={styles.App}>
             <div>
