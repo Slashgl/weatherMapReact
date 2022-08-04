@@ -1,12 +1,12 @@
-import React, {useState} from "react";
-import Forecast from "../Forecast/Forecast";
-import Header from "../Header/Header";
-import AsideBar from "../AsideBar/AsideBar";
-import WeatherToday from "../Weather-Today/Weather-Today";
-import WeatherBoards from "../WeatherBoards/WeatherBoards";
-import Popup from "../Popup/Popup";
-
+import React, {useState} from 'react';
+import Forecast from '../components/forecast';
+import Header from '../components/header';
+import AsideBar from '../components/asideBar';
+import WeatherToday from '../components/weatherToday';
+import WeatherBoards from '../components/weatherBoards';
+import Popup from '../components/popup';
 import styles from './App.module.scss';
+
 const App = () => {
     const [modalActive, setModalActive] = useState(false);
     return (

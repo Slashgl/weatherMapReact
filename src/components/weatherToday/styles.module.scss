@@ -1,18 +1,20 @@
-@import "src/assets/variables/variables";
+@import "src/assets/variables/colors";
+
 .today {
   width: 628px;
   height: 200px;
   margin: 38px 19px 0 37px;
-  color: $gray;
+  color: $darkGrey;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(290px);
   border-radius: 15px;
+
   &__title {
     width: 340px;
     padding: 10px 0 0 10px;
     font-size: 18px;
   }
-  &
+
   &__items {
     display: flex;
     justify-content: space-between;
@@ -20,13 +22,16 @@
     padding: 0;
     margin: 16px 17px 0 10px;
   }
+
   &__time {
     font-size: 17px;
   }
+
   &__img {
     margin: 24px 0 24px 0;
     text-align: center;
   }
+
   &__degrees {
     font-size: 22px;
   }

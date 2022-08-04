@@ -1,5 +1,5 @@
-import React from "react"
-
+import React from 'react'
+import styles from './styles.module.scss';
 import logoUiIndex from '../../assets/img/sun.max.fill.svg'
 import logoSubtract from '../../assets/img/Subtract.svg'
 import logoVector from '../../assets/img/Vector.svg'
@@ -10,21 +10,18 @@ import logoTemp from '../../assets/img/thermometer.svg'
 import logoHumidity from '../../assets/img/humidity.svg'
 import logoVisibility from '../../assets/img/eye.fill.svg'
 
-import styles from './WeatherBoards.module.scss';
-
-const WeatherBoards = () => {
-    return(
-        <div className={styles.boards}>
+const Index = () => {
+    return (<div className={styles.boards}>
             <div className={styles.board}>
                 <div className={styles.board__item}>
                     <div className={styles.board__title}>
-                        <img className='logo' src={logoUiIndex} alt="img"/>
+                        <img className={styles.logo} src={logoUiIndex} alt='img'/>
                         uv index
                     </div>
                     <div className={styles.board__index}>12</div>
                     <div className={styles.board__level}>Middle</div>
-                    <div className={styles.board__line}>
-                        <img src={logoSubtract} alt="img"/>
+                    <div>
+                        <img src={logoSubtract} alt='img'/>
                     </div>
                     <div className={styles.board__description}>Middle for the rest of the day.</div>
                 </div>
@@ -32,12 +29,12 @@ const WeatherBoards = () => {
             <div className={styles.board}>
                 <div className={styles.board__item}>
                     <div className={styles.board__title}>
-                        <img className='logo' src={logoSunrise} alt="img"/>
+                        <img className={styles.logo} src={logoSunrise} alt='img'/>
                         sunrise
                     </div>
                     <div className={styles.board__time}>11:28 AM</div>
                     <div>
-                        <img className={styles.board__vector} src={logoVector} alt="img"/>
+                        <img className={styles.board__vector} src={logoVector} alt='img'/>
                     </div>
                     <div className={styles.board__description}>Sunrise: 9:45 pm</div>
                 </div>
@@ -45,39 +42,41 @@ const WeatherBoards = () => {
             <div className={styles.board}>
                 <div className={styles.board__item}>
                     <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoWind} alt="img"/>
+                        <img className={styles.logo} src={logoWind} alt='img'/>
                         Wind
                     </div>
-                    <img className={styles.board__compass} src={logoCompass} alt="img"/>
+                    <img className={styles.board__compass} src={logoCompass} alt='img'/>
                 </div>
             </div>
             <div className={styles.board}>
                 <div className={styles.board__item}>
                     <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoTemp} alt="img"/>
+                        <img className={styles.logo} src={logoTemp} alt='img'/>
                         feels like
                     </div>
                     <div className={styles.board__degrees}>29°</div>
                     <div className={styles.board__description}>Similar to the
                         actual
-                        temperature</div>
+                        temperature
+                    </div>
                 </div>
             </div>
             <div className={styles.board}>
                 <div className={styles.board__item}>
                     <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoHumidity} alt="img"/>
+                        <img className={styles.logo} src={logoHumidity} alt='img'/>
                         humidity
                     </div>
                     <div className={styles.board__percent}>54%</div>
                     <div className={styles.board__level}>The dew point is
-                        21° right now.</div>
+                        21° right now.
+                    </div>
                 </div>
             </div>
             <div className={styles.board}>
                 <div className={styles.board__item}>
                     <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoVisibility} alt="img"/>
+                        <img className={styles.logo} src={logoVisibility} alt='img'/>
                         visibility
                     </div>
                     <div className={styles.board__visibility}>21 км</div>
@@ -89,4 +88,4 @@ const WeatherBoards = () => {
 
     )
 }
-export default WeatherBoards;
+export default Index;

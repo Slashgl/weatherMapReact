@@ -1,8 +1,7 @@
-import React from "react";
+import React from 'react';
+import styles from './styles.module.scss';
 
-import styles from './AsideBar.module.scss';
-
-const AsideBar = ({setModalActive}) => {
+const Index = ({setModalActive}) => {
     return(
         <div className={styles.aside}>
             <input type='text' placeholder='Search for a city or airport' onClick={() => setModalActive(true)}/>
@@ -20,4 +19,4 @@ const AsideBar = ({setModalActive}) => {
         </div>
     )
 }
-export default AsideBar;
+export default Index;

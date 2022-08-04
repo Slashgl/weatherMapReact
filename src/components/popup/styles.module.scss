@@ -1,10 +1,12 @@
-@import "src/assets/variables/variables";
+@import "src/assets/variables/colors";
+
 .popup {
   position: absolute;
   width: 100%;
   height: 100vh;
   background: rgba(78, 112, 123, 0.42);
   backdrop-filter: blur(16px);
+
   &__close {
     cursor: pointer;
     &:after {
@@ -14,9 +16,10 @@
       top: -15px;
       width: 30px;
       height: 2px;
-      background-color: #FFFFFF;
+      background-color: $white;
       transform: rotate(45deg);
     }
+
     &:before {
       content: '';
       position: absolute;
@@ -28,6 +31,7 @@
       transform: rotate(135deg);
     }
   }
+
   &__content {
     position: absolute;
     top: 50%;
@@ -36,6 +40,7 @@
     height: 289px;
     transform: translate(-50%, -50%);
   }
+
   &__search {
     width: calc(621px - 48px);
     height: 44px;
@@ -45,6 +50,7 @@
     outline: none;
     border: none;
   }
+
   &__input {
     &:before {
       content: url("../../assets/img/magnifier.svg");
@@ -53,6 +59,7 @@
       left: 18px;
     }
   }
+
   &__results {
     position: relative;
     height: 100%;
@@ -61,6 +68,7 @@
     background: $white;
     border-radius: 0 0 16px 16px;
   }
+
   &__item {
     cursor: pointer;
     position: relative;
@@ -76,16 +84,19 @@
       border: 1px solid rgba(84, 84, 88, 0.65);
     }
   }
+
   &__name {
     font-weight: 400;
     font-size: 16px;
     color: $black;
   }
+
   &__country {
     font-weight: 400;
     font-size: 15px;
     color: rgba(60, 60, 67, 0.6);
   }
+
   &__button {
     cursor: pointer;
     width: 621px;
@@ -98,6 +109,7 @@
       background: $blue;
     }
   }
+
   .checked {
     content: url("../../assets/img/Vectorchecked.svg");
     margin-left: auto;

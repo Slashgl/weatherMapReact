@@ -1,16 +1,21 @@
-@import "src/assets/variables/variables";
+@import "src/assets/variables/colors";
+
 .header {
   color: $white;
   text-align: center;
+
   &__title {
     font-size: 37px;
   }
+
   &__degrees {
     font-size: 102px;
   }
+
   &__description {
     font-size: 24px;
   }
+
   &__coordinates {
     font-size: 21px;
   }

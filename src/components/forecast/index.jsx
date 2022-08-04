@@ -1,8 +1,7 @@
-import React from "react";
+import React from 'react';
+import styles from './styles.module.scss';
 
-import styles from  './forecast.module.scss';
-
-const Forecast = () => {
+const Index = () => {
     return(
         <div className={styles.forecast}>
             <div className={styles.title}>10-DAY FORECAST</div>
@@ -10,7 +9,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -21,7 +20,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -32,7 +31,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -43,7 +42,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -54,7 +53,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -65,7 +64,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -76,7 +75,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -87,7 +86,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -98,7 +97,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -109,7 +108,7 @@ const Forecast = () => {
                 <li className={styles.forecast__item}>
                     <div className={styles.forecast__left}>
                         <div className={styles.forecast__week}>Mon</div>
-                        <img width='20px' height='20px' src="https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg" alt="img"/>
+                        <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
                     </div>
                     <div className={styles.forecast__right}>
                         <div className={styles.forecast__min}>18°</div>
@@ -117,9 +116,8 @@ const Forecast = () => {
                         <div className={styles.forecast__max}>27°</div>
                     </div>
                 </li>
-
             </ul>
         </div>
     )
 }
-export default Forecast;
+export default Index;

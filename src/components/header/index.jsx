@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './header.module.scss';
+import styles from './styles.module.scss';
 
-const Header = () => {
+const Index = () => {
     return(
         <div className={styles.header}>
             <div className={styles.header__title}>Minsk</div>
@@ -11,4 +11,4 @@ const Header = () => {
         </div>
     )
 }
-export default Header;
+export default Index;

@@ -5,6 +5,7 @@
   width: 628px;
   margin: 53px 0 0 37px;
 }
+
 .board {
   width: 200px;
   height: 200px;
@@ -13,9 +14,11 @@
   border: 0.616817px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(290px);
   border-radius: 18.5045px;
+
   .logo {
     margin-right: 8px;
   }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -23,37 +26,47 @@
     height: 168px;
     padding: 18px 0 0 20px;
   }
+
   &__title {
     font-size: 18.5045px;
     text-transform: uppercase;
   }
+
   &__index {
     font-size: 44.4108px;
   }
+
   &__level {
     font-size: 27.14px;
   }
+
   &__description {
     vertical-align: bottom;
     font-size: 22.2054px;
   }
+
   &__compass {
     width: 140px;
     height: 140px;
     margin: 0 auto;
   }
+
   &__vector {
     width: 100%;
   }
+
   &__time {
     font-size: 43.1772px;
   }
+
   &__degrees {
     font-size: 35px;
   }
+
   &__percent {
     font-size: 35px;
   }
+
   &__visibility {
     font-size: 43.1772px;
   }
