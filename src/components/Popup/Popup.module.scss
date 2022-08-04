@@ -5,7 +5,6 @@
   height: 100vh;
   background: rgba(78, 112, 123, 0.42);
   backdrop-filter: blur(16px);
-  visibility: hidden;
   &__close {
     cursor: pointer;
     &:after {
@@ -103,7 +102,4 @@
     content: url("../../assets/img/Vectorchecked.svg");
     margin-left: auto;
   }
-}
-.popup.active {
-  visibility: visible;
 }
