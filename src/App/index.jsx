@@ -5,7 +5,7 @@ import AsideBar from 'components/asideBar';
 import WeatherToday from 'components/weatherToday';
 import WeatherBoards from 'components/weatherBoards';
 import Popup from 'components/popup';
-import styles from './App.module.scss';
+import styles from './styles.module.scss';
 
 const App = () => {
     const [modalActive, setModalActive] = useState(false);

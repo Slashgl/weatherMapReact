@@ -1,11 +1,11 @@
-@import "src/assets/variables/colors";
+@import 'src/assets/variables/colors';
 
 .today {
   width: 628px;
   height: 200px;
   margin: 38px 19px 0 37px;
   color: $darkGrey;
-  background: rgba(255, 255, 255, 0.1);
+  background: $lightGrey;
   backdrop-filter: blur(290px);
   border-radius: 15px;
 
@@ -28,7 +28,7 @@
   }
 
   &__img {
-    margin: 24px 0 24px 0;
+    margin: 24px 0;
     text-align: center;
   }
 

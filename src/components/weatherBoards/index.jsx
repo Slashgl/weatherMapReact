@@ -11,6 +11,7 @@ import logoHumidity from '../../assets/img/humidity.svg'
 import logoVisibility from '../../assets/img/eye.fill.svg'
 
 const WeatherBoards = () => {
+
     return (<div className={styles.boards}>
             <div className={styles.board}>
                 <div className={styles.board__item}>

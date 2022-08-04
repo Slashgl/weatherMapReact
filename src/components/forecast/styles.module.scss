@@ -6,7 +6,7 @@
   margin: 38px 0 0 40px;
   padding: 0 25px 0 17px;
   list-style: none;
-  background: rgba(255, 255, 255, 0.1);
+  background: $lightGrey;
   backdrop-filter: blur(290px);
   border-radius: 15px;
 
@@ -21,6 +21,7 @@
     align-items: center;
     margin-bottom: 10px;
     height: 55px;
+
     &:before {
       content: '';
       position: absolute;
@@ -60,7 +61,7 @@
   &__line {
     width: 165px;
     height: 4px;
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
     background-color: $black;
     border-radius: 44px;
   }

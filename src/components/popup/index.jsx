@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss'
 
 const Popup = ({active, setActive}) => {
+
     return (
         active ? <div className={styles.popup} onClick={() => setActive(false)}>
             <div className={styles.popup__content} onClick={(e) => e.stopPropagation()}>

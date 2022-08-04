@@ -1,14 +1,15 @@
-@import "src/assets/variables/colors";
+@import 'src/assets/variables/colors';
 
 .popup {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: rgba(78, 112, 123, 0.42);
+  background: $lightBlue;
   backdrop-filter: blur(16px);
 
   &__close {
     cursor: pointer;
+
     &:after {
       content: '';
       position: absolute;
@@ -52,6 +53,7 @@
   }
 
   &__input {
+
     &:before {
       content: url("../../assets/img/magnifier.svg");
       position: absolute;
@@ -81,7 +83,7 @@
       width: 589px;
       height: 0;
       margin-top: 40px;
-      border: 1px solid rgba(84, 84, 88, 0.65);
+      border: 1px solid $lightGrey;
     }
   }
 
@@ -94,7 +96,7 @@
   &__country {
     font-weight: 400;
     font-size: 15px;
-    color: rgba(60, 60, 67, 0.6);
+    color: $darkBlack;
   }
 
   &__button {

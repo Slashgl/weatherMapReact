@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 const AsideBar = ({setModalActive}) => {
+
     return(
         <div className={styles.aside}>
             <input type='text' placeholder='Search for a city or airport' onClick={() => setModalActive(true)}/>
