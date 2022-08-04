@@ -12,7 +12,8 @@ import logoVisibility from '../../assets/img/eye.fill.svg'
 
 const WeatherBoards = () => {
 
-    return (<div className={styles.boards}>
+    return (
+        <div className={styles.boards}>
             <div className={styles.board}>
                 <div className={styles.board__item}>
                     <div className={styles.board__title}>
@@ -84,9 +85,7 @@ const WeatherBoards = () => {
                     <div className={styles.board__description}>Visibility is good</div>
                 </div>
             </div>
-
         </div>
-
     )
 }
 export default WeatherBoards;
