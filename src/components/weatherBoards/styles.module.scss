@@ -60,7 +60,8 @@
     font-size: 43px;
   }
 
-  &__degrees {
+  &__degrees, &__percent, &__visibility{
+    margin-bottom: auto;
     font-size: 35px;
   }
 

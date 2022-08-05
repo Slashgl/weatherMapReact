@@ -1,7 +1,7 @@
 @import "src/assets/variables/colors.scss";
 @import "src/assets/mixins/magnifier";
 .aside {
-  width: 562px;
+  width: 661px;
   height: 100vh;
   padding: 26px 20px 0 20px;
   color: $white;
@@ -17,7 +17,7 @@
       border-radius: 47px;
       border: none;
       outline: none;
-      padding-left: 46px;
+      padding: 0 46px;
       z-index: 1;
     }
     &:before {
