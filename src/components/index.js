@@ -5,4 +5,4 @@ import WeatherToday from './weatherToday';
 import WeatherBoards from './weatherBoards';
 import Popup from './popup';
 
-export default {Forecast, Header, AsideBar, WeatherToday, WeatherBoards, Popup}
+export {Forecast, Header, AsideBar, WeatherToday, WeatherBoards, Popup}
