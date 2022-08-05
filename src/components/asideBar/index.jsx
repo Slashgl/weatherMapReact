@@ -5,7 +5,9 @@ const AsideBar = ({setModalActive}) => {
 
     return(
         <div className={styles.aside}>
-            <input type='text' placeholder='Search for a city or airport' onClick={() => setModalActive(true)}/>
+            <label className={styles.aside__input}>
+                <input type='text' placeholder='Search for a city or airport' onClick={() => setModalActive(true)}/>
+            </label>
             <div className={styles.aside__myLocation}>
                 <div className={styles.aside__left}>
                     <div className={styles.aside__title}>My location</div>

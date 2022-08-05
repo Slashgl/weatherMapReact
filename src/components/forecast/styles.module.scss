@@ -1,5 +1,5 @@
 @import "src/assets/variables/colors";
-
+@import "src/assets/mixins/line";
 .forecast {
   width: 535px;
   height: 706px;
@@ -23,12 +23,7 @@
     height: 55px;
 
     &:before {
-      content: '';
-      position: absolute;
-      top: 50px;
-      width: 100%;
-      opacity: 0.5;
-      border: 0.2px solid $greyBlack;
+      @include line(50px)
     }
   }
 

@@ -1,5 +1,5 @@
 @import "src/assets/variables/colors.scss";
-
+@import "src/assets/mixins/magnifier";
 .aside {
   width: 562px;
   height: 100vh;
@@ -8,13 +8,21 @@
   background: $darkBlue;
   backdrop-filter: blur(340px);
 
-  input {
-    width: 100%;
-    height: 44px;
-    margin-bottom: 30px;
-    border-radius: 47px;
-    border: none;
-    outline: none;
+  &__input {
+    input {
+      position: relative;
+      width: 100%;
+      height: 44px;
+      margin-bottom: 30px;
+      border-radius: 47px;
+      border: none;
+      outline: none;
+      padding-left: 46px;
+      z-index: 1;
+    }
+    &:before {
+      @include magnifier(40px, 40px)
+    }
   }
 
   &__myLocation {

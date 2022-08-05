@@ -1,0 +1,7 @@
+@mixin magnifier($top, $left) {
+  content: url("../../assets/img/magnifier.svg");
+  position: absolute;
+  top: $top;
+  left: $left;
+  z-index: 10;
+}
