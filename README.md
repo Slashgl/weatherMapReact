@@ -1,2 +1,1 @@
-
-https://weather-map-react.vercel.app/
+https://weather-map-react.vercel.app 
