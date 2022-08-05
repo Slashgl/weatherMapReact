@@ -1,5 +1,5 @@
 import React from 'react';
-import countryApi from "@services/countryApi";
+import {countryApi} from "services";
 import styles from './styles.module.scss'
 
 const Popup = ({active, setActive}) => {

@@ -7,10 +7,13 @@ import logoSunrise from 'assets/img/sunrise.fill.svg'
 import logoWind from 'assets/img/wind.svg'
 import logoCompass from 'assets/img/compass.svg'
 import logoTemp from 'assets/img/thermometer.svg'
-import logoHumidity from 'assets/img/humidity.svg'
-import logoVisibility from 'assets/img/eye.fill.svg'
 
 const WeatherBoards = () => {
+    const api = [
+        {boards: 'FEELSLIKE', num: 20},
+        {boards: 'HUMIDITY', num: 34},
+        {boards: 'VISIBILITY', num: 10},
+    ]
 
     return (
         <div className={styles.boards}>
@@ -50,41 +53,37 @@ const WeatherBoards = () => {
                     <img className={styles.board__compass} src={logoCompass} alt='img'/>
                 </div>
             </div>
-            <div className={styles.board}>
-                <div className={styles.board__item}>
-                    <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoTemp} alt='img'/>
-                        feels like
+            {api.map(el => {
+                return (
+                    <div className={styles.board}>
+                        <div className={styles.board__item}>
+                            <div className={styles.board__title}>
+                                <img className={styles.logo} src={logoTemp} alt='img'/>
+                                {el.boards}
+                            </div>
+
+                                {
+                                    el.boards === 'HUMIDITY' ?
+                                        <>
+                                            <div className={styles.board__percent}>{el.num}%</div>
+                                            <div className={styles.board__description}>The dew point is 21° right now.</div>
+                                        </> :
+                                    el.boards === 'FEELSLIKE' ?
+                                        <>
+                                            <div className={styles.board__degrees}>{el.num}&deg;</div>
+                                            <div className={styles.board__description}>Similar to the actual temperature</div>
+                                        </> :
+                                    el.boards === "VISIBILITY" ?
+                                        <>
+                                            <div className={styles.board__visibility}>{el.num} км</div>
+                                            <div className={styles.board__description}>Visibility is good</div>
+                                        </> : null
+                                }
+                        </div>
                     </div>
-                    <div className={styles.board__degrees}>29°</div>
-                    <div className={styles.board__description}>Similar to the
-                        actual
-                        temperature
-                    </div>
-                </div>
-            </div>
-            <div className={styles.board}>
-                <div className={styles.board__item}>
-                    <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoHumidity} alt='img'/>
-                        humidity
-                    </div>
-                    <div className={styles.board__percent}>54%</div>
-                    <div className={styles.board__level}>The dew point is
-                        21° right now.
-                    </div>
-                </div>
-            </div>
-            <div className={styles.board}>
-                <div className={styles.board__item}>
-                    <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoVisibility} alt='img'/>
-                        visibility
-                    </div>
-                    <div className={styles.board__visibility}>21 км</div>
-                    <div className={styles.board__description}>Visibility is good</div>
-                </div>
-            </div>
+                )
+            })}
+
         </div>
     )
 }
