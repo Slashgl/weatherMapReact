@@ -10,7 +10,7 @@
   &__close {
     cursor: pointer;
 
-    &:after {
+    &:after, &:before {
       content: '';
       position: absolute;
       right: -30px;
@@ -22,13 +22,6 @@
     }
 
     &:before {
-      content: '';
-      position: absolute;
-      right: -30px;
-      top: -15px;
-      width: 30px;
-      height: 2px;
-      background-color: $white;
       transform: rotate(135deg);
     }
   }
