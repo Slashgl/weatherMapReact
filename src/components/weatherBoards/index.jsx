@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './styles.module.scss';
-import logoUiIndex from '../../assets/img/sun.max.fill.svg'
-import logoSubtract from '../../assets/img/Subtract.svg'
-import logoVector from '../../assets/img/Vector.svg'
-import logoSunrise from '../../assets/img/sunrise.fill.svg'
-import logoWind from '../../assets/img/wind.svg'
-import logoCompass from '../../assets/img/compass.svg'
-import logoTemp from '../../assets/img/thermometer.svg'
-import logoHumidity from '../../assets/img/humidity.svg'
-import logoVisibility from '../../assets/img/eye.fill.svg'
+import logoUiIndex from 'assets/img/sun.max.fill.svg'
+import logoSubtract from 'assets/img/Subtract.svg'
+import logoVector from 'assets/img/Vector.svg'
+import logoSunrise from 'assets/img/sunrise.fill.svg'
+import logoWind from 'assets/img/wind.svg'
+import logoCompass from 'assets/img/compass.svg'
+import logoTemp from 'assets/img/thermometer.svg'
+import logoHumidity from 'assets/img/humidity.svg'
+import logoVisibility from 'assets/img/eye.fill.svg'
 
 const WeatherBoards = () => {
 

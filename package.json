@@ -52,11 +52,7 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
-    "web-vitals": "^2.1.4",
-    "webpack": "^5.64.4",
-    "webpack-dev-server": "^4.6.0",
-    "webpack-manifest-plugin": "^4.0.2",
-    "workbox-webpack-plugin": "^6.4.1"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -88,9 +84,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "less-loader": "^11.0.0",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "style-loader": "^3.3.1"
   },
   "jest": {
     "roots": [
