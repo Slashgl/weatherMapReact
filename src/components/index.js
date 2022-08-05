@@ -1,8 +1,8 @@
-import Forecast from 'components/forecast';
-import Header from 'components/header';
-import AsideBar from 'components/asideBar';
-import WeatherToday from 'components/weatherToday';
-import WeatherBoards from 'components/weatherBoards';
-import Popup from 'components/popup';
+import Forecast from './forecast';
+import Header from './header';
+import AsideBar from './asideBar';
+import WeatherToday from './weatherToday';
+import WeatherBoards from './weatherBoards';
+import Popup from './popup';
 
 export default {Forecast, Header, AsideBar, WeatherToday, WeatherBoards, Popup}

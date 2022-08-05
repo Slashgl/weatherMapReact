@@ -1,10 +1,5 @@
 import React, {useState} from 'react';
-import Forecast from 'components/forecast';
-import Header from 'components/header';
-import AsideBar from 'components/asideBar';
-import WeatherToday from 'components/weatherToday';
-import WeatherBoards from 'components/weatherBoards';
-import Popup from 'components/popup';
+import {AsideBar, Forecast, Popup, Header, WeatherBoards, WeatherToday} from 'components';
 import styles from './styles.module.scss';
 
 const App = () => {
