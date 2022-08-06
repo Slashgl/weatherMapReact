@@ -1,5 +1,5 @@
 import React from 'react';
-import {weatherTodayApi} from 'services';
+import weatherTodayApi from '../../services/weatherTodayApi';
 import styles from './styles.module.scss';
 
 const WeatherToday = () => {
