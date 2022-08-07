@@ -1,4 +1,5 @@
 body {
+  height: 100vh;
   background: url("assets/img/bg.jpg") no-repeat;
 }
 * {
