@@ -55,13 +55,12 @@ const WeatherBoards = () => {
             </div>
             {api.map(el => {
                 return (
-                    <div className={styles.board}>
-                        <div className={styles.board__item}>
+                    <div key={el.boards} className={styles.board}>
+                        <div  className={styles.board__item}>
                             <div className={styles.board__title}>
                                 <img className={styles.logo} src={logoTemp} alt='img'/>
                                 {el.boards}
                             </div>
-
                                 {
                                     el.boards === 'HUMIDITY' ?
                                         <>
