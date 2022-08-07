@@ -1,5 +1,5 @@
 import React from 'react';
-import forecastApi from "../../services/forecastApi";
+import {forecastApi} from 'services';
 import styles from './styles.module.scss';
 
 const Forecast = () => {
