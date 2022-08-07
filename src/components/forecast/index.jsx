@@ -9,8 +9,8 @@ const Forecast = () => {
         <div className={styles.forecast}>
             <div className={styles.title}>10-DAY FORECAST</div>
             <ul className={styles.forecast__items}>
-                {
-                    api && api.map(el => {
+                {api &&
+                    api.map(el => {
                         return (
                             <li key={el.id} className={styles.forecast__item}>
                                 <div className={styles.forecast__left}>
