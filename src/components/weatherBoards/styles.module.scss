@@ -11,12 +11,13 @@
 .board {
   width: 200px;
   height: 200px;
-  margin-bottom: 53px;
   background: $lightGrey;
-  border: 0.616817px solid $lightWhite;
+  border: 0.6px solid $lightWhite;
   backdrop-filter: blur(290px);
   border-radius: 18px;
-
+  &:nth-child(1):not(&:nth-child(4)) {
+    margin-bottom: 30px;
+  }
   .logo {
     margin-right: 8px;
   }
