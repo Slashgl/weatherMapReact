@@ -22,9 +22,8 @@
   &__items {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     list-style: none;
-    padding: 0;
+    height: 122px;
     margin: 16px 17px 0 10px;
   }
   &__item {
@@ -39,7 +38,6 @@
   }
 
   &__img {
-    margin: 24px 0;
     text-align: center;
   }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import {forecastApi} from 'services';
 import styles from './styles.module.scss';
 
+
 const Forecast = () => {
     const api = forecastApi()
 
@@ -15,7 +16,7 @@ const Forecast = () => {
                             <li key={el.id} className={styles.forecast__item}>
                                 <div className={styles.forecast__left}>
                                     <div className={styles.forecast__week}>{el.day}</div>
-                                    <img width='20px' height='20px' src='https://img2.freepng.ru/20180626/ipe/kisspng-computer-icons-cloud-cover-meteorology-rain-day-time-5b32197e96f184.0483834715300099826183.jpg' alt='img'/>
+                                    <img src={el.icon} alt='img'/>
                                 </div>
                                 <div className={styles.forecast__right}>
                                     <div className={styles.forecast__min}>{`${el.min}`}&deg;</div>
