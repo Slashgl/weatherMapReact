@@ -25,7 +25,7 @@ const WeatherBoards = () => {
                     </div>
                     <div className={styles.board__index}>12</div>
                     <div className={styles.board__level}>Middle</div>
-                    <div>
+                    <div className={styles.board__lvlImg}>
                         <img src={logoSubtract} alt='img'/>
                     </div>
                     <div className={styles.board__description}>Middle for the rest of the day.</div>
@@ -38,7 +38,7 @@ const WeatherBoards = () => {
                         sunrise
                     </div>
                     <div className={styles.board__time}>11:28 AM</div>
-                    <div>
+                    <div className={styles.board__img}>
                         <img className={styles.board__vector} src={logoVector} alt='img'/>
                     </div>
                     <div className={styles.board__description}>Sunrise: 9:45 pm</div>
@@ -50,7 +50,9 @@ const WeatherBoards = () => {
                         <img className={styles.logo} src={logoWind} alt='img'/>
                         Wind
                     </div>
-                    <img className={styles.board__compass} src={logoCompass} alt='img'/>
+                    <div className={styles.board__img}>
+                        <img className={styles.board__compass} src={logoCompass} alt='img'/>
+                    </div>
                 </div>
             </div>
             {api.map(el => {
