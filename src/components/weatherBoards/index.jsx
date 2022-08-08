@@ -38,7 +38,7 @@ const WeatherBoards = () => {
                         sunrise
                     </div>
                     <div className={styles.board__time}>11:28 <span className={styles.board__format}>AM</span></div>
-                    <div className={styles.board__img}>
+                    <div className={styles.board__imgVector}>
                         <img className={styles.board__vector} src={logoVector} alt='img'/>
                     </div>
                     <div className={styles.board__description}>Sunrise: 9:45 pm</div>
@@ -50,7 +50,7 @@ const WeatherBoards = () => {
                         <img className={styles.logo} src={logoWind} alt='img'/>
                         Wind
                     </div>
-                    <div className={styles.board__img}>
+                    <div className={styles.board__imgCompass}>
                         <img className={styles.board__compass} src={logoCompass} alt='img'/>
                     </div>
                 </div>
