@@ -38,13 +38,19 @@
     background-size: cover;
     border-radius: 14px;
   }
-
+  &__left, &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 159px;
+  }
   &__left {
     margin: 25px 0 0 20px;
   }
 
   &__right {
     margin: 25px 20px 0 0;
+
   }
 
   &__title {
@@ -53,7 +59,7 @@
   }
 
   &__city {
-    margin-top: 60px;
+    margin-bottom: auto;
     font-size: 21px;
   }
 
@@ -62,7 +68,7 @@
   }
 
   &__degrees {
-    font-size: 110px;
+    font-size: 80px;
   }
 
   &__coordinates {
