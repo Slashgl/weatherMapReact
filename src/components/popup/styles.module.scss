@@ -1,5 +1,5 @@
 @import 'src/assets/variables/colors';
-@import "src/assets/mixins/magnifier";
+@import 'src/assets/mixins/magnifier';
 
 .popup {
   position: absolute;
@@ -47,6 +47,7 @@
   }
 
   &__input {
+
     &:before {
       @include magnifier(13px, 18px)
     }
@@ -89,13 +90,14 @@
     background: $greyBlue;
     border-radius: 31px;
     border: none;
+
     &:hover {
       background: $blue;
     }
   }
 
   .checked {
-    content: url("../../assets/img/Vectorchecked.svg");
+    content: url('../../assets/img/Vectorchecked.svg');
     margin-left: auto;
   }
 }

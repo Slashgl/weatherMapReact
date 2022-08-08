@@ -1,5 +1,5 @@
 @import 'src/assets/variables/colors';
-@import "src/assets/mixins/line";
+@import 'src/assets/mixins/line';
 
 .today {
   width: 628px;
@@ -9,9 +9,11 @@
   background: $lightGrey;
   backdrop-filter: blur(290px);
   border-radius: 15px;
+
   &:before {
     @include line(60px);
   }
+
   &__title {
     width: 340px;
     padding: 10px 0 0 10px;
