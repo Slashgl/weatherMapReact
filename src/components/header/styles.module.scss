@@ -6,18 +6,22 @@
   text-align: center;
 
   &__title {
+    font-weight: 400;
     font-size: 37px;
   }
 
   &__degrees {
+    font-weight: 200;
     font-size: 80px;
   }
 
   &__description {
+    font-weight: 400;
     font-size: 24px;
   }
 
   &__coordinates {
+    font-weight: 500;
     font-size: 21px;
   }
 }

@@ -1,4 +1,4 @@
-@import 'src/assets/variables/colors';
+@import 'src/assets/variables/colors.scss';
 
 .boards {
   display: flex;
@@ -33,28 +33,32 @@
 
   &__title {
     margin: 15px 0 5px;
+    font-weight: 500;
     font-size: 18px;
     text-transform: uppercase;
+    opacity: 0.3;
   }
 
   &__index {
+    font-weight: 400;
     font-size: 44px;
   }
 
   &__level {
+    font-weight: 500;
     font-size: 27px;
   }
 
 
   &__description {
     max-width: 171px;
-    font-size: 22px;
     margin: auto 0 15px 0;
+    font-weight: 400;
+    font-size: 22px;
   }
 
   &__compass {
     transform: translateX(20%);
-
   }
 
   &__vector {
@@ -62,21 +66,26 @@
   }
 
   &__time {
+    font-weight: 400;
     font-size: 43px;
   }
   &__format {
+    font-weight: 400;
     font-size: 30px;
   }
 
   &__degrees{
+    font-weight: 400;
     font-size: 35px;
   }
 
   &__percent {
+    font-weight: 400;
     font-size: 35px;
   }
 
   &__visibility {
+    font-weight: 400;
     font-size: 43px;
   }
 
