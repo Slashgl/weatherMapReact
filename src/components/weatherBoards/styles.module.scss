@@ -12,7 +12,7 @@
   width: 200px;
   min-height: 200px;
   background: $lightGrey;
-  border: 0.6px solid $lightWhite;
+  border: 1px solid $lightWhite;
   backdrop-filter: blur(290px);
   border-radius: 18px;
 
@@ -82,8 +82,5 @@
 
   &__visibility {
     font-size: 43px;
-  }
-  &__img {
-
   }
 }
