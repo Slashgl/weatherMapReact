@@ -18,7 +18,7 @@
     width: 340px;
     padding: 10px 0 0 10px;
     font-size: 18px;
-
+    font-weight: 400;
   }
 
   &__items {
@@ -36,6 +36,7 @@
   }
 
   &__time {
+    font-weight: 500;
     font-size: 17px;
   }
 
@@ -44,6 +45,7 @@
   }
 
   &__degrees {
+    font-weight: 500;
     font-size: 22px;
   }
 }

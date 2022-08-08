@@ -21,6 +21,11 @@
       outline: none;
       padding: 0 46px;
       z-index: 1;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 17px;
+      }
     }
 
     &:before {
@@ -55,23 +60,28 @@
 
   &__title {
     margin-top:5px;
+    font-weight: 700;
     font-size: 32px;
   }
 
   &__city {
     margin-bottom: auto;
+    font-weight: 400;
     font-size: 21px;
   }
 
   &__description {
+    font-weight: 400;
     font-size: 21px;
   }
 
   &__degrees {
+    font-weight: 300;
     font-size: 80px;
   }
 
   &__coordinates {
+    font-weight: 500;
     font-size: 21px;
   }
 }

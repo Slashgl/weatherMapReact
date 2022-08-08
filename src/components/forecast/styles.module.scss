@@ -38,16 +38,19 @@
   }
 
   &__week {
+    font-weight: 500;
     margin-right: 20px;
     font-size: 22px;
   }
 
   &__min {
+    font-weight: 500;
     font-size: 22px;
     text-align: center;
   }
 
   &__max {
+    font-weight: 500;
     font-size: 22px;
   }
 
@@ -61,6 +64,7 @@
 }
 
 .title {
+  font-weight: 500;
   padding-top: 14px;
   font-size: 15px;
   text-align: center;
