@@ -11,11 +11,12 @@
   backdrop-filter: blur(340px);
 
   @media (max-width: 575px) {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
     height: 100vh;
+    padding: 26px 50px 0 20px;
   }
 
   @media (min-width: 576px)  {
