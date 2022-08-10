@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles.module.scss';
+import styles from './styles.module.scss'
 import logoUiIndex from 'assets/img/sun.max.fill.svg'
 import logoSubtract from 'assets/img/Subtract.svg'
 import logoVector from 'assets/img/Vector.svg'
@@ -102,4 +102,4 @@ const WeatherBoards = () => {
         </div>
     )
 }
-export default WeatherBoards;
+export default WeatherBoards

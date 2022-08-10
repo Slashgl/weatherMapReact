@@ -1,6 +1,6 @@
-import React from 'react';
-import {forecastApi} from 'services';
-import styles from './styles.module.scss';
+import React from 'react'
+import {forecastApi} from 'services'
+import styles from './styles.module.scss'
 
 
 const Forecast = () => {
@@ -31,4 +31,4 @@ const Forecast = () => {
         </div>
     )
 }
-export default Forecast;
+export default Forecast

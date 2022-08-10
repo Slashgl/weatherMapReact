@@ -1,16 +1,23 @@
+@import 'src/assets/mixins/media';
+
 .App, .table{
   display: flex;
   justify-content: space-between;
 }
-@media (min-width: 320px) and (max-width: 1679px) {
+
+@include screen1680{
+
   .table {
     flex-direction: column;
   }
 }
-@media (min-width: 320px) and (max-width: 575px) {
+
+@include screen576 {
+
   .App {
     display: block;
   }
+
   .table {
     flex-direction: column;
   }

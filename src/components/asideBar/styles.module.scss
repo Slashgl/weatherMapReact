@@ -91,6 +91,7 @@
   &__description {
     font-weight: 400;
     font-size: 21px;
+
     @include screen1280 {
       font-size: 20px;
       text-align: left;
@@ -105,6 +106,7 @@
   &__coordinates {
     font-weight: 500;
     font-size: 21px;
+
     @include screen1280 {
       font-size: 20px;
       text-align: right;

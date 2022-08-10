@@ -32,10 +32,12 @@
 
   &:nth-child(n + 4) {
     margin-top: 40px;
+
     @media (min-width: 1680px) and (max-width: 1919px)  {
       margin-top: 35px;
     }
   }
+
   .logo {
     margin-right: 8px;
   }

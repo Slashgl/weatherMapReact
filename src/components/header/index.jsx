@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './styles.module.scss';
+import React from 'react'
+import styles from './styles.module.scss'
 
 const Header = () => {
 
@@ -12,4 +12,4 @@ const Header = () => {
         </div>
     )
 }
-export default Header;
+export default Header

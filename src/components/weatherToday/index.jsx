@@ -1,6 +1,6 @@
-import React from 'react';
-import {weatherTodayApi} from 'services';
-import styles from './styles.module.scss';
+import React from 'react'
+import {weatherTodayApi} from 'services'
+import styles from './styles.module.scss'
 
 const WeatherToday = () => {
     const api = weatherTodayApi()
@@ -25,4 +25,4 @@ const WeatherToday = () => {
     )
 }
 
-export default WeatherToday;
+export default WeatherToday
