@@ -2,3 +2,16 @@
   display: flex;
   justify-content: space-between;
 }
+@media (min-width: 320px) and (max-width: 1679px) {
+  .table {
+    flex-direction: column;
+  }
+}
+@media (min-width: 320px) and (max-width: 575px) {
+  .App {
+    display: block;
+  }
+  .table {
+    flex-direction: column;
+  }
+}

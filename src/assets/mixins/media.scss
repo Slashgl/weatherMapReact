@@ -1,0 +1,23 @@
+@mixin screen1680 {
+ @media (max-width: 1680px) {
+  @content
+ }
+}
+
+@mixin screen1280 {
+ @media (max-width: 1280px) {
+  @content
+ }
+}
+
+@mixin screen768 {
+ @media (max-width: 768px) {
+  @content
+ }
+}
+
+@mixin screen576 {
+ @media (max-width: 576px) {
+  @content
+ }
+}

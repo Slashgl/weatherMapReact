@@ -1,4 +1,5 @@
 @import 'src/assets/variables/colors.scss';
+@import 'src/assets/mixins/media';
 
 .boards {
   display: flex;
@@ -6,6 +7,15 @@
   flex-wrap: wrap;
   width: 628px;
   margin: 53px 0 0 37px;
+
+  @include screen1680 {
+    width: 700px;
+  }
+
+  @include screen576 {
+    width: 600px;
+    margin: 35px 19px 0 20px;
+  }
 }
 
 .board {
@@ -16,8 +26,15 @@
   backdrop-filter: blur(290px);
   border-radius: 18px;
 
+  @media (min-width: 320px) and (max-width: 575px) {
+    height: 250px
+  }
+
   &:nth-child(n + 4) {
     margin-top: 40px;
+    @media (min-width: 1680px) and (max-width: 1919px)  {
+      margin-top: 35px;
+    }
   }
   .logo {
     margin-right: 8px;

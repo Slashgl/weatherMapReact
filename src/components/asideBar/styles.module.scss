@@ -1,13 +1,31 @@
 @import 'src/assets/variables/colors.scss';
 @import 'src/assets/mixins/magnifier';
+@import 'src/assets/mixins/media';
 
 .aside {
   width: 661px;
-  height: 100vh;
+  min-height: 100vh;
   padding: 26px 20px 0 20px;
   color: $white;
   background: $RgbaDarkBlue;
   backdrop-filter: blur(340px);
+
+  @media (max-width: 575px) {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+
+  @media (min-width: 576px)  {
+    width: 661px;
+    min-height: 100vh;
+    padding: 26px 20px 0 20px;
+    color: $white;
+    background: $RgbaDarkBlue;
+    backdrop-filter: blur(340px);
+  }
 
   &__input {
 
@@ -73,6 +91,10 @@
   &__description {
     font-weight: 400;
     font-size: 21px;
+    @include screen1280 {
+      font-size: 20px;
+      text-align: left;
+    }
   }
 
   &__degrees {
@@ -83,5 +105,9 @@
   &__coordinates {
     font-weight: 500;
     font-size: 21px;
+    @include screen1280 {
+      font-size: 20px;
+      text-align: right;
+    }
   }
 }

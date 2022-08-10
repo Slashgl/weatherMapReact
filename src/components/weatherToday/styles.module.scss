@@ -10,6 +10,15 @@
   backdrop-filter: blur(290px);
   border-radius: 15px;
 
+  @media (max-width: 1679px) {
+    width: 700px;
+  }
+
+  @media (max-width: 575px) {
+    width: 600px;
+    margin: 35px 19px 0 20px;
+  }
+
   &:before {
     @include line(60px);
   }
@@ -33,6 +42,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
   }
 
   &__time {

@@ -7,6 +7,8 @@ import logoSunrise from 'assets/img/sunrise.fill.svg'
 import logoWind from 'assets/img/wind.svg'
 import logoCompass from 'assets/img/compass.svg'
 import logoTemp from 'assets/img/thermometer.svg'
+import logoHumidity from 'assets/img/humidity.svg'
+import logoEye from 'assets/img/eye.fill.svg'
 
 const WeatherBoards = () => {
     const api = [
@@ -59,23 +61,35 @@ const WeatherBoards = () => {
                 return (
                     <div key={el.boards} className={styles.board}>
                         <div  className={styles.board__item}>
-                            <div className={styles.board__title}>
-                                <img className={styles.logo} src={logoTemp} alt='img'/>
-                                {el.boards}
-                            </div>
                                 {
                                     el.boards === 'HUMIDITY' ?
-                                        <>
-                                            <div className={styles.board__percent}>{el.num}%</div>
-                                            <div className={styles.board__description}>The dew point is 21° right now.</div>
-                                        </> :
+                                       <>
+                                           <div className={styles.board__title}>
+                                               <img className={styles.logo} src={logoHumidity} alt='img'/>
+                                               {el.boards}
+                                           </div>
+
+                                           <div className={styles.board__percent}>{el.num}%</div>
+                                           <div className={styles.board__description}>The dew point is 21° right now.</div>
+                                       </>
+                                         :
                                     el.boards === 'FEELSLIKE' ?
                                         <>
+                                            <div className={styles.board__title}>
+                                                <img className={styles.logo} src={logoTemp} alt='img'/>
+                                                {el.boards}
+                                            </div>
+
                                             <div className={styles.board__degrees}>{el.num}&deg;</div>
                                             <div className={styles.board__description}>Similar to the actual temperature</div>
                                         </> :
                                     el.boards === "VISIBILITY" ?
                                         <>
+                                            <div className={styles.board__title}>
+                                                <img className={styles.logo} src={logoEye} alt='img'/>
+                                                {el.boards}
+                                            </div>
+
                                             <div className={styles.board__visibility}>{el.num} км</div>
                                             <div className={styles.board__description}>Visibility is good</div>
                                         </> : null
