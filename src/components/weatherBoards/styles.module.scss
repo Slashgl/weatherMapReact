@@ -26,15 +26,15 @@
   backdrop-filter: blur(290px);
   border-radius: 18px;
 
-  @media (min-width: 320px) and (max-width: 575px) {
+  @include screen576{
     height: 250px
   }
 
   &:nth-child(n + 4) {
     margin-top: 40px;
 
-    @media (min-width: 1680px) and (max-width: 1919px)  {
-      margin-top: 35px;
+    @include screen1680 {
+      margin-top: 5px;
     }
   }
 

@@ -1,5 +1,6 @@
 @import 'src/assets/variables/colors';
 @import 'src/assets/mixins/magnifier';
+@import 'src/assets/mixins/media';
 
 .popup {
   position: absolute;
@@ -7,6 +8,10 @@
   height: 100vh;
   background: $RgbaLightBlue;
   backdrop-filter: blur(16px);
+
+  @include screen576 {
+    display: none;
+  }
 
   &__close {
     cursor: pointer;
