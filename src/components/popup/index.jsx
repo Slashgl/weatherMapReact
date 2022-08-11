@@ -1,8 +1,9 @@
 import React from 'react'
-import List from './List';
-import {countryApi} from 'services';
+import List from './List'
+import {countryApi} from 'services'
+import {Input} from '../asideBar/input'
 import styles from './styles.module.scss'
-import {Input} from "../asideBar/input";
+
 
 
 const Popup = ({active, setActive}) => {

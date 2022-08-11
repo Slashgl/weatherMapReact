@@ -3,6 +3,7 @@ import {Context} from '../context'
 import {countryApi} from 'services'
 import {BackgroundVideo, Input, List} from 'components'
 import styles from './styles.module.scss'
+import stylesVideo from '../backgroundVideo/styles.module.scss'
 
 const AsideBar = () => {
     const {switchingModal, clickedInputMobile} = useContext(Context)
@@ -30,7 +31,7 @@ const AsideBar = () => {
 
             <div className={styles.aside__inner}>
                 <div className={styles.aside__myLocation}>
-                    <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'}/>
+                    <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'} className={stylesVideo.cardVideo}/>
                     <div className={styles.aside__left}>
                         <div className={styles.aside__title}>My location</div>
                         <div className={styles.aside__city}>Minsk</div>

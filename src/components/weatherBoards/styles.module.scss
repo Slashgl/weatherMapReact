@@ -5,8 +5,12 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 628px;
   margin: 53px 0 0 37px;
+  width: 628px;
+
+  @include screenMax1140 {
+    margin-bottom: 50px;
+  }
 
   @include screen1680 {
     width: 700px;
@@ -14,7 +18,10 @@
 
   @include screen576 {
     width: 600px;
-    margin: 35px 19px 0 20px;
+  }
+
+  @include screen576 {
+    margin: 53px 0 50px 37px;
   }
 }
 

@@ -8,6 +8,5 @@ import logoTemp from './thermometer.svg'
 import logoHumidity from './humidity.svg'
 import logoEye from './eye.svg'
 
-
 export {logoUiIndex, logoSubtract, logoVector, logoSunrise, logoWind, logoCompass, logoTemp, logoHumidity, logoEye}
 
