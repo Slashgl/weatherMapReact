@@ -1,10 +1,16 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import video from '../../assets/img/bgVideo.mp4'
+import video from '../../assets/video/bgVideo.mp4'
 
-const BackgroundVideo = () => {
+const BackgroundVideo = ({position, width, radius, height}) => {
+
     return (
-        <video className={styles.bgVideo} autoPlay loop muted>
+        <video className={styles.bgVideo}
+               style={{position: position, width: width, borderRadius: radius, height: height}}
+               autoPlay
+               loop
+               muted
+        >
             <source src={video}/>
         </video>
     )

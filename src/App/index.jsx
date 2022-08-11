@@ -12,7 +12,7 @@ const App = () => {
 
     return (
         <Context.Provider value={{switchingModal, setSwitchingModal, setModalActive, setClickedInputMobile, clickedInputMobile}}>
-            <BackgroundVideo />
+            <BackgroundVideo position={'fixed'}/>
             <div className={styles.App}>
                 <div>
                     <Header/>

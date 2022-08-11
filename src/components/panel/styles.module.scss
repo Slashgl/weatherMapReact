@@ -1,7 +1,8 @@
 @import 'src/assets/variables/colors';
 @import 'src/assets/mixins/media';
 
-@include screen576 {
+@include screenMax1140 {
+
   .panel {
     position: fixed;
     bottom: 0;

@@ -27,3 +27,21 @@
   @content
  }
 }
+
+@mixin screenMax1140 {
+ @media (max-width: 1140px) {
+  @content
+ }
+}
+
+@mixin screenMin1141 {
+ @media (min-width: 1141px) {
+  @content
+ }
+}
+
+@mixin screenMin769 {
+ @media (min-width: 767px) and (max-width: 1440px) {
+  @content
+ }
+}

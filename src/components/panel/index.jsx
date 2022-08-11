@@ -9,7 +9,9 @@ const Hamburger = () => {
    return (
        <div className={styles.panel}>
            <div className={styles.panel__wrapper}>
-               <div className={styles.panel__btn} onClick={() => setSwitchingModal(true)}>
+               <div className={styles.panel__btn}
+                    onClick={() => setSwitchingModal(true)}
+               >
                    <div className={styles.panel__line}></div>
                    <div className={styles.panel__line}></div>
                    <div className={styles.panel__line}></div>

@@ -1,14 +1,14 @@
 import React, {useContext} from 'react'
 import {Context} from '../context'
 import {countryApi} from 'services'
-import {Input, List} from 'components'
+import {BackgroundVideo, Input, List} from 'components'
 import styles from './styles.module.scss'
 
 const AsideBar = () => {
     const {switchingModal, clickedInputMobile} = useContext(Context)
     const api = countryApi()
 
-    return(
+    return (
         <div className={styles.aside} style={{
             display: switchingModal ? 'block' : null
         }}>
@@ -30,6 +30,7 @@ const AsideBar = () => {
 
             <div className={styles.aside__inner}>
                 <div className={styles.aside__myLocation}>
+                    <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'}/>
                     <div className={styles.aside__left}>
                         <div className={styles.aside__title}>My location</div>
                         <div className={styles.aside__city}>Minsk</div>

@@ -13,7 +13,9 @@ const Forecast = () => {
                 {api &&
                     api.map(el => {
                         return (
-                            <li key={el.id} className={styles.forecast__item}>
+                            <li key={el.id}
+                                className={styles.forecast__item}
+                            >
                                 <div className={styles.forecast__left}>
                                     <div className={styles.forecast__week}>{el.day}</div>
                                     <img src={el.icon} alt='img'/>

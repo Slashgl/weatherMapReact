@@ -3,7 +3,6 @@
 @import 'src/assets/mixins/media';
 
 .aside {
-  position: relative;
   width: 661px;
   min-height: 100vh;
   padding: 26px 20px 0 20px;
@@ -11,13 +10,13 @@
   background: $RgbaDarkBlue;
   backdrop-filter: blur(340px);
 
-  @include screen576 {
+  @include screenMax1140 {
     position: fixed;
     top: 0;
     left: 0;
     display: none;
     height: 100%;
-    width: 661px;
+    width: 100%;
     padding: 26px 50px 0 20px;
     color: $white;
     background: $RgbaDarkBlue;
@@ -27,6 +26,7 @@
   &__input {
 
     input {
+      cursor: pointer;
       position: relative;
       width: 100%;
       height: 44px;
@@ -36,6 +36,11 @@
       outline: none;
       padding: 0 46px;
       z-index: 10;
+
+      &:hover {
+        background: linear-gradient(to right, $blue 0%, $greyBlue 100%);
+        transform: rotate(0deg);
+      }
 
       &::placeholder {
         font-weight: 400;
@@ -47,14 +52,15 @@
       @include magnifier(40px, 40px)
     }
   }
-  @include screenMin577 {
+
+  @include screenMin1141 {
 
     &__wrapper {
       display: none;
     }
   }
 
-  @include screen576 {
+  @include screenMax1140 {
 
     &__wrapper {
       position: absolute;
@@ -88,21 +94,31 @@
   }
 
   &__myLocation {
+    position: relative;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    width: 100%;
     height: 200px;
-    background: url('../../assets/img/myLocationLink.jpg') no-repeat center;
     background-size: cover;
     border-radius: 14px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.51), rgba(0, 0, 0, 0.51));
+
+    &:hover {
+      border: 1px solid;
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+      outline-color: rgba(255, 255, 255, 0);
+      outline-offset: 15px;
+      text-shadow: 1px 1px 2px #427388;
+    }
   }
+
   &__left, &__right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 159px;
   }
+
   &__left {
     margin: 25px 0 0 20px;
   }

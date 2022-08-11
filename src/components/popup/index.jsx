@@ -1,14 +1,12 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import List from './List';
 import {countryApi} from 'services';
 import styles from './styles.module.scss'
-import {Context} from "../context";
 import {Input} from "../asideBar/input";
 
 
 const Popup = ({active, setActive}) => {
     const api = countryApi()
-    const {clickedInputMobile} = useContext(Context)
 
     return (
         active ?
