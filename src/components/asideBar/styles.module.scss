@@ -3,6 +3,7 @@
 @import 'src/assets/mixins/media';
 
 .aside {
+  position: relative;
   width: 661px;
   min-height: 100vh;
   padding: 26px 20px 0 20px;
@@ -10,19 +11,14 @@
   background: $RgbaDarkBlue;
   backdrop-filter: blur(340px);
 
-  @media (max-width: 575px) {
-    position: absolute;
+  @include screen576 {
+    position: fixed;
     top: 0;
     left: 0;
     display: none;
-    height: 120%;
-    padding: 26px 50px 0 20px;
-  }
-
-  @media (min-width: 576px)  {
+    height: 100%;
     width: 661px;
-    min-height: 100vh;
-    padding: 26px 20px 0 20px;
+    padding: 26px 50px 0 20px;
     color: $white;
     background: $RgbaDarkBlue;
     backdrop-filter: blur(340px);
@@ -39,7 +35,7 @@
       border: none;
       outline: none;
       padding: 0 46px;
-      z-index: 1;
+      z-index: 10;
 
       &::placeholder {
         font-weight: 400;
@@ -49,6 +45,45 @@
 
     &:before {
       @include magnifier(40px, 40px)
+    }
+  }
+  @include screenMin577 {
+
+    &__wrapper {
+      display: none;
+    }
+  }
+
+  @include screen576 {
+
+    &__wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      z-index: 1;
+    }
+
+    &__results {
+      margin: 100px 0 0 50px;
+      list-style: none;
+    }
+
+    &__item {
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    &__name {
+      font-size: 15px;
+    }
+
+    &__country {
+      font-size: 16px;
+      color: $greyBlack;
     }
   }
 
@@ -114,3 +149,4 @@
     }
   }
 }
+

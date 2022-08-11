@@ -1,28 +1,28 @@
-import React from 'react'
-import {countryApi} from 'services'
+import React, {useContext} from 'react'
+import List from './List';
+import {countryApi} from 'services';
 import styles from './styles.module.scss'
+import {Context} from "../context";
+import {Input} from "../asideBar/input";
+
 
 const Popup = ({active, setActive}) => {
     const api = countryApi()
+    const {clickedInputMobile} = useContext(Context)
 
     return (
         active ?
             <div className={styles.popup} onClick={() => setActive(false)}>
                 <div className={styles.popup__content} onClick={(e) => e.stopPropagation()}>
                     <div className={styles.popup__close} onClick={() => setActive(false)}></div>
-                    <label className={styles.popup__input}>
-                        <input className={styles.popup__search} type='text'/>
-                    </label>
-                    <ul className={styles.popup__results}>
-                        {api && api.map(el => {
-                            return (
-                                <li key={el.city} className={styles.popup__item}>
-                                    <div className={styles.popup__name}>{el.city}</div>
-                                    <div className={styles.popup__country}>{el.state}</div>
-                                </li>
-                            )
-                        })}
-                    </ul>
+                    <Input className={styles.popup__input}/>
+                        <List
+                            api={api}
+                            classNameList={styles.popup__results}
+                            classNameItem={styles.popup__item}
+                            classNameName={styles.popup__name}
+                            classNameCountry={styles.popup__country}
+                        />
                     <button type='button' className={styles.popup__button}>OK</button>
                 </div>
             </div>

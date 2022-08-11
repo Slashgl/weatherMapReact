@@ -6,16 +6,14 @@
 }
 
 @include screen1680{
-
   .table {
     flex-direction: column;
   }
 }
 
 @include screen576 {
-
   .App {
-    display: block;
+    display: flex;
   }
 
   .table {

@@ -3,7 +3,7 @@
 
 .boards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   width: 628px;
   margin: 53px 0 0 37px;
@@ -19,35 +19,31 @@
 }
 
 .board {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 200px;
   min-height: 200px;
+  padding-left:20px;
   background: $RgbaLightGrey;
   border: 1px solid $RgbaLightWhite;
   backdrop-filter: blur(290px);
   border-radius: 18px;
+  margin-right: 5px;
 
   @include screen576{
-    height: 250px
+    height: 250px;
+    margin-bottom: 15px;
   }
 
-  &:nth-child(n + 4) {
-    margin-top: 40px;
-
-    @include screen1680 {
-      margin-top: 5px;
+  @include screenMin577 {
+    &:nth-child(n + 4) {
+      margin-top: 40px;
     }
   }
 
   .logo {
     margin-right: 8px;
-  }
-
-  &__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100%;
-    padding-left:20px;
   }
 
   &__title {

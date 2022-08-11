@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {AsideBar, Forecast, Popup, Header, WeatherBoards, WeatherToday} from 'components'
+import {AsideBar, Forecast, Popup, Header, WeatherBoards, WeatherToday, BackgroundVideo} from 'components'
 import {Hamburger} from "components"
 import {Context} from "../components/context";
 import styles from './styles.module.scss'
@@ -8,29 +8,27 @@ import styles from './styles.module.scss'
 const App = () => {
     const [modalActive, setModalActive] = useState(false)
     const [switchingModal, setSwitchingModal] = useState(false)
+    const [clickedInputMobile, setClickedInputMobile] = useState(false)
 
     return (
-        <>
-
-            <Context.Provider value={{switchingModal, setSwitchingModal, setModalActive}}>
-                <div className={styles.App}>
-                    <div>
-                        <Header/>
-                        <div className={styles.table}>
-                            <Forecast/>
-                            <div>
-                                <WeatherToday/>
-                                <WeatherBoards/>
-                            </div>
+        <Context.Provider value={{switchingModal, setSwitchingModal, setModalActive, setClickedInputMobile, clickedInputMobile}}>
+            <BackgroundVideo />
+            <div className={styles.App}>
+                <div>
+                    <Header/>
+                    <div className={styles.table}>
+                        <Forecast/>
+                        <div>
+                            <WeatherToday/>
+                            <WeatherBoards/>
                         </div>
                     </div>
-
-                    <Hamburger/>
-                    <AsideBar setModalActive={setModalActive}/>
-                    <Popup active={modalActive} setActive={setModalActive}/>
                 </div>
-            </Context.Provider>
-        </>
+                <Hamburger/>
+                <AsideBar/>
+                <Popup active={modalActive} setActive={setModalActive}/>
+            </div>
+        </Context.Provider>
     )
 }
 

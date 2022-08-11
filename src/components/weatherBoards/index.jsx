@@ -20,47 +20,41 @@ const WeatherBoards = () => {
     return (
         <div className={styles.boards}>
             <div className={styles.board}>
-                <div className={styles.board__item}>
-                    <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoUiIndex} alt='img'/>
-                        uv index
-                    </div>
-                    <div className={styles.board__index}>12</div>
-                    <div className={styles.board__level}>Middle</div>
-                    <div className={styles.board__lvlImg}>
-                        <img src={logoSubtract} alt='img'/>
-                    </div>
-                    <div className={styles.board__description}>Middle for the rest of the day.</div>
+                <div className={styles.board__title}>
+                    <img className={styles.logo} src={logoUiIndex} alt='img'/>
+                    uv index
                 </div>
+                <div className={styles.board__index}>12</div>
+                <div className={styles.board__level}>Middle</div>
+                <div className={styles.board__lvlImg}>
+                    <img src={logoSubtract} alt='img'/>
+                </div>
+                <div className={styles.board__description}>Middle for the rest of the day.</div>
             </div>
             <div className={styles.board}>
-                <div className={styles.board__item}>
-                    <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoSunrise} alt='img'/>
-                        sunrise
-                    </div>
-                    <div className={styles.board__time}>11:28 <span className={styles.board__format}>AM</span></div>
-                    <div className={styles.board__imgVector}>
-                        <img className={styles.board__vector} src={logoVector} alt='img'/>
-                    </div>
-                    <div className={styles.board__description}>Sunrise: 9:45 pm</div>
+                <div className={styles.board__title}>
+                    <img className={styles.logo} src={logoSunrise} alt='img'/>
+                    sunrise
                 </div>
+                <div className={styles.board__time}>11:28 <span className={styles.board__format}>AM</span></div>
+                <div className={styles.board__imgVector}>
+                    <img className={styles.board__vector} src={logoVector} alt='img'/>
+                </div>
+                <div className={styles.board__description}>Sunrise: 9:45 pm</div>
             </div>
             <div className={styles.board}>
-                <div className={styles.board__item}>
-                    <div className={styles.board__title}>
-                        <img className={styles.logo} src={logoWind} alt='img'/>
-                        Wind
-                    </div>
-                    <div className={styles.board__imgCompass}>
-                        <img className={styles.board__compass} src={logoCompass} alt='img'/>
-                    </div>
+                <div className={styles.board__title}>
+                    <img className={styles.logo} src={logoWind} alt='img'/>
+                    Wind
+                </div>
+                <div className={styles.board__imgCompass}>
+                    <img className={styles.board__compass} src={logoCompass} alt='img'/>
                 </div>
             </div>
             {api.map(el => {
                 return (
                     <div key={el.boards} className={styles.board}>
-                        <div  className={styles.board__item}>
+
                                 {
                                     el.boards === 'HUMIDITY' ?
                                        <>
@@ -94,7 +88,7 @@ const WeatherBoards = () => {
                                             <div className={styles.board__description}>Visibility is good</div>
                                         </> : null
                                 }
-                        </div>
+
                     </div>
                 )
             })}

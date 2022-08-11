@@ -1,26 +1,44 @@
 import React, {useContext} from 'react'
+import {Context} from '../context'
+import {countryApi} from 'services'
+import {Input, List} from 'components'
 import styles from './styles.module.scss'
-import {Context} from "../context"
 
-const AsideBar = ({setModalActive}) => {
-    const {switchingModal} = useContext(Context)
+const AsideBar = () => {
+    const {switchingModal, clickedInputMobile} = useContext(Context)
+    const api = countryApi()
 
     return(
         <div className={styles.aside} style={{
             display: switchingModal ? 'block' : null
         }}>
-            <label className={styles.aside__input}>
-                <input type='text' placeholder='Search for a city or airport' onClick={() => setModalActive(true)}/>
-            </label>
-            <div className={styles.aside__myLocation}>
-                <div className={styles.aside__left}>
-                    <div className={styles.aside__title}>My location</div>
-                    <div className={styles.aside__city}>Minsk</div>
-                    <div className={styles.aside__description}>Partly Cloudy</div>
-                </div>
-                <div className={styles.aside__right}>
-                    <div className={styles.aside__degrees}>21°</div>
-                    <div className={styles.aside__coordinates}>H:29°  L:15°</div>
+            <Input
+                className={styles.aside__input}
+                placeholder={`Search for a city or airport`}
+            />
+            <div className={styles.aside__wrapper} style={{
+                opacity: clickedInputMobile ? '1' : null
+            }}>
+                <List
+                    api={api}
+                    classNameList={styles.aside__results}
+                    classNameItem={styles.aside__item}
+                    classNameName={styles.aside__name}
+                    classNameCountry={styles.aside__country}
+                />
+            </div>
+
+            <div className={styles.aside__inner}>
+                <div className={styles.aside__myLocation}>
+                    <div className={styles.aside__left}>
+                        <div className={styles.aside__title}>My location</div>
+                        <div className={styles.aside__city}>Minsk</div>
+                        <div className={styles.aside__description}>Partly Cloudy</div>
+                    </div>
+                    <div className={styles.aside__right}>
+                        <div className={styles.aside__degrees}>21°</div>
+                        <div className={styles.aside__coordinates}>H:29°  L:15°</div>
+                    </div>
                 </div>
             </div>
         </div>

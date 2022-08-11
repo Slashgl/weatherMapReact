@@ -8,7 +8,7 @@
     left: 0;
     width: 100%;
     height: 40px;
-    background-color: rgb(66,170,255);
+    background-color: $blue;
 
     &__wrapper {
       width: 100%;
@@ -32,8 +32,8 @@
         width: 2px;
         height: 2px;
         margin-left: -5px;
-        border-radius: 100%;
         background-color: $white;
+        border-radius: 100%;
       }
     }
   }
