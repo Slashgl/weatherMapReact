@@ -116,6 +116,21 @@
     top: 105px;
     left: 0;
   }
+
+  &__lvlImg {
+    position: relative;
+    width: 165px;
+    height: 5px;
+    background: linear-gradient(90deg, #65DB7C 1.17%, #F5E753 24.98%, #E63A52 77.89%, #B55DE0 99.24%);
+  }
+
+  &__circle {
+    position: absolute;
+    width: 4.94px;
+    height: 4.85px;
+    background: $white;
+  }
+
   &__imgCompass {
     position: absolute;
     left: 0;

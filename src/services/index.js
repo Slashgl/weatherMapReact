@@ -1,5 +1,4 @@
-import countryApi from "./countryApi"
-import forecastApi from "./forecastApi"
-import weatherTodayApi from "./weatherTodayApi"
+import apiWeatherCountry from './apiWeatherCountry'
+import apiGetCountry from './apiGetCountry'
 
-export {countryApi, forecastApi, weatherTodayApi}
+export {apiWeatherCountry, apiGetCountry}

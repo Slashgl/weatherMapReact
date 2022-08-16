@@ -73,10 +73,17 @@
   }
 
   &__line {
+    position: relative;
     width: 165px;
     height: 4px;
     margin: 0 20px;
     background-color: $black;
+    border-radius: 44px;
+  }
+  &__range {
+    position: absolute;
+    height: 4px;
+    background: linear-gradient(90deg, #96D0A8 0%, #B5CF79 22.81%, #F8D74A 54.18%, #EF8835 99%);
     border-radius: 44px;
   }
 }

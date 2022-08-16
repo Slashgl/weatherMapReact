@@ -1,18 +1,48 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import {Context} from '../../context'
+import {apiGetCountry, apiWeatherCountry} from 'services'
 
 
-const List = ({api, classNameList, classNameItem, classNameName, classNameCountry}) => {
-    const {clickedInputMobile, setSwitchingModal} = useContext(Context)
+const List = ({classNameList, classNameItem, classNameName, classNameCountry}) => {
+    const {clickedInputMobile, valueInput, setCountry, data, setData, setNameCountry} = useContext(Context)
+
+    const getListCountry = () => {
+        if(valueInput) {
+            const api = apiGetCountry(valueInput, setData)
+            api.then(res => {
+                setData(res)
+            })
+        }
+    }
+
+    useEffect(() => {
+        getListCountry()
+    }, [valueInput, setData])
+
+    const getCountryAndCoordinate = (el) => {
+        apiWeatherCountry(el.lat, el.lon)
+            .then(res => {
+                setCountry((prev) => {
+                    return [
+                        ...prev,
+                        res,
+                    ]
+                })
+            })
+    }
 
     return (
         <ul className={classNameList} style={{
             display: clickedInputMobile ? 'block' : null
         }}>
-            {api && api.map(el => {
+            {data &&
+                data.map((el, index) => {
                 return (
-                    <li key={el.city} className={classNameItem} onClick={() => setSwitchingModal(true)}>
-                        <div className={classNameName}>{el.city}</div>
+                    <li key={index} className={classNameItem} onClick={() => {
+                        getCountryAndCoordinate(el, index)
+                        setNameCountry(el.name)
+                    }}>
+                        <div className={classNameName}>{el.name}</div>
                         <div className={classNameCountry}>{el.state}</div>
                     </li>
                 )

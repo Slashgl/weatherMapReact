@@ -1,22 +1,32 @@
-import React from 'react'
-import {weatherTodayApi} from 'services'
+import React, {useContext} from 'react'
 import styles from './styles.module.scss'
+import {Context} from '../context'
 
 const WeatherToday = () => {
-    const api = weatherTodayApi()
+    const {mainMenu} = useContext(Context)
+
+    const transferTimeOfHours = (timestamp) => {
+        const nameHours = ['12AM', '1AM', '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12AM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'];
+        const time = new Date()
+        time.setTime(timestamp + '000')
+        const getHours = time.getHours()
+
+        return nameHours[getHours]
+    }
 
     return(
         <div className={styles.today}>
             <div className={styles.today__title}>Cloudy conditions from 1AM-9AM, with
                 showers expected at 9AM.</div>
             <ul className={styles.today__items}>
-                {api &&
-                    api.map(el => {
+                {mainMenu &&
+                    mainMenu.hourly.slice(0, 10).map(day => {
+
                     return (
-                        <li key={el.time} className={styles.today__item}>
-                            <div className={styles.today__time}>{el.time}</div>
-                            <div className={styles.today__img}><img src={el.icon} alt='img'/></div>
-                            <div className={styles.today__degrees}>{`${el.degrees}`}&deg;</div>
+                        <li key={day} className={styles.today__item}>
+                            <div className={styles.today__time}>{transferTimeOfHours(day.dt)}</div>
+                            <div className={styles.today__img}><img width='34px' height='34px' src={`https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${day.weather.map(icon => icon.icon)}.png`} alt='img'/></div>
+                            <div className={styles.today__degrees}>{`${Math.round(day.temp)}`}&deg;</div>
                         </li>
                     )
                 })}
