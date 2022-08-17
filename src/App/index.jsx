@@ -18,13 +18,15 @@ const App = () => {
     const [data, setData] = useState()
     const [nameCountry, setNameCountry] = useState()
     const [mainMenu, setMainMenu] = useState(null)
-    const [closeCard, setCloseCards] = useState(false)
+    const [dataGeolocation, setDataGeolocation] = useState(null)
+    const [closeCards, setCloseCards] = useState(false)
     const [closeWrapper, setCloseWrapper] = useState(false)
     const [addCardOfMobileAside, setCardsOfMobileAside] = useState(false)
     const [openListCountryMobile, setOpenListCountryMobile] = useState(false)
+    const [id, setId] = useState(null)
 
     const translateTimeOfHourAM = () => {
-        return new Date().toLocaleTimeString('en-US').slice(0, 4)
+        return new Date().toLocaleTimeString('en-US').slice(0, 5)
     }
 
     const translateTimeOfHourPM = (timestamp) => {
@@ -47,11 +49,13 @@ const App = () => {
         mainMenu, setMainMenu,
         translateTimeOfHourAM,
         translateTimeOfHourPM,
-        closeCard, setCloseCards,
+        closeCards, setCloseCards,
         closeWrapper, setCloseWrapper,
         addCardOfMobileAside, setCardsOfMobileAside,
         openListCountryMobile, setOpenListCountryMobile,
-        switchingModalMobile, setSwitchingModalMobile
+        switchingModalMobile, setSwitchingModalMobile,
+        dataGeolocation, setDataGeolocation,
+        id, setId
     }
 
     return (

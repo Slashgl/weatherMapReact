@@ -5,13 +5,15 @@ import styles from './styles.module.scss'
 import {Context} from '../context'
 
 const Popup = ({active, setActive}) => {
-    const {setClickOK,clickOK} = useContext(Context)
+    let {setClickOK,clickOK} = useContext(Context)
 
     return (
         active ?
             <div className={styles.popup} onClick={() => setActive(!clickOK)}>
                 <div className={styles.popup__content} onClick={(e) => e.stopPropagation()}>
-                    <div className={styles.popup__close} onClick={() => setActive(false)}></div>
+                    <div className={styles.popup__close} onClick={() => {
+                        setActive(false)
+                    }}></div>
                     <Input className={styles.popup__input}/>
                         <List
                             classNameList={styles.popup__results}

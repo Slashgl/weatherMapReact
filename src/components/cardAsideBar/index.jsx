@@ -7,7 +7,7 @@ import DeleteButton from "../deleteButton";
 const CardAsideBar = ({className, classNameAsideLeft, classNameAsideTitle, classNameAsideTime,
                           classNameAsideDescription, classNameAsideRight, classNameAsideDegrees,classNameAsideCoordinates}) => {
 
-    const {country, clickOK, nameCountry, setMainMenu, translateTimeOfHourAM, closeCards, addCardOfMobileAside, setSwitchingModalMobile} = useContext(Context)
+    const {country, clickOK, setMainMenu, translateTimeOfHourAM, addCardOfMobileAside, setSwitchingModalMobile} = useContext(Context)
 
     const addInfoMainMenu = (el) => {
         setMainMenu(el)
@@ -24,7 +24,6 @@ const CardAsideBar = ({className, classNameAsideLeft, classNameAsideTitle, class
                              addInfoMainMenu(el)
                              setSwitchingModalMobile(false)
                          }}
-                         style={{display: closeCards ? 'none' : null}}
                     >
                         <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'} className={stylesVideo.cardVideo}/>
                         <div className={classNameAsideLeft}>
@@ -39,9 +38,7 @@ const CardAsideBar = ({className, classNameAsideLeft, classNameAsideTitle, class
                         <DeleteButton/>
                     </div>
                 )
-            })
-
-        : null
+            }) : null
 
     )
 }

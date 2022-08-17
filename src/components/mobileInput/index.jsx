@@ -6,8 +6,8 @@ import styles from './styles.module.scss'
 
 const MobileInput = () => {
 
-    const {openListCountryMobile, closeWrapper, switchingModalMobile} = useContext(Context)
-    console.log(switchingModalMobile)
+    const {openListCountryMobile, closeWrapper, switchingModalMobile, closeCards} = useContext(Context)
+    console.log(closeCards)
 
     return (
         switchingModalMobile ?
@@ -28,16 +28,18 @@ const MobileInput = () => {
                         />
                     </div> : null
                 }
-                <CardAsideBar className={styles.mobile__cards}
-                              classNameAsideLeft={styles.mobile__left}
-                              classNameAsideTitle={styles.mobile__title}
-                              classNameAsideTime={styles.mobile__time}
-                              classNameAsideDescription={styles.mobile__description}
-                              classNameAsideRight={styles.mobile__right}
-                              classNameAsideDegrees={styles.mobile__degrees}
-                              classNameAsideCoordinates={styles.mobile__coordinates}
-                              classNameBtnClose={styles.amobile__btnClose}
-                />
+
+                    <CardAsideBar className={styles.mobile__cards}
+                                  classNameAsideLeft={styles.mobile__left}
+                                  classNameAsideTitle={styles.mobile__title}
+                                  classNameAsideTime={styles.mobile__time}
+                                  classNameAsideDescription={styles.mobile__description}
+                                  classNameAsideRight={styles.mobile__right}
+                                  classNameAsideDegrees={styles.mobile__degrees}
+                                  classNameAsideCoordinates={styles.mobile__coordinates}
+                                  classNameBtnClose={styles.mobile__btnClose}
+                    />
+
             </div> : null
     )
 }

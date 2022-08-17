@@ -3,7 +3,7 @@ import {Context} from '../../context'
 import {apiGetCountry, apiWeatherCountry} from 'services'
 
 const List = ({classNameList, classNameItem, classNameName, classNameCountry}) => {
-    const {clickedInputMobile, valueInput, setCountry, data, setData, setNameCountry, nameCountry, country, setCardsOfMobileAside, setCloseWrapper} = useContext(Context)
+    const {clickedInputMobile, valueInput, setCountry, data, setData, setNameCountry, nameCountry, country, setCardsOfMobileAside, setCloseWrapper, setId} = useContext(Context)
 
     const getListCountry = () => {
         if(valueInput) {
@@ -36,11 +36,13 @@ const List = ({classNameList, classNameItem, classNameName, classNameCountry}) =
         }}>
             {data &&
                 data.map((el, index) => {
+
                 return (
                     <li key={index} className={classNameItem} onClick={() => {
                         getCountryAndCoordinate(el, index)
                         setCardsOfMobileAside(true)
                         setCloseWrapper(true)
+                        setId(index)
                     }}>
                         <div className={classNameName}>{el.name}</div>
                         <div className={classNameCountry}>{el.state}</div>

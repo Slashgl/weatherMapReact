@@ -1,10 +1,9 @@
 import React, {useContext} from 'react'
-import styles from './styles.module.scss'
 import {Context} from '../context'
-
+import styles from './styles.module.scss'
 
 const Forecast = () => {
-    const {mainMenu} = useContext(Context)
+    const {mainMenu, setDataGeolocation, dataGeolocation} = useContext(Context)
 
     const translateTimeOfWeek = (timestamp) => {
         const daysName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
