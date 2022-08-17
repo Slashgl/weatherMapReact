@@ -3,7 +3,7 @@ import List from './List'
 import {Input} from '../asideBar/input'
 import styles from './styles.module.scss'
 import {Context} from '../context'
-import {weatherApi} from 'axios'
+import {weatherApi} from 'services'
 
 
 const Popup = ({active, setActive}) => {

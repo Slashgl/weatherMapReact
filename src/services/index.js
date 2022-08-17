@@ -1,5 +1,3 @@
-import apiWeatherCountry from './apiWeatherCountry'
-import apiGetCountry from './apiGetCountry'
+import weatherApi from "./endpoint/weatherApi";
 
-
-export {apiWeatherCountry, apiGetCountry}
+export {weatherApi}

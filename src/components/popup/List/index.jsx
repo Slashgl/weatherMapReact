@@ -1,34 +1,38 @@
 import React, {useContext, useEffect} from 'react'
 import {Context} from '../../context'
-import {apiGetCountry, apiWeatherCountry} from 'services'
+import {weatherApi} from "../../../services";
+import {setCity} from "../../../store/Reducers/cityList";
+// import {apiGetCountry, apiWeatherCountry} from 'src/ser'
 
 const List = ({classNameList, classNameItem, classNameName, classNameCountry}) => {
     const {clickedInputMobile, valueInput, setCountry, data, setData, setCardsOfMobileAside, setCloseWrapper, setId} = useContext(Context)
 
-    const getListCountry = () => {
-        if(valueInput) {
-            const api = apiGetCountry(valueInput, setData)
-            api.then(res => {
-                setData(res)
-            })
-        }
-    }
+    // useEffect(() => {
+    //     searchCity()
+    // },[])
+    //
+    // const getListCountry = () => {
+    //     if(valueInput) {
+    //         const api = apiGetCountry(valueInput, setData)
+    //         api.then(res => {
+    //             setData(res)
+    //         })
+    //     }
+    // }
+    //
 
-    useEffect(() => {
-        getListCountry()
-    }, [valueInput, setData])
-
-    const getCountryAndCoordinate = (el) => {
-        apiWeatherCountry(el.lat, el.lon)
-            .then(res => {
-                setCountry((prev) => {
-                    return [
-                        ...prev,
-                        res,
-                    ]
-                })
-            })
-    }
+    //
+    // const getCountryAndCoordinate = (el) => {
+    //     apiWeatherCountry(el.lat, el.lon)
+    //         .then(res => {
+    //             setCountry((prev) => {
+    //                 return [
+    //                     ...prev,
+    //                     res,
+    //                 ]
+    //             })
+    //         })
+    // }
 
     return (
         <ul className={classNameList} style={{
@@ -39,7 +43,7 @@ const List = ({classNameList, classNameItem, classNameName, classNameCountry}) =
 
                 return (
                     <li key={index} className={classNameItem} onClick={() => {
-                        getCountryAndCoordinate(el, index)
+                        // getCountryAndCoordinate(el, index)
                         setCardsOfMobileAside(true)
                         setCloseWrapper(true)
                         setId(index)
