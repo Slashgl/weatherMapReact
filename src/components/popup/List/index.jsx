@@ -3,7 +3,7 @@ import {Context} from '../../context'
 import {apiGetCountry, apiWeatherCountry} from 'services'
 
 const List = ({classNameList, classNameItem, classNameName, classNameCountry}) => {
-    const {clickedInputMobile, valueInput, setCountry, data, setData, setNameCountry, nameCountry, country, setCardsOfMobileAside, setCloseWrapper, setId} = useContext(Context)
+    const {clickedInputMobile, valueInput, setCountry, data, setData, setCardsOfMobileAside, setCloseWrapper, setId} = useContext(Context)
 
     const getListCountry = () => {
         if(valueInput) {
