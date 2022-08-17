@@ -54,9 +54,9 @@ const WeatherBoards = () => {
                     <img className={styles.board__compass} src={logoCompass} alt='img'/>
                 </div>
             </div>
-            {nameBoards?.map(el => {
+            {nameBoards?.map((el, index) => {
                 return (
-                    <div key={el.boards} className={styles.board}>
+                    <div key={index}  className={styles.board}>
                         {
                             el.boards === 'HUMIDITY' ?
                                <>

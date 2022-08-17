@@ -4,13 +4,13 @@ import styles from './styles.module.scss'
 import {Context} from "../context";
 
 const Hamburger = () => {
-    const {setSwitchingModal} = useContext(Context)
+    const {setSwitchingModalMobile} = useContext(Context)
 
    return (
        <div className={styles.panel}>
            <div className={styles.panel__wrapper}>
                <div className={styles.panel__btn}
-                    onClick={() => setSwitchingModal(true)}
+                    onClick={() => setSwitchingModalMobile(true)}
                >
                    <div className={styles.panel__line}></div>
                    <div className={styles.panel__line}></div>

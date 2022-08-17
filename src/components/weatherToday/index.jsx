@@ -20,10 +20,10 @@ const WeatherToday = () => {
                 showers expected at 9AM.</div>
             <ul className={styles.today__items}>
                 {mainMenu &&
-                    mainMenu.hourly.slice(0, 10).map(day => {
+                    mainMenu.hourly.slice(0, 10).map((day, index) => {
 
                     return (
-                        <li key={day} className={styles.today__item}>
+                        <li key={index} className={styles.today__item}>
                             <div className={styles.today__time}>{transferTimeOfHours(day.dt)}</div>
                             <div className={styles.today__img}><img width='34px' height='34px' src={`https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${day.weather.map(icon => icon.icon)}.png`} alt='img'/></div>
                             <div className={styles.today__degrees}>{`${Math.round(day.temp)}`}&deg;</div>

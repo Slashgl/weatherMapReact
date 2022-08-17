@@ -4,11 +4,13 @@ import {Hamburger} from "components"
 import {Context} from "../components/context";
 import styles from './styles.module.scss'
 import stylesVideo from 'components/backgroundVideo/styles.module.scss'
+import MobileInput from "../components/mobileInput";
 
 
 const App = () => {
     const [modalActive, setModalActive] = useState(false)
     const [switchingModal, setSwitchingModal] = useState(false)
+    const [switchingModalMobile, setSwitchingModalMobile] = useState(false)
     const [clickedInputMobile, setClickedInputMobile] = useState(false)
     const [valueInput, setValueInput] = useState('')
     const [country, setCountry] = useState([])
@@ -16,10 +18,13 @@ const App = () => {
     const [data, setData] = useState()
     const [nameCountry, setNameCountry] = useState()
     const [mainMenu, setMainMenu] = useState(null)
+    const [closeCard, setCloseCards] = useState(false)
+    const [closeWrapper, setCloseWrapper] = useState(false)
+    const [addCardOfMobileAside, setCardsOfMobileAside] = useState(false)
+    const [openListCountryMobile, setOpenListCountryMobile] = useState(false)
 
     const translateTimeOfHourAM = () => {
-        const time = new Date().toLocaleTimeString('en-US').slice(0, 4)
-        return time
+        return new Date().toLocaleTimeString('en-US').slice(0, 4)
     }
 
     const translateTimeOfHourPM = (timestamp) => {
@@ -31,8 +36,7 @@ const App = () => {
     }
 
     const context = {
-        switchingModal,
-        setSwitchingModal,
+        switchingModal, setSwitchingModal,
         setModalActive,
         setClickedInputMobile, clickedInputMobile,
         setValueInput, valueInput,
@@ -42,7 +46,12 @@ const App = () => {
         nameCountry, setNameCountry,
         mainMenu, setMainMenu,
         translateTimeOfHourAM,
-        translateTimeOfHourPM
+        translateTimeOfHourPM,
+        closeCard, setCloseCards,
+        closeWrapper, setCloseWrapper,
+        addCardOfMobileAside, setCardsOfMobileAside,
+        openListCountryMobile, setOpenListCountryMobile,
+        switchingModalMobile, setSwitchingModalMobile
     }
 
     return (
@@ -62,6 +71,7 @@ const App = () => {
                 <Hamburger/>
                 <AsideBar/>
                 <Popup active={modalActive} setActive={setModalActive}/>
+                <MobileInput/>
             </div>
         </Context.Provider>
     )

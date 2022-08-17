@@ -1,29 +1,34 @@
 import React, {useContext} from 'react'
-import {BackgroundVideo} from "../index";
-import {Context} from "../context";
-
-import stylesVideo from "../backgroundVideo/styles.module.scss";
+import {BackgroundVideo} from '../index'
+import {Context} from '../context'
+import stylesVideo from '../backgroundVideo/styles.module.scss'
+import DeleteButton from "../deleteButton";
 
 const CardAsideBar = ({className, classNameAsideLeft, classNameAsideTitle, classNameAsideTime,
                           classNameAsideDescription, classNameAsideRight, classNameAsideDegrees,classNameAsideCoordinates}) => {
 
-    const {country, clickOK, nameCountry, setMainMenu, translateTimeOfHourAM} = useContext(Context)
+    const {country, clickOK, nameCountry, setMainMenu, translateTimeOfHourAM, closeCards, addCardOfMobileAside, setSwitchingModalMobile} = useContext(Context)
 
     const addInfoMainMenu = (el) => {
         setMainMenu(el)
     }
-
     return (
 
-        clickOK ?
+        clickOK || addCardOfMobileAside ?
             country &&
             country.map((el, index) => {
 
                 return(
-                    <div key={index} className={className} onClick={() => addInfoMainMenu(el)}>
+                    <div key={index} className={className}
+                         onClick={() => {
+                             addInfoMainMenu(el)
+                             setSwitchingModalMobile(false)
+                         }}
+                         style={{display: closeCards ? 'none' : null}}
+                    >
                         <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'} className={stylesVideo.cardVideo}/>
                         <div className={classNameAsideLeft}>
-                            <div className={classNameAsideTitle}>{nameCountry}</div>
+                            <div className={classNameAsideTitle}></div>
                             <div className={classNameAsideTime}>{translateTimeOfHourAM(el.current.dt)} AM</div>
                             <div className={classNameAsideDescription}>{el.current.weather.map(info => info.description)}</div>
                         </div>
@@ -31,6 +36,7 @@ const CardAsideBar = ({className, classNameAsideLeft, classNameAsideTitle, class
                             <div className={classNameAsideDegrees}>{Math.round(el.current.temp)}&deg;</div>
                             <div className={classNameAsideCoordinates}>{`H:${Math.round(el.lat)}`}&deg;{` L:${Math.round(el.lon)}`}&deg;</div>
                         </div>
+                        <DeleteButton/>
                     </div>
                 )
             })

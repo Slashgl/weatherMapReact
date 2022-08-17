@@ -2,9 +2,8 @@ import React, {useContext, useEffect} from 'react'
 import {Context} from '../../context'
 import {apiGetCountry, apiWeatherCountry} from 'services'
 
-
 const List = ({classNameList, classNameItem, classNameName, classNameCountry}) => {
-    const {clickedInputMobile, valueInput, setCountry, data, setData, setNameCountry} = useContext(Context)
+    const {clickedInputMobile, valueInput, setCountry, data, setData, setNameCountry, nameCountry, country, setCardsOfMobileAside, setCloseWrapper} = useContext(Context)
 
     const getListCountry = () => {
         if(valueInput) {
@@ -40,7 +39,8 @@ const List = ({classNameList, classNameItem, classNameName, classNameCountry}) =
                 return (
                     <li key={index} className={classNameItem} onClick={() => {
                         getCountryAndCoordinate(el, index)
-                        setNameCountry(el.name)
+                        setCardsOfMobileAside(true)
+                        setCloseWrapper(true)
                     }}>
                         <div className={classNameName}>{el.name}</div>
                         <div className={classNameCountry}>{el.state}</div>
