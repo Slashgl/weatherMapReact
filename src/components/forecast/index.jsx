@@ -3,7 +3,7 @@ import {Context} from '../context'
 import styles from './styles.module.scss'
 
 const Forecast = () => {
-    const {mainMenu, setDataGeolocation, dataGeolocation} = useContext(Context)
+    const {mainMenu} = useContext(Context)
 
     const translateTimeOfWeek = (timestamp) => {
         const daysName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
