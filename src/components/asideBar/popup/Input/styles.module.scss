@@ -1,0 +1,34 @@
+@import "src/assets/mixins/media";
+@import "src/assets/mixins/magnifier";
+@import "src/assets/variables/colors";
+
+.input {
+
+    input {
+      cursor: pointer;
+      position: relative;
+      width: 100%;
+      height: 44px;
+      padding-left: 50px;
+      border: none;
+      outline: none;
+      background: #F3F3F3;
+      border-radius: 16px 16px 0 0;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 17px;
+      }
+
+      @include screenMax1140 {
+        width: 600px;
+      }
+      @include screen576 {
+        width: 400px;
+      }
+    }
+
+    &:before {
+      @include magnifier(15px, 20px)
+    }
+}

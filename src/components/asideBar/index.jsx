@@ -14,16 +14,16 @@ const AsideBar = () => {
                 placeholder={`Search for a city or airport`}
                 setIsModalActive={setIsModalActive}
             />
-            <CardAsideBar className={styles.aside__cards}
-                          classNameAsideLeft={styles.aside__left}
-                          classNameAsideTitle={styles.aside__title}
-                          classNameAsideTime={styles.aside__time}
-                          classNameAsideDescription={styles.aside__description}
-                          classNameAsideRight={styles.aside__right}
-                          classNameAsideDegrees={styles.aside__degrees}
-                          classNameAsideCoordinates={styles.aside__coordinates}
-                          classNameBtnClose={styles.aside__btnClose}
-            />
+            {/*<CardAsideBar className={styles.aside__cards}*/}
+            {/*              classNameAsideLeft={styles.aside__left}*/}
+            {/*              classNameAsideTitle={styles.aside__title}*/}
+            {/*              classNameAsideTime={styles.aside__time}*/}
+            {/*              classNameAsideDescription={styles.aside__description}*/}
+            {/*              classNameAsideRight={styles.aside__right}*/}
+            {/*              classNameAsideDegrees={styles.aside__degrees}*/}
+            {/*              classNameAsideCoordinates={styles.aside__coordinates}*/}
+            {/*              classNameBtnClose={styles.aside__btnClose}*/}
+            {/*/>*/}
             <Popup isActive={isModalActive} setIsActive={setIsModalActive}/>
         </div>
     )

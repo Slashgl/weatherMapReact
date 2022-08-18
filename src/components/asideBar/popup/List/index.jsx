@@ -1,25 +1,23 @@
-import React, {useContext, useEffect} from 'react'
-import {Context} from '../../../context'
-import {weatherApi} from "../../../../services";
-import {setCity} from "../../../../store/Reducers/cityList";
+import React, {useEffect} from 'react'
+import {setCity} from "store";
 // import {apiGetCountry, apiWeatherCountry} from 'src/ser'
 
-const List = ({classNameList, classNameItem, classNameName, classNameCountry}) => {
-    const {clickedInputMobile, valueInput, setCountry, data, setData, setCardsOfMobileAside, setCloseWrapper, setId} = useContext(Context)
+const List = ({classNameList, classNameItem, classNameName, classNameCountry, cityList}) => {
+
+    const addCity = (el) => {
+        try {
+            setCity(el.lat, el.lon)
+        }catch (e) {
+            console.log(e)
+        }
+    }
 
     return (
-        <ul className={classNameList} style={{
-            display: clickedInputMobile ? 'block' : null
-        }}>
-            {data &&
-                data.map((el, index) => (
+        <ul className={classNameList}>
+            {cityList &&
+                cityList.map((el, index) => (
 
-                    <li key={index} className={classNameItem} onClick={() => {
-
-                        setCardsOfMobileAside(true)
-                        setCloseWrapper(true)
-                        setId(index)
-                    }}>
+                    <li key={index} className={classNameItem} onClick={() => addCity(el)}>
                         <div className={classNameName}>{el.name}</div>
                         <div className={classNameCountry}>{el.state}</div>
                     </li>
