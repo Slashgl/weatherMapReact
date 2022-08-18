@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
-import {BackgroundVideo} from '../index'
-import {Context} from '../context'
-import stylesVideo from '../backgroundVideo/styles.module.scss'
-import DeleteButton from "../deleteButton";
+import {BackgroundVideo} from '../../index'
+import {Context} from '../../context'
+import stylesVideo from '../../backgroundVideo/styles.module.scss'
+import DeleteButton from "../../deleteButton";
 
 const CardAsideBar = ({className, classNameAsideLeft, classNameAsideTitle, classNameAsideTime,
                           classNameAsideDescription, classNameAsideRight, classNameAsideDegrees,classNameAsideCoordinates}) => {

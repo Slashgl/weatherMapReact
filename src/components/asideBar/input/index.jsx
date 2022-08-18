@@ -1,16 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {Context} from '../../context';
 import debounce from 'lodash.debounce'
-import {weatherApi} from "../../../services";
+import {weatherApi} from 'services'
 
-export const Input = ({className, placeholder}) => {
-    const {setClickedInputMobile, setModalActive, setValueInput, setCloseWrapper, setOpenListCountryMobile} = useContext(Context)
+const Input = ({className, placeholder, setIsModalActive}) => {
+    const {setClickedInputMobile, setCloseWrapper, setOpenListCountryMobile} = useContext(Context)
 
-    const [cityInput, setCityInput] = useState()
+    const [cityInput, setCityInput] = useState('')
 
     const updateInput = (e) => setCityInput(e?.target?.value);
-
-    const debounceOnChange = debounce(updateInput, 500)
 
     const searchCity = async (city) => {
         const citySuggestion = await weatherApi.getListCountry(city)
@@ -19,7 +17,9 @@ export const Input = ({className, placeholder}) => {
     }
 
     useEffect(() => {
-        searchCity()
+        if(cityInput) {
+            searchCity(cityInput)
+        }
     }, [cityInput])
 
     return (
@@ -28,18 +28,18 @@ export const Input = ({className, placeholder}) => {
             <input
                 type='text'
                 placeholder={placeholder}
-                value={cityInput}
                 onClick={() => {
-                    setModalActive(true)
+                    setIsModalActive(true)
                     setCloseWrapper(false)
                     setOpenListCountryMobile(true)
 
                 }}
-                onChange={debounceOnChange}
+                onChange={debounce(updateInput, 500)}
             />
         </label>
     )
 }
 
+export default Input
 
 

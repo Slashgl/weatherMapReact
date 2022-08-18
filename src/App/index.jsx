@@ -1,14 +1,13 @@
 import React, {useState} from 'react'
-import {AsideBar, Forecast, Popup, Header, WeatherBoards, WeatherToday, BackgroundVideo} from 'components'
+import {AsideBar, Forecast,Header, WeatherBoards, WeatherToday, BackgroundVideo} from 'components'
 import {Hamburger} from "components"
 import {Context} from "../components/context";
 import styles from './styles.module.scss'
 import stylesVideo from 'components/backgroundVideo/styles.module.scss'
 import MobileInput from "../components/mobileInput";
 
-
 const App = () => {
-    const [modalActive, setModalActive] = useState(false)
+
     const [switchingModal, setSwitchingModal] = useState(false)
     const [switchingModalMobile, setSwitchingModalMobile] = useState(false)
     const [clickedInputMobile, setClickedInputMobile] = useState(false)
@@ -39,7 +38,6 @@ const App = () => {
 
     const context = {
         switchingModal, setSwitchingModal,
-        setModalActive,
         setClickedInputMobile, clickedInputMobile,
         setValueInput, valueInput,
         country, setCountry,
@@ -60,23 +58,22 @@ const App = () => {
 
     return (
         <Context.Provider value={context}>
-            <BackgroundVideo position={'fixed'} className={stylesVideo.bgVideo}/>
-            <div className={styles.App}>
-                <div>
-                    <Header/>
-                    <div className={styles.table}>
-                        <Forecast/>
-                        <div>
-                            <WeatherToday/>
-                            <WeatherBoards/>
+                <BackgroundVideo position={'fixed'} className={stylesVideo.bgVideo}/>
+                <div className={styles.App}>
+                    <div>
+                        <Header/>
+                        <div className={styles.table}>
+                            <Forecast/>
+                            <div>
+                                <WeatherToday/>
+                                <WeatherBoards/>
+                            </div>
                         </div>
                     </div>
+                    <Hamburger/>
+                    <AsideBar/>
+                    {/*<MobileInput/>*/}
                 </div>
-                <Hamburger/>
-                <AsideBar/>
-                <Popup active={modalActive} setActive={setModalActive}/>
-                <MobileInput/>
-            </div>
         </Context.Provider>
     )
 }
