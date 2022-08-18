@@ -4,3 +4,4 @@ export const setCityList = (payload) => ({
     type: SET_CITY_LIST,
     payload,
 });
+

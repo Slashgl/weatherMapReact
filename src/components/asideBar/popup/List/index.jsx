@@ -1,12 +1,16 @@
-import React, {useEffect} from 'react'
-import {setCity} from "store";
+import React from 'react'
+import {setCity} from "store"
+import {useDispatch} from "react-redux"
 // import {apiGetCountry, apiWeatherCountry} from 'src/ser'
 
 const List = ({classNameList, classNameItem, classNameName, classNameCountry, cityList}) => {
 
+    const dispatch = useDispatch()
+
     const addCity = (el) => {
+        console.log(el)
         try {
-            setCity(el.lat, el.lon)
+            dispatch(setCity(el.lat, el.lon, el.name))
         }catch (e) {
             console.log(e)
         }
