@@ -3,7 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 import {cityListReducer} from './reducers/CityList';
 
 const rootReducer = combineReducers({
-    cityListReducer
+    cityListReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));

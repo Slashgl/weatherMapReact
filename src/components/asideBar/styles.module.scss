@@ -3,7 +3,6 @@
 @import 'src/assets/mixins/media';
 
 .aside {
-  position: relative;
   width: 661px;
   min-height: 100vh;
   padding: 26px 20px 0 20px;
@@ -36,7 +35,6 @@
       border: none;
       outline: none;
       padding: 0 46px;
-      z-index: 100;
 
       &:hover {
         background: linear-gradient(to right, $blue 0%, $greyBlue 100%);
@@ -59,7 +57,6 @@
     &:before {
       @include magnifier(40px, 40px)
     }
-
   }
 
   &__close {
@@ -75,7 +72,6 @@
       display: none;
     }
   }
-
 
   @include screenMin1141 {
 
@@ -116,78 +112,4 @@
       color: $greyBlack;
     }
   }
-
-  &__cards {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
-    background-size: cover;
-    border-radius: 14px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.51), rgba(0, 0, 0, 0.51));
-
-    &:hover {
-      border: 1px solid;
-      box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
-      outline-color: rgba(255, 255, 255, 0);
-      outline-offset: 15px;
-      text-shadow: 1px 1px 2px #427388;
-    }
-  }
-
-  &__left, &__right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 159px;
-  }
-
-  &__left {
-    margin: 25px 0 0 20px;
-  }
-
-  &__right {
-    margin: 25px 20px 0 0;
-
-  }
-
-  &__title {
-    margin-top:5px;
-    font-weight: 700;
-    font-size: 32px;
-  }
-
-  &__time{
-    margin-bottom: auto;
-    font-weight: 400;
-    font-size: 21px;
-  }
-
-  &__description {
-    font-weight: 400;
-    font-size: 21px;
-
-    @include screen1280 {
-      font-size: 20px;
-      text-align: left;
-    }
-  }
-
-  &__degrees {
-    font-weight: 300;
-    font-size: 80px;
-  }
-
-  &__coordinates {
-    font-weight: 500;
-    font-size: 21px;
-
-    @include screen1280 {
-      font-size: 20px;
-      text-align: right;
-    }
-  }
-
 }
-

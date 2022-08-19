@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import List from './List'
-import Input from '../popup/Input'
+import Input from './Input'
 import styles from './styles.module.scss'
 import {Context} from '../../context'
 
