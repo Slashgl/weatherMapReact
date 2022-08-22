@@ -1,11 +1,10 @@
-import React, {useContext, useState} from 'react'
+import React from 'react'
 import List from './List'
 import Input from './Input'
 import styles from './styles.module.scss'
-import {Context} from '../../context'
 
-const Popup = ({isActive, setIsActive}) => {
-    const [cityList, setCityList] = useState()
+const Popup = ({isActive, setIsActive, setCityList, cityList, setActiveMobileInput}) => {
+
 
     return (
         isActive ?
@@ -14,14 +13,8 @@ const Popup = ({isActive, setIsActive}) => {
                     <div className={styles.popup__close} onClick={() => {
                         setIsActive(false)
                     }}></div>
-                        <Input setCityList={setCityList}/>
-                        <List
-                            classNameList={styles.popup__results}
-                            classNameItem={styles.popup__item}
-                            classNameName={styles.popup__name}
-                            classNameCountry={styles.popup__country}
-                            cityList={cityList}
-                        />
+                        <Input setCityList={setCityList} setActiveMobileInput={setActiveMobileInput}/>
+                        <List cityList={cityList}/>
                     <button type='button' className={styles.popup__button}>OK</button>
                 </div>
             </div>

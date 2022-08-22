@@ -1,0 +1,50 @@
+@import "src/assets/variables/colors";
+@import "src/assets/mixins/media";
+
+.popup {
+
+  &__results {
+
+    padding: 17px 17px;
+    margin: 0;
+    background: $white;
+    border-radius: 0 0 16px 16px;
+
+    @include screenMax1140 {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      z-index: 1;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-left:10px;
+  }
+
+  &__name {
+    font-weight: 400;
+    font-size: 16px;
+    color: $black;
+  }
+
+  &__country {
+    font-weight: 400;
+    font-size: 15px;
+    color: $darkBlack;
+  }
+
+  &:hover {
+    background: $blue;
+  }
+}

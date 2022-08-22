@@ -2,6 +2,7 @@ import {applyMiddleware, combineReducers, createStore} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {cityListReducer} from './reducers/CityList';
 
+
 const rootReducer = combineReducers({
     cityListReducer,
 });

@@ -1,9 +1,7 @@
 import React, {useContext} from 'react'
 import styles from './styles.module.scss'
-import {Context} from '../context'
 
-const WeatherToday = () => {
-    const {mainMenu} = useContext(Context)
+const WeatherToday = ({data}) => {
 
     const transferTimeOfHours = (timestamp) => {
         const nameHours = ['12AM', '1AM', '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12AM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'];
@@ -19,8 +17,8 @@ const WeatherToday = () => {
             <div className={styles.today__title}>Cloudy conditions from 1AM-9AM, with
                 showers expected at 9AM.</div>
             <ul className={styles.today__items}>
-                {mainMenu &&
-                    mainMenu.hourly.slice(0, 10).map((day, index) => {
+                {data &&
+                    data.hourly.slice(0, 10).map((day, index) => {
 
                     return (
                         <li key={index} className={styles.today__item}>

@@ -4,7 +4,10 @@ import Popup from './popup'
 import styles from './styles.module.scss'
 import CardAsideBar from "./cardAsideBar";
 
-const AsideBar = () => {
+const AsideBar = ({setData, translateTimeOfHourAM, setCityList, cityList,
+                      setActiveMobileInput, setGeolocationData, geolocationData,
+                      geoFindMe,
+                  }) => {
     const [isModalActive, setIsModalActive] = useState(false)
 
     return (
@@ -14,8 +17,19 @@ const AsideBar = () => {
                 placeholder={`Search for a city or airport`}
                 setIsModalActive={setIsModalActive}
             />
-            <CardAsideBar />
-            <Popup isActive={isModalActive} setIsActive={setIsModalActive}/>
+            <CardAsideBar setGeolocationData={setGeolocationData}
+                          translateTimeOfHourAM={translateTimeOfHourAM}
+                          setData={setData}
+                          geolocationData={geolocationData}
+                          geoFindMe={geoFindMe}
+            />
+            <Popup
+                cityList={cityList}
+                setCityList={setCityList}
+                isActive={isModalActive}
+                setIsActive={setIsModalActive}
+                setActiveMobileInput={setActiveMobileInput}
+            />
         </div>
     )
 }

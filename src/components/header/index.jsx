@@ -1,17 +1,14 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import styles from './styles.module.scss'
-import {Context} from "../context";
 
-const Header = () => {
-
-    const {mainMenu, nameCountry} = useContext(Context)
+const Header = ({data}) => {
 
     return(
         <div className={styles.header}>
-            <div className={styles.header__title}>{nameCountry}</div>
-            <div className={styles.header__degrees}>{Math.round(mainMenu?.current.temp)}&deg;</div>
-            <div className={styles.header__description}>{mainMenu?.current.weather.map(descr => descr.description)}</div>
-            <div className={styles.header__coordinates}>{`H:${Math.round(mainMenu?.lat)}`}&deg; {`L:${Math.round(mainMenu?.lon)}`}&deg;</div>
+            <div className={styles.header__title}>{data?.name}</div>
+            <div className={styles.header__degrees}>{Math.round(data?.tempCurrent)}&deg;</div>
+            <div className={styles.header__description}>{data?.description}</div>
+            <div className={styles.header__coordinates}>{`H:${Math.round(data?.tempHigh)}`}&deg; {`L:${Math.round(data?.tempLow)}`}&deg;</div>
         </div>
     )
 }

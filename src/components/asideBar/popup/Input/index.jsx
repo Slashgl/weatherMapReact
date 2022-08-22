@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import debounce from "lodash.debounce";
-import {weatherApi} from "../../../../services";
+import {weatherApi} from "services";
 import styles from './styles.module.scss'
 
-const Input = ({ setCityList }) => {
+const Input = ({ setCityList, setActiveMobileInput }) => {
 
     const [cityInput, setCityInput] = useState('')
 
@@ -29,6 +29,7 @@ const Input = ({ setCityList }) => {
             <input
                 type='text'
                 onChange={debounce(updateInput, 500)}
+                onClick={() => setActiveMobileInput(true)}
             />
         </label>
     )

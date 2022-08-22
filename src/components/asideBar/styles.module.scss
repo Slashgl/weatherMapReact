@@ -8,7 +8,7 @@
   padding: 26px 20px 0 20px;
   color: $white;
   background: $RgbaDarkBlue;
-  backdrop-filter: blur(340px);
+  backdrop-filter: blur(-340px);
 
   @include screenMax1140 {
     position: fixed;
@@ -24,10 +24,9 @@
   }
 
   &__input {
-
+    position: relative;
     input {
       cursor: pointer;
-      position: relative;
       width: 100%;
       height: 44px;
       margin-bottom: 30px;
@@ -55,7 +54,7 @@
     }
 
     &:before {
-      @include magnifier(40px, 40px)
+      @include magnifier(0, 20px)
     }
   }
 
