@@ -8,7 +8,6 @@ import stylesVideo from 'components/backgroundVideo/styles.module.scss'
 import geolocation from "../utils/geolocation";
 
 const App = () => {
-    const [data, setData] = useState()
     const [isPanel, setPanel] = useState(false)
     const [cityList, setCityList] = useState()
 
@@ -29,12 +28,12 @@ const App = () => {
             <BackgroundVideo position={'fixed'} className={stylesVideo.bgVideo}/>
             <div className={styles.App}>
                 <div>
-                    <Header data={data}/>
+                    <Header/>
                     <div className={styles.table}>
-                        <Forecast  data={data}/>
+                        <Forecast />
                         <div>
-                            <WeatherToday data={data}/>
-                            <WeatherBoards translateTimeOfHourAM={translateTimeOfHourAM} data={data}/>
+                            <WeatherToday />
+                            <WeatherBoards translateTimeOfHourAM={translateTimeOfHourAM}/>
                         </div>
                     </div>
                 </div>
@@ -42,12 +41,10 @@ const App = () => {
                 <AsideBar cityList={cityList}
                           setCityList={setCityList}
                           translateTimeOfHourAM={translateTimeOfHourAM}
-                          setData={setData}
                 />
                 <MobileInput cityList={cityList}
                              setCityList={setCityList}
                              isPanel={isPanel}
-                             setData={setData}
                              translateTimeOfHourAM={translateTimeOfHourAM}
                 />
             </div>

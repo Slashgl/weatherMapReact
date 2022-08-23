@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import styles from './styles.module.scss'
 import logoUiIndex from 'assets/img/sun.max.fill.svg'
 import logoVector from 'assets/img/Vector.svg'
@@ -8,9 +8,12 @@ import logoCompass from 'assets/img/compass.svg'
 import logoTemp from 'assets/img/thermometer.svg'
 import logoHumidity from 'assets/img/humidity.svg'
 import logoEye from 'assets/img/eye.fill.svg'
-import {GetCityList} from "../../store/selectors/CityList";
+import {GetActiveIndex, GetCityList} from "../../store/selectors/CityList";
 
-const WeatherBoards = ({data, translateTimeOfHourAM}) => {
+const WeatherBoards = ({translateTimeOfHourAM}) => {
+
+    const defaultData = GetCityList()
+    const activeIndex = GetActiveIndex()
 
     const nameBoards = [
         {boards: 'FEELSLIKE'},
@@ -25,10 +28,10 @@ const WeatherBoards = ({data, translateTimeOfHourAM}) => {
                     <img className={styles.logo} src={logoUiIndex} alt='img'/>
                     uv index
                 </div>
-                <div className={styles.board__index}>{Math.round(data?.uvi)}</div>
+                <div className={styles.board__index}>{Math.round(defaultData[activeIndex]?.uvi)}</div>
                 <div className={styles.board__level}>Middle</div>
                 <div className={styles.board__lvlImg}>
-                    <span className={styles.board__circle} style={{left: `${data?.uvi}px`}}></span>
+                    <span className={styles.board__circle} style={{left: `${defaultData[activeIndex]?.uvi}px`}}></span>
                 </div>
                 <div className={styles.board__description}>Middle for the rest of the day.</div>
             </div>
@@ -37,11 +40,11 @@ const WeatherBoards = ({data, translateTimeOfHourAM}) => {
                     <img className={styles.logo} src={logoSunrise} alt='img'/>
                     sunrise
                 </div>
-                <div className={styles.board__time}>{translateTimeOfHourAM(data?.time)}</div>
+                <div className={styles.board__time}>{translateTimeOfHourAM(defaultData[activeIndex]?.time)}</div>
                 <div className={styles.board__imgVector}>
                     <img className={styles.board__vector} src={logoVector} alt='img'/>
                 </div>
-                <div className={styles.board__description}>Sunrise: {translateTimeOfHourAM(data?.sunrise)}</div>
+                <div className={styles.board__description}>Sunrise: {translateTimeOfHourAM(defaultData[activeIndex]?.sunrise)}</div>
             </div>
             <div className={styles.board}>
                 <div className={styles.board__title}>
@@ -63,7 +66,7 @@ const WeatherBoards = ({data, translateTimeOfHourAM}) => {
                                        {el.boards}
                                    </div>
 
-                                   <div className={styles.board__percent}>{Math.round(data?.humidity)}%</div>
+                                   <div className={styles.board__percent}>{Math.round(defaultData[activeIndex]?.humidity)}%</div>
                                    <div className={styles.board__description}>The dew point is 21° right now.</div>
                                </>
                                  :
@@ -74,7 +77,7 @@ const WeatherBoards = ({data, translateTimeOfHourAM}) => {
                                         {el.boards}
                                     </div>
 
-                                    <div className={styles.board__degrees}>{Math.round(data?.feels)}&deg;</div>
+                                    <div className={styles.board__degrees}>{Math.round(defaultData[activeIndex]?.feels)}&deg;</div>
                                     <div className={styles.board__description}>Similar to the actual temperature</div>
                                 </> :
                             el.boards === "VISIBILITY" ?
@@ -84,7 +87,7 @@ const WeatherBoards = ({data, translateTimeOfHourAM}) => {
                                         {el.boards}
                                     </div>
 
-                                    <div className={styles.board__visibility}>{String(data?.visibility).slice(0, 2)} км</div>
+                                    <div className={styles.board__visibility}>{String(defaultData[activeIndex]?.visibility).slice(0, 2)} км</div>
                                     <div className={styles.board__description}>Visibility is good</div>
                                 </> : null
                         }

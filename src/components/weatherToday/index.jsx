@@ -1,7 +1,11 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import styles from './styles.module.scss'
+import {GetActiveIndex, GetCityList} from "../../store/selectors/CityList";
 
-const WeatherToday = ({data}) => {
+const WeatherToday = () => {
+
+    const defaultData = GetCityList()
+    const activeIndex = GetActiveIndex()
 
     const transferTimeOfHours = (timestamp) => {
         const nameHours = ['12AM', '1AM', '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12AM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'];
@@ -17,8 +21,8 @@ const WeatherToday = ({data}) => {
             <div className={styles.today__title}>Cloudy conditions from 1AM-9AM, with
                 showers expected at 9AM.</div>
             <ul className={styles.today__items}>
-                {data &&
-                    data.hourly.slice(0, 10).map((day, index) => {
+                {defaultData[activeIndex] &&
+                    defaultData[activeIndex].hourly.slice(0, 10).map((day, index) => {
 
                     return (
                         <li key={index} className={styles.today__item}>
