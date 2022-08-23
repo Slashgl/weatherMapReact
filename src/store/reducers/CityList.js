@@ -1,9 +1,10 @@
-import {setCityList, SET_CITY_LIST} from "../actions/CityList"
+import {setCityList, SET_CITY_LIST, removeCity, REMOVE_CITY} from "../actions/CityList"
 import {weatherApi} from "services"
-import {removeCity, REMOVE_CITY} from "../actions/CityList"
+
 
 const initialState = {
     cityList: [],
+    activeIndex: 0
 }
 
 export const setCity = (lat, lon, name) => async dispatch => {
@@ -33,6 +34,10 @@ export const setCity = (lat, lon, name) => async dispatch => {
 
 export const deleteCity = (id) => dispatch => {
     dispatch(removeCity(id))
+}
+
+export const activeIndex = (index = initialState.activeIndex) => dispatch => {
+    dispatch(activeIndex(index))
 }
 
 export const cityListReducer = (state = initialState, action) => {

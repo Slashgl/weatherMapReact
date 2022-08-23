@@ -1,14 +1,14 @@
 import React from 'react'
-import {GetCityList} from "../../../store/selectors/CityList"
+import {GetActiveIndex, GetCityList, GetDefaultCity} from "../../../store/selectors/CityList"
 import {BackgroundVideo} from '../../index'
 import stylesVideo from '../../backgroundVideo/styles.module.scss'
 import DeleteIcon from "@mui/icons-material/Delete"
 import IconButton from "@mui/material/IconButton"
 import styles from './styles.module.scss'
-import {deleteCity} from "../../../store/reducers/CityList"
+import {activeIndex, deleteCity} from "../../../store/reducers/CityList"
 import {useDispatch} from "react-redux"
 
-const CardAsideBar = ({setData, translateTimeOfHourAM, setHidden}) => {
+const CardAsideBar = ({setData, translateTimeOfHourAM}) => {
     const cityList = GetCityList()
     const dispatch = useDispatch()
 
@@ -16,9 +16,10 @@ const CardAsideBar = ({setData, translateTimeOfHourAM, setHidden}) => {
         dispatch(deleteCity(id))
     }
 
-    const getWeatherWeek = (city) => {
-        setData(city)
-    }
+
+    // const getWeatherWeek = (city) => {
+    //     setData(city)
+    // }
 
     return (
         <>
@@ -27,8 +28,7 @@ const CardAsideBar = ({setData, translateTimeOfHourAM, setHidden}) => {
                     return(
 
                         <div key={`key_${index}`} className={styles.cardsAside} onClick={() => {
-                            getWeatherWeek(city)
-                            setHidden(true)
+                            // getWeatherWeek(city)
                         }}>
                             <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'} className={stylesVideo.cardVideo}/>
                             <div className={styles.cardsAside__left}>
