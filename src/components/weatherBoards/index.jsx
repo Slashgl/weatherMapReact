@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './styles.module.scss'
 import logoUiIndex from 'assets/img/sun.max.fill.svg'
 import logoVector from 'assets/img/Vector.svg'
@@ -8,6 +8,7 @@ import logoCompass from 'assets/img/compass.svg'
 import logoTemp from 'assets/img/thermometer.svg'
 import logoHumidity from 'assets/img/humidity.svg'
 import logoEye from 'assets/img/eye.fill.svg'
+import {GetCityList} from "../../store/selectors/CityList";
 
 const WeatherBoards = ({data, translateTimeOfHourAM}) => {
 

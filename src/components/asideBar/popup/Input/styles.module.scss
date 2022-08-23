@@ -20,14 +20,16 @@
       }
 
       @include screenMax1140 {
-        width: 600px;
-      }
-      @include screen576 {
-        width: 400px;
+        width: 100%;
+        border-radius: 47px;
+        margin-bottom: 20px;
       }
     }
 
     &:before {
-      @include magnifier(15px, 20px)
+      @include magnifier(15px, 20px);
+      @include screenMax1140 {
+        display: none;
+      }
     }
 }

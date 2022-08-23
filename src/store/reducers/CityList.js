@@ -8,8 +8,12 @@ const initialState = {
 
 export const setCity = (lat, lon, name) => async dispatch => {
     const res = await weatherApi.getDataWeather(lat, lon)
+    const ip = await weatherApi.getIp('')
+    console.log(res.data)
     let cityData = {
         id: Date.now(),
+        ipName: ip.data.city,
+        geoName: 'My Location',
         name: name,
         time: res.data.current.dt,
         description: res.data.current.weather[0].description,

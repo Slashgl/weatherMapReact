@@ -19,7 +19,9 @@ const List = ({cityList}) => {
             {cityList &&
                 cityList.map((el, index) => {
                     return (
-                        <li key={index} className={styles.popup__item} onClick={() => addCity(el)}>
+                        <li key={index} className={styles.popup__item} onClick={() => {
+                            addCity(el)
+                        }}>
                             <div className={styles.popup__name}>{el.name}</div>
                             <div className={styles.popup__country}>{el.state}</div>
                         </li>

@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 import {deleteCity} from "../../../store/reducers/CityList"
 import {useDispatch} from "react-redux"
 
-const CardAsideBar = ({setData, translateTimeOfHourAM}) => {
+const CardAsideBar = ({setData, translateTimeOfHourAM, setHidden}) => {
     const cityList = GetCityList()
     const dispatch = useDispatch()
 
@@ -28,11 +28,12 @@ const CardAsideBar = ({setData, translateTimeOfHourAM}) => {
 
                         <div key={`key_${index}`} className={styles.cardsAside} onClick={() => {
                             getWeatherWeek(city)
+                            setHidden(true)
                         }}>
                             <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'} className={stylesVideo.cardVideo}/>
                             <div className={styles.cardsAside__left}>
-                                <div className={styles.cardsAside__title}>{city.name}</div>
-                                <div className={styles.cardsAside__time}>{translateTimeOfHourAM(city.time)}</div>
+                                <div className={styles.cardsAside__title}>{index === 0 ? city.geoName : city.name}</div>
+                                <div className={styles.cardsAside__time}>{index === 0 ? city.ipName : translateTimeOfHourAM(city.time)}</div>
                                 <div className={styles.cardsAside__description}>{city.description}</div>
                             </div>
                             <div className={styles.cardsAside__right}>

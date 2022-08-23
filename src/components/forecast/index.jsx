@@ -1,10 +1,9 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import {GetGeolocationData} from "../../store/selectors/CityList";
 
 const Forecast = ({data}) => {
-    const geo = GetGeolocationData()
 
+    console.log(data)
     const translateTimeOfWeek = (timestamp) => {
         const daysName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
         const day = new Date();
@@ -18,7 +17,7 @@ const Forecast = ({data}) => {
             <div className={styles.title}>10-DAY FORECAST</div>
             <ul className={styles.forecast__items}>
                 {
-                    data?.forecast.map((day, index) => (
+                    data?.forecast.map((day,index) => (
                         <li index={`key_${index}`}
                             className={styles.forecast__item}>
                             <div className={styles.forecast__left}>

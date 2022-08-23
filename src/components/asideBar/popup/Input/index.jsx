@@ -3,7 +3,7 @@ import debounce from "lodash.debounce";
 import {weatherApi} from "services";
 import styles from './styles.module.scss'
 
-const Input = ({ setCityList, setActiveMobileInput }) => {
+const Input = ({ setCityList }) => {
 
     const [cityInput, setCityInput] = useState('')
 
@@ -29,7 +29,6 @@ const Input = ({ setCityList, setActiveMobileInput }) => {
             <input
                 type='text'
                 onChange={debounce(updateInput, 500)}
-                onClick={() => setActiveMobileInput(true)}
             />
         </label>
     )
