@@ -1,7 +1,6 @@
 import {setCityList, SET_CITY_LIST, removeCity, REMOVE_CITY, activeIndex, ACTIVE_INDEX} from "../actions/CityList"
 import {weatherApi} from "services"
 
-
 const initialState = {
     cityList: [],
     activeIndex: 0
@@ -9,7 +8,6 @@ const initialState = {
 
 export const setCity = (lat, lon, name) => async dispatch => {
     const res = await weatherApi.getDataWeather(lat, lon)
-
 
     let cityData = {
         id: Date.now(),

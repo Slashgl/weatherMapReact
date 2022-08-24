@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import debounce from "lodash.debounce";
-import {weatherApi} from "services";
+import debounce from 'lodash.debounce'
+import {weatherApi} from 'services'
 import styles from './styles.module.scss'
 
 const Input = ({ setCityList, setIsHidden }) => {

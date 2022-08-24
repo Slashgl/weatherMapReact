@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import Input from './input'
 import Popup from './popup'
+import CardAsideBar from './cardAsideBar'
 import styles from './styles.module.scss'
-import CardAsideBar from "./cardAsideBar"
 
 const AsideBar = ({translateTimeOfHourAM, setCityList, cityList }) => {
 

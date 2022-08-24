@@ -5,18 +5,7 @@
   justify-content: space-between;
 }
 
-@include screen1680{
-  .table {
-    flex-direction: column;
-  }
-}
 
-@include screenMax1140 {
-
-  .table {
-    flex-direction: column;
-  }
-}
 
 @include screenMin769 {
   .App {

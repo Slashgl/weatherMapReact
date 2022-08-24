@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import {AsideBar, BackgroundVideo} from 'components'
-import {Panel} from "components"
+import AsideBar from 'components/asideBar'
+import Panel from "components/asideBar/panel"
 import MobileInput from "../components/mobileInput"
 import {useDispatch} from "react-redux"
 import styles from './styles.module.scss'
 import stylesVideo from 'components/mainMenu/backgroundVideo/styles.module.scss'
 import geolocation from "../utils/geolocation";
 import MainMenu from "../components/mainMenu";
-
 
 const App = () => {
     const [isPanel, setPanel] = useState(false)
@@ -25,7 +24,7 @@ const App = () => {
 
     return (
         <>
-            <BackgroundVideo position={'fixed'} className={stylesVideo.bgVideo}/>
+
             <div className={styles.App}>
                 <MainMenu translateTimeOfHourAM={translateTimeOfHourAM}/>
                 <Panel setPanel={setPanel}/>

@@ -5,7 +5,6 @@ import styles from './styles.module.scss'
 
 const Popup = ({isActive, setIsActive, setCityList, cityList}) => {
 
-
     return (
         isActive ?
             <div className={styles.popup} onClick={() => setIsActive(!isActive)}>
