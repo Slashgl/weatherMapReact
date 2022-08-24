@@ -21,7 +21,7 @@ const App = () => {
 
     useEffect(() => {
         geolocation(dispatch)
-    }, [])
+    }, [dispatch])
 
     return (
         <>
@@ -41,11 +41,13 @@ const App = () => {
                 <AsideBar cityList={cityList}
                           setCityList={setCityList}
                           translateTimeOfHourAM={translateTimeOfHourAM}
+                          setPanel={setPanel}
                 />
                 <MobileInput cityList={cityList}
                              setCityList={setCityList}
                              isPanel={isPanel}
                              translateTimeOfHourAM={translateTimeOfHourAM}
+                             setPanel={setPanel}
                 />
             </div>
         </>

@@ -3,7 +3,8 @@ import {setCity} from "store"
 import {useDispatch} from "react-redux"
 import styles from './styles.module.scss'
 
-const List = ({cityList}) => {
+const List = ({cityList, isHidden, setIsHidden}) => {
+
 
     const dispatch = useDispatch()
 
@@ -15,12 +16,13 @@ const List = ({cityList}) => {
         }
     }
     return (
-        <ul className={styles.popup__results}>
+        <ul className={styles.popup__results} style={{display: isHidden ? 'block' : null}}>
             {cityList &&
                 cityList.map((el, index) => {
                     return (
                         <li key={index} className={styles.popup__item} onClick={() => {
                             addCity(el)
+                            setIsHidden(false)
                         }}>
                             <div className={styles.popup__name}>{el.name}</div>
                             <div className={styles.popup__country}>{el.state}</div>

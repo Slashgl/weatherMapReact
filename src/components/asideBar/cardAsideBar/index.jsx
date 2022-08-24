@@ -9,6 +9,7 @@ import {setActiveIndex, deleteCity} from "../../../store/reducers/CityList"
 import {useDispatch} from "react-redux"
 
 const CardAsideBar = ({translateTimeOfHourAM}) => {
+
     const cityList = GetCityList()
     const dispatch = useDispatch()
 
@@ -28,6 +29,7 @@ const CardAsideBar = ({translateTimeOfHourAM}) => {
 
                         <div key={`key_${index}`} className={styles.cardsAside} onClick={() => {
                             activeIndexData(index)
+
                         }}>
                             <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'} className={stylesVideo.cardVideo}/>
                             <div className={styles.cardsAside__left}>

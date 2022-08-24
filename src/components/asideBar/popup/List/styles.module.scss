@@ -12,13 +12,15 @@
 
     @include screenMax1140 {
       position: absolute;
-      top: 100px;
+      top: 0;
       left: 0;
       display: none;
       width: 100%;
       height: 100%;
+      padding: 100px 0 0 40px;
       background-color: $black;
-      z-index: 1;
+      border-radius: 0;
+      z-index: -10;
     }
   }
 
@@ -36,12 +38,18 @@
     font-weight: 400;
     font-size: 16px;
     color: $black;
+    @include screenMax1140 {
+      color: $white;
+    }
   }
 
   &__country {
     font-weight: 400;
     font-size: 15px;
     color: $darkBlack;
+    @include screenMax1140 {
+      color: $white;
+    }
   }
 
   &:hover {

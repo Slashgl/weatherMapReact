@@ -3,7 +3,7 @@ import List from './List'
 import Input from './Input'
 import styles from './styles.module.scss'
 
-const Popup = ({isActive, setIsActive, setCityList, cityList, setActiveMobileInput}) => {
+const Popup = ({isActive, setIsActive, setCityList, cityList}) => {
 
 
     return (
@@ -13,9 +13,9 @@ const Popup = ({isActive, setIsActive, setCityList, cityList, setActiveMobileInp
                     <div className={styles.popup__close} onClick={() => {
                         setIsActive(false)
                     }}></div>
-                        <Input setCityList={setCityList} setActiveMobileInput={setActiveMobileInput}/>
+                        <Input setCityList={setCityList}/>
                         <List cityList={cityList}/>
-                    <button type='button' className={styles.popup__button}>OK</button>
+                    <button type='button' className={styles.popup__button} onClick={() => setIsActive(false)}>OK</button>
                 </div>
             </div>
             : null

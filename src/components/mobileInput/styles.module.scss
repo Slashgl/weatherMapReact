@@ -13,6 +13,10 @@
   background: $RgbaDarkBlue;
   backdrop-filter: blur(340px);
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
   &__wrapper {
     position: absolute;
     top: 0;
