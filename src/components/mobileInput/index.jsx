@@ -9,14 +9,15 @@ const MobileInput = ({isPanel, cityList, setCityList, translateTimeOfHourAM, set
     const [iHidden, setIsHidden] = useState(false)
 
     return (
-            <div className={styles.mobile} style={{display: isPanel ? 'block': 'none'}}>
-                <div className={styles.mobile__header}>
-                    <Input setCityList={setCityList} setIsHidden={setIsHidden}/>
-                    <CloseButton setIsHidden={setIsHidden} setPanel={setPanel}/>
-                </div>
-                <List cityList={cityList} isHidden={iHidden} setIsHidden={setIsHidden}/>
-                <CardAsideBar translateTimeOfHourAM={translateTimeOfHourAM}/>
-            </div>
+            isPanel ?
+                <div className={styles.mobile}>
+                    <div className={styles.mobile__header}>
+                        <Input setCityList={setCityList} setIsHidden={setIsHidden}/>
+                        <CloseButton setIsHidden={setIsHidden} setPanel={setPanel} />
+                    </div>
+                    <List cityList={cityList} isHidden={iHidden} setIsHidden={setIsHidden}/>
+                    <CardAsideBar translateTimeOfHourAM={translateTimeOfHourAM}/>
+                </div> : null
     )
 }
 export default MobileInput
