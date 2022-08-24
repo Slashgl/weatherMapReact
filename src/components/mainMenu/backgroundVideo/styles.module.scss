@@ -1,0 +1,15 @@
+@import "../../../assets/mixins/media";
+
+.bgVideo {
+  z-index: -1;
+
+  @include screen768 {
+    height: 100%;
+  }
+}
+
+.cardVideo {
+  object-fit: fill;
+  height: 100%;
+  z-index: -1;
+}

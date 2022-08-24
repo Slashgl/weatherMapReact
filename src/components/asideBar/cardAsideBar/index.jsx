@@ -1,12 +1,14 @@
 import React from 'react'
+import {useDispatch} from "react-redux"
 import {GetCityList} from "../../../store/selectors/CityList"
 import {BackgroundVideo} from '../../index'
-import stylesVideo from '../../backgroundVideo/styles.module.scss'
+import {setActiveIndex, deleteCity} from "../../../store/reducers/CityList"
 import DeleteIcon from "@mui/icons-material/Delete"
 import IconButton from "@mui/material/IconButton"
+import stylesVideo from '../../mainMenu/backgroundVideo/styles.module.scss'
 import styles from './styles.module.scss'
-import {setActiveIndex, deleteCity} from "../../../store/reducers/CityList"
-import {useDispatch} from "react-redux"
+
+
 
 const CardAsideBar = ({translateTimeOfHourAM}) => {
 
@@ -21,17 +23,22 @@ const CardAsideBar = ({translateTimeOfHourAM}) => {
         dispatch(setActiveIndex(index))
     }
 
+
+
+
     return (
         <>
             {
                 cityList?.map((city, index) => {
+                    console.log(city)
                     return(
 
                         <div key={`key_${index}`} className={styles.cardsAside} onClick={() => {
                             activeIndexData(index)
 
                         }}>
-                            <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'} className={stylesVideo.cardVideo}/>
+                            <BackgroundVideo position={'absolute'} width={'100%'} radius={'14px'} className={stylesVideo.cardVideo} city={city}/>
+
                             <div className={styles.cardsAside__left}>
                                 <div className={styles.cardsAside__title}>{index === 0 ? city.geoName : city.name}</div>
                                 <div className={styles.cardsAside__time}>{index === 0 ? city.ipName : translateTimeOfHourAM(city.time)}</div>
