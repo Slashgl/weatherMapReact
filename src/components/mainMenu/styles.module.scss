@@ -20,6 +20,10 @@
   }
 }
 
+.mainMenu {
+  margin: 0 auto;
+}
+
 .header {
   margin-top: 30px;
   color: $white;
@@ -208,24 +212,19 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 53px 0 0 37px;
+  margin: 0 0 0 37px;
   width: 628px;
-
-  @include screenMax1140 {
-    margin-bottom: 50px;
-  }
 
   @include screen1680 {
     width: 700px;
+    margin: 0 0 50px 37px;
   }
 
   @include screen576 {
     width: 600px;
   }
 
-  @include screen576 {
-    margin: 53px 0 50px 37px;
-  }
+
 }
 
 .board {
@@ -235,22 +234,20 @@
   justify-content: space-between;
   width: 200px;
   min-height: 200px;
+  margin-top: 40px;
   padding-left:20px;
   background: $RgbaLightGrey;
   border: 1px solid $RgbaLightWhite;
   backdrop-filter: blur(290px);
   border-radius: 18px;
-  margin-right: 5px;
 
   @include screen576{
+    margin-right: 20px;
     height: 250px;
-    margin-bottom: 15px;
   }
 
-  @include screenMin577 {
-    &:nth-child(n + 4) {
+  @include screen1680 {
       margin-top: 40px;
-    }
   }
 
   .logo {

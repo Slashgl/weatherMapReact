@@ -1,0 +1,9 @@
+@import "../../../assets/mixins/media";
+
+.backgroundMain {
+  position: fixed;
+  z-index: -1;
+  @include screen768 {
+    height: 100%;
+  }
+}

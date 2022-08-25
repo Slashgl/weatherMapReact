@@ -4,11 +4,3 @@
   display: flex;
   justify-content: space-between;
 }
-
-
-
-@include screenMin769 {
-  .App {
-    justify-content: center;
-  }
-}

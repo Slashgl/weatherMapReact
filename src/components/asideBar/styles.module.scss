@@ -60,6 +60,7 @@
 
   &__close {
     position: absolute;
+    display: none;
     right: 30px;
     width: 100px;
     height: 50px;
@@ -67,17 +68,14 @@
     background-color: $white;
     border-radius: 50% 50% 50% 50%;
     border: none;
-    @include screenMin1141 {
-      display: none;
+    @include screenMax1140 {
+      display: block;
     }
   }
-
-  @include screenMin1141 {
 
     &__wrapper {
       display: none;
     }
-  }
 
   @include screenMax1140 {
 
@@ -85,6 +83,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      display: block;
       opacity: 0;
       width: 100%;
       height: 100%;

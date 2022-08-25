@@ -5,7 +5,7 @@ import CardAsideBar from "../asideBar/cardAsideBar"
 import CloseButton from './closeButton'
 import styles from './styles.module.scss'
 
-const MobileInput = ({isPanel, cityList, setCityList, translateTimeOfHourAM, setPanel}) => {
+const MobileInput = ({isPanel, cityList, setCityList, translateTimeOfHourAM, setPanel, setDescr}) => {
     const [iHidden, setIsHidden] = useState(false)
 
     return (
@@ -16,7 +16,7 @@ const MobileInput = ({isPanel, cityList, setCityList, translateTimeOfHourAM, set
                         <CloseButton setIsHidden={setIsHidden} setPanel={setPanel} />
                     </div>
                     <List cityList={cityList} isHidden={iHidden} setIsHidden={setIsHidden}/>
-                    <CardAsideBar translateTimeOfHourAM={translateTimeOfHourAM}/>
+                    <CardAsideBar setDescr={setDescr}  translateTimeOfHourAM={translateTimeOfHourAM}/>
                 </div> : null
     )
 }
