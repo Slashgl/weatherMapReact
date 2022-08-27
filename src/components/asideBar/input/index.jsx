@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Input = ({className, placeholder, setIsModalActive}) => {
-
+const Input = ({ className, placeholder, setIsModalActive }) => {
     const openPopup = () => {
         setIsModalActive(true)
     }
@@ -9,7 +8,7 @@ const Input = ({className, placeholder, setIsModalActive}) => {
     return (
         <label className={className}>
             <input
-                type='text'
+                type="text"
                 placeholder={placeholder}
                 onClick={() => {
                     openPopup()
@@ -20,5 +19,3 @@ const Input = ({className, placeholder, setIsModalActive}) => {
 }
 
 export default Input
-
-

@@ -1,3 +1,3 @@
-import weatherApi from "./endpoint/weatherApi";
+import weatherApi from './endpoint/weatherApi'
 
-export {weatherApi}
+export { weatherApi }

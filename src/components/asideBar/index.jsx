@@ -1,11 +1,15 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Input from './input'
 import Popup from './popup'
 import CardAsideBar from './cardAsideBar'
 import styles from './styles.module.scss'
 
-const AsideBar = ({translateTimeOfHourAM, setCityList, cityList, setDescr }) => {
-
+const AsideBar = ({
+    translateTimeOfHourAM,
+    setCityList,
+    cityList,
+    setDescr,
+}) => {
     const [isModalActive, setIsModalActive] = useState(false)
 
     return (
@@ -15,9 +19,10 @@ const AsideBar = ({translateTimeOfHourAM, setCityList, cityList, setDescr }) => 
                 placeholder={`Search for a city or airport`}
                 setIsModalActive={setIsModalActive}
             />
-            <CardAsideBar translateTimeOfHourAM={translateTimeOfHourAM}
-                          setDescr={setDescr}
-                          />
+            <CardAsideBar
+                translateTimeOfHourAM={translateTimeOfHourAM}
+                setDescr={setDescr}
+            />
             <Popup
                 cityList={cityList}
                 setCityList={setCityList}

@@ -1,144 +1,147 @@
-@import "src/assets/variables/colors";
-@import "src/assets/mixins/media";
-@import "src/assets/mixins/magnifier";
+@import 'src/assets/variables/colors';
+@import 'src/assets/mixins/media';
+@import 'src/assets/mixins/magnifier';
 
 .mobile {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100%;
-  padding: 26px 20px 0 20px;
-  color: $white;
-  background: $RgbaDarkBlue;
-  backdrop-filter: blur(340px);
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: $black;
-    z-index: 1;
-  }
+    min-height: 100%;
+    padding: 26px 20px 0 20px;
+    color: $white;
+    background: $RgbaDarkBlue;
+    backdrop-filter: blur(340px);
 
-  &__results {
-    position: absolute;
-    margin: 100px 0 0 50px;
-    list-style: none;
-  }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
 
-  &__item {
-    margin-bottom: 20px;
-    font-weight: 400;
-  }
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        z-index: 1;
+    }
 
-  &__name {
-    font-size: 15px;
-  }
+    &__results {
+        position: absolute;
+        margin: 100px 0 0 50px;
+        list-style: none;
+    }
 
-  &__country {
-    font-size: 16px;
-    color: $greyBlack;
-  }
-
-  &__input {
-
-    input {
-      cursor: pointer;
-      position: relative;
-      width: 100%;
-      height: 44px;
-      margin-bottom: 30px;
-      border-radius: 47px;
-      border: none;
-      outline: none;
-      padding: 0 46px;
-      z-index: 100;
-
-      &:hover {
-        background: linear-gradient(to right, $blue 0%, $greyBlue 100%);
-        transform: rotate(0deg);
-      }
-
-      &::placeholder {
+    &__item {
+        margin-bottom: 20px;
         font-weight: 400;
-        font-size: 17px;
-      }
     }
 
-    &:before {
-      @include magnifier(40px, 40px)
+    &__name {
+        font-size: 15px;
     }
 
-  }
-
-  &__cards {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
-    background-size: cover;
-    border-radius: 14px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.51), rgba(0, 0, 0, 0.51));
-    margin-bottom: 30px;
-
-    &:hover {
-      border: 1px solid;
-      box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
-      outline-color: rgba(255, 255, 255, 0);
-      outline-offset: 15px;
-      text-shadow: 1px 1px 2px #427388;
+    &__country {
+        font-size: 16px;
+        color: $greyBlack;
     }
-  }
 
-  &__left, &__right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 159px;
-  }
+    &__input {
+        input {
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            height: 44px;
+            margin-bottom: 30px;
+            border-radius: 47px;
+            border: none;
+            outline: none;
+            padding: 0 46px;
+            z-index: 100;
 
-  &__left {
-    margin: 25px 0 0 20px;
-  }
+            &:hover {
+                background: linear-gradient(to right, $blue 0%, $greyBlue 100%);
+                transform: rotate(0deg);
+            }
 
-  &__right {
-    margin: 25px 20px 0 0;
+            &::placeholder {
+                font-weight: 400;
+                font-size: 17px;
+            }
+        }
 
-  }
+        &:before {
+            @include magnifier(40px, 40px);
+        }
+    }
 
-  &__title {
-    margin-top:5px;
-    font-weight: 700;
-    font-size: 32px;
-  }
+    &__cards {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        height: 200px;
+        background-size: cover;
+        border-radius: 14px;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.51),
+            rgba(0, 0, 0, 0.51)
+        );
+        margin-bottom: 30px;
 
-  &__time{
-    margin-bottom: auto;
-    font-weight: 400;
-    font-size: 21px;
-  }
+        &:hover {
+            border: 1px solid;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.2);
+            outline-color: rgba(255, 255, 255, 0);
+            outline-offset: 15px;
+            text-shadow: 1px 1px 2px #427388;
+        }
+    }
 
-  &__description {
-    font-weight: 400;
-    font-size: 21px;
-  }
+    &__left,
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 159px;
+    }
 
-  &__degrees {
-    font-weight: 300;
-    font-size: 80px;
-  }
+    &__left {
+        margin: 25px 0 0 20px;
+    }
 
-  &__coordinates {
-    font-weight: 500;
-    font-size: 21px;
-  }
+    &__right {
+        margin: 25px 20px 0 0;
+    }
 
+    &__title {
+        margin-top: 5px;
+        font-weight: 700;
+        font-size: 32px;
+    }
+
+    &__time {
+        margin-bottom: auto;
+        font-weight: 400;
+        font-size: 21px;
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: 21px;
+    }
+
+    &__degrees {
+        font-weight: 300;
+        font-size: 80px;
+    }
+
+    &__coordinates {
+        font-weight: 500;
+        font-size: 21px;
+    }
 }

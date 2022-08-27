@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import AsideBar from 'components/asideBar'
-import Panel from "components/asideBar/panel"
-import MobileInput from "../components/mobileInput"
-import {useDispatch} from "react-redux"
+import Panel from 'components/asideBar/panel'
+import MobileInput from '../components/mobileInput'
+import { useDispatch } from 'react-redux'
 import styles from './styles.module.scss'
-import geolocation from "../utils/geolocation"
-import MainMenu from "../components/mainMenu"
-import Background from "../components/mainMenu/background";
-import {GetCityList} from "../store/selectors/CityList";
+import geolocation from '../utils/geolocation'
+import MainMenu from '../components/mainMenu'
+import Background from '../components/mainMenu/background'
+import { GetCityList } from '../store/selectors/CityList'
 
 const App = () => {
     const [isPanel, setPanel] = useState(false)
@@ -18,13 +18,16 @@ const App = () => {
     const defaultData = GetCityList()
 
     const translateTimeOfHourAM = () => {
-        return new Date().toLocaleTimeString('en-US',{hour: '2-digit', minute:'2-digit'})
+        return new Date().toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+        })
     }
 
     const changeBackground = () => {
-       return defaultData.map((city, index) => {
-            if(city.backgroundDescription === descr || index === 0) {
-                return <Background city={city}/>
+        return defaultData.map((city, index) => {
+            if (city.backgroundDescription === descr || index === 0) {
+                return <Background city={city} />
             }
         })
     }
@@ -36,26 +39,30 @@ const App = () => {
     return (
         <>
             <div className={styles.App}>
-                { changeBackground() }
-                <MainMenu translateTimeOfHourAM={translateTimeOfHourAM}
-                          descr={descr}/>
-                <Panel setPanel={setPanel}/>
-                <AsideBar cityList={cityList}
-                          setCityList={setCityList}
-                          translateTimeOfHourAM={translateTimeOfHourAM}
-                          setPanel={setPanel}
-                          setDescr={setDescr}
+                {changeBackground()}
+                <MainMenu
+                    translateTimeOfHourAM={translateTimeOfHourAM}
+                    descr={descr}
                 />
-                <MobileInput cityList={cityList}
-                             setCityList={setCityList}
-                             isPanel={isPanel}
-                             translateTimeOfHourAM={translateTimeOfHourAM}
-                             setPanel={setPanel}
-                             setDescr={setDescr}
+                <Panel setPanel={setPanel} />
+                <AsideBar
+                    cityList={cityList}
+                    setCityList={setCityList}
+                    translateTimeOfHourAM={translateTimeOfHourAM}
+                    setPanel={setPanel}
+                    setDescr={setDescr}
+                />
+                <MobileInput
+                    cityList={cityList}
+                    setCityList={setCityList}
+                    isPanel={isPanel}
+                    translateTimeOfHourAM={translateTimeOfHourAM}
+                    setPanel={setPanel}
+                    setDescr={setDescr}
                 />
             </div>
         </>
     )
 }
 
-export default App;
+export default App

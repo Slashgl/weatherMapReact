@@ -1,14 +1,13 @@
-import {setCity} from "../store"
+import { setCity } from '../store'
 
 const geolocation = (dispatch) => {
-
     const getCoordsCurrent = (position) => {
-        const latitude  = position.coords.latitude;
-        const longitude = position.coords.longitude;
+        const latitude = position.coords.latitude
+        const longitude = position.coords.longitude
 
         try {
             dispatch(setCity(latitude, longitude))
-        }catch (e) {
+        } catch (e) {
             console.log(e)
         }
     }
@@ -22,7 +21,7 @@ const geolocation = (dispatch) => {
     } else {
         console.log('Определение местоположения…')
 
-        navigator.geolocation.getCurrentPosition(getCoordsCurrent, error);
+        navigator.geolocation.getCurrentPosition(getCoordsCurrent, error)
     }
 }
 

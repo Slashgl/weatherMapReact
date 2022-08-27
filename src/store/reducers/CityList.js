@@ -1,12 +1,19 @@
-import {setCityList, SET_CITY_LIST, removeCity, REMOVE_CITY, activeIndex, ACTIVE_INDEX} from "../actions/CityList"
-import {weatherApi} from "services"
+import {
+    setCityList,
+    SET_CITY_LIST,
+    removeCity,
+    REMOVE_CITY,
+    activeIndex,
+    ACTIVE_INDEX,
+} from '../actions/CityList'
+import { weatherApi } from 'services'
 
 const initialState = {
     cityList: [],
     activeIndex: 0,
 }
 
-export const setCity = (lat, lon, name) => async dispatch => {
+export const setCity = (lat, lon, name) => async (dispatch) => {
     const res = await weatherApi.getDataWeather(lat, lon)
     const ip = await weatherApi.getIp()
 
@@ -27,30 +34,35 @@ export const setCity = (lat, lon, name) => async dispatch => {
         humidity: res.data.current.humidity,
         sunrise: res.data.current.sunrise,
         uvi: res.data.current.uvi,
-        visibility: res.data.current.visibility
+        visibility: res.data.current.visibility,
     }
     dispatch(setCityList(cityData))
 }
 
-export const deleteCity = (id) => dispatch => {
+export const deleteCity = (id) => (dispatch) => {
     dispatch(removeCity(id))
 }
 
-export const setActiveIndex = (index = initialState.activeIndex) => dispatch => {
-    dispatch(activeIndex(index))
-}
+export const setActiveIndex =
+    (index = initialState.activeIndex) =>
+    (dispatch) => {
+        dispatch(activeIndex(index))
+    }
 
 export const cityListReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CITY_LIST:
-            return {...state, cityList: [...state.cityList, action.payload]}
+            return { ...state, cityList: [...state.cityList, action.payload] }
         case REMOVE_CITY:
-            return  {...state, cityList: state.cityList.filter(city => city.id !== action.payload)}
+            return {
+                ...state,
+                cityList: state.cityList.filter(
+                    (city) => city.id !== action.payload
+                ),
+            }
         case ACTIVE_INDEX:
-            return {...state, activeIndex: action.payload}
+            return { ...state, activeIndex: action.payload }
         default:
             return state
     }
 }
-
-

@@ -1,4 +1,4 @@
 import store from './Store'
-import {setCity} from './reducers/CityList'
+import { setCity } from './reducers/CityList'
 
-export {store, setCity}
+export { store, setCity }

@@ -3,111 +3,110 @@
 @import 'src/assets/mixins/media';
 
 .aside {
-  width: 661px;
-  min-height: 100vh;
-  padding: 26px 20px 0 20px;
-  color: $white;
-  background: $RgbaDarkBlue;
-  backdrop-filter: blur(-340px);
-
-  @include screenMax1140 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    height: 100%;
-    width: 100%;
-    padding: 26px 50px 0 20px;
+    width: 661px;
+    min-height: 100vh;
+    padding: 26px 20px 0 20px;
     color: $white;
     background: $RgbaDarkBlue;
-    backdrop-filter: blur(340px);
-  }
+    backdrop-filter: blur(-340px);
 
-  &__input {
-    position: relative;
-    input {
-      cursor: pointer;
-      width: 100%;
-      height: 44px;
-      margin-bottom: 30px;
-      border-radius: 47px;
-      border: none;
-      outline: none;
-      padding: 0 46px;
-
-      &:hover {
-        background: linear-gradient(to right, $blue 0%, $greyBlue 100%);
-        transform: rotate(0deg);
-      }
-
-      &::placeholder {
-        font-weight: 400;
-        font-size: 17px;
-      }
-
-      @include screenMax1140 {
-        width: 600px;
-      }
-      @include screen576 {
-        width: 400px;
-      }
-    }
-
-    &:before {
-      @include magnifier(0, 20px)
-    }
-  }
-
-  &__close {
-    position: absolute;
-    display: none;
-    right: 30px;
-    width: 100px;
-    height: 50px;
-    z-index: 100;
-    background-color: $white;
-    border-radius: 50% 50% 50% 50%;
-    border: none;
     @include screenMax1140 {
-      display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        height: 100%;
+        width: 100%;
+        padding: 26px 50px 0 20px;
+        color: $white;
+        background: $RgbaDarkBlue;
+        backdrop-filter: blur(340px);
     }
-  }
+
+    &__input {
+        position: relative;
+        input {
+            cursor: pointer;
+            width: 100%;
+            height: 44px;
+            margin-bottom: 30px;
+            border-radius: 47px;
+            border: none;
+            outline: none;
+            padding: 0 46px;
+
+            &:hover {
+                background: linear-gradient(to right, $blue 0%, $greyBlue 100%);
+                transform: rotate(0deg);
+            }
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: 17px;
+            }
+
+            @include screenMax1140 {
+                width: 600px;
+            }
+            @include screen576 {
+                width: 400px;
+            }
+        }
+
+        &:before {
+            @include magnifier(0, 20px);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        display: none;
+        right: 30px;
+        width: 100px;
+        height: 50px;
+        z-index: 100;
+        background-color: $white;
+        border-radius: 50% 50% 50% 50%;
+        border: none;
+        @include screenMax1140 {
+            display: block;
+        }
+    }
 
     &__wrapper {
-      display: none;
+        display: none;
     }
 
-  @include screenMax1140 {
+    @include screenMax1140 {
+        &__wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            z-index: 1;
+        }
 
-    &__wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      opacity: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $black;
-      z-index: 1;
-    }
+        &__results {
+            margin: 100px 0 0 50px;
+            list-style: none;
+        }
 
-    &__results {
-      margin: 100px 0 0 50px;
-      list-style: none;
-    }
+        &__item {
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
 
-    &__item {
-      margin-bottom: 20px;
-      font-weight: 400;
-    }
+        &__name {
+            font-size: 15px;
+        }
 
-    &__name {
-      font-size: 15px;
+        &__country {
+            font-size: 16px;
+            color: $greyBlack;
+        }
     }
-
-    &__country {
-      font-size: 16px;
-      color: $greyBlack;
-    }
-  }
 }

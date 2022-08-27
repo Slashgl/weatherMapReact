@@ -9,9 +9,9 @@ export const setCityList = (payload) => ({
 
 export const removeCity = (payload) => ({
     type: REMOVE_CITY,
-    payload
+    payload,
 })
 export const activeIndex = (payload) => ({
     type: ACTIVE_INDEX,
-    payload
+    payload,
 })

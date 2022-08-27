@@ -1,25 +1,24 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import debounce from 'lodash.debounce'
-import {weatherApi} from 'services'
+import { weatherApi } from 'services'
 import styles from './styles.module.scss'
 
 const Input = ({ setCityList, setIsHidden }) => {
-
     const [cityInput, setCityInput] = useState('')
 
-    const updateInput = (e) => setCityInput(e?.target?.value);
+    const updateInput = (e) => setCityInput(e?.target?.value)
 
     const searchCity = async (city) => {
         try {
             const citySuggestion = await weatherApi.getListCountry(city)
             setCityList(citySuggestion.data)
-        }catch (e) {
+        } catch (e) {
             console.log(e)
         }
     }
 
     useEffect(() => {
-        if(cityInput) {
+        if (cityInput) {
             searchCity(cityInput)
         }
     }, [cityInput])
@@ -27,7 +26,7 @@ const Input = ({ setCityList, setIsHidden }) => {
     return (
         <label className={styles.input} onClick={() => setIsHidden(true)}>
             <input
-                type='text'
+                type="text"
                 onChange={debounce(updateInput, 500)}
                 autoFocus
                 onClick={(e) => {
