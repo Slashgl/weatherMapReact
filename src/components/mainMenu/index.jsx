@@ -1,4 +1,5 @@
 import React from 'react'
+import dayjs from 'dayjs'
 import { GetActiveIndex, GetCityList } from '../../store/selectors/CityList'
 import styles from './styles.module.scss'
 import logoUiIndex from '../../assets/img/sun.max.fill.svg'
@@ -111,9 +112,7 @@ const MainMenu = () => {
                                                         styles.forecast__week
                                                     }
                                                 >
-                                                    {translateTimeOfWeek(
-                                                        day.dt
-                                                    )}
+                                                    {dayjs(String(day.dt)).format('dd')}
                                                 </div>
                                                 <img
                                                     height="34px"
