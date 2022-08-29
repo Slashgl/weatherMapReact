@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './styles.module.scss'
 import dayjs from 'dayjs'
+import styles from './styles.module.scss'
 
 const Forecast = ({ defaultData, activeIndex }) => {
     return (

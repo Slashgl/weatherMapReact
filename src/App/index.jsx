@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import AsideBar from 'components/asideBar'
 import Panel from 'components/asideBar/panel'
 import MobileInput from '../components/mobileInput'
-import { useDispatch } from 'react-redux'
-import styles from './styles.module.scss'
 import geolocation from '../utils/geolocation'
 import MainMenu from '../components/mainMenu'
 import Background from '../components/mainMenu/background'
 import { GetCityList } from '../store/selectors/CityList'
+import styles from './styles.module.scss'
 
 const App = () => {
     const [isPanel, setPanel] = useState(false)
