@@ -12,6 +12,11 @@
     color: $white;
     background: $RgbaDarkBlue;
     backdrop-filter: blur(340px);
+    display: none;
+
+    @include screenMax1140 {
+        display: block;
+    }
 
     &__header {
         display: flex;

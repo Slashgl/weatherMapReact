@@ -17,13 +17,6 @@ const App = () => {
     const dispatch = useDispatch()
     const defaultData = GetCityList()
 
-    const translateTimeOfHourAM = () => {
-        return new Date().toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-        })
-    }
-
     const changeBackground = () => {
         return defaultData.map((city, index) => {
             if (city.backgroundDescription === descr || index === 0) {
@@ -41,14 +34,12 @@ const App = () => {
             <div className={styles.App}>
                 {changeBackground()}
                 <MainMenu
-                    translateTimeOfHourAM={translateTimeOfHourAM}
                     descr={descr}
                 />
                 <Panel setPanel={setPanel} />
                 <AsideBar
                     cityList={cityList}
                     setCityList={setCityList}
-                    translateTimeOfHourAM={translateTimeOfHourAM}
                     setPanel={setPanel}
                     setDescr={setDescr}
                 />
@@ -56,7 +47,6 @@ const App = () => {
                     cityList={cityList}
                     setCityList={setCityList}
                     isPanel={isPanel}
-                    translateTimeOfHourAM={translateTimeOfHourAM}
                     setPanel={setPanel}
                     setDescr={setDescr}
                 />

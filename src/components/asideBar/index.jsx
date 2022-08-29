@@ -4,12 +4,7 @@ import Popup from './popup'
 import CardAsideBar from './cardAsideBar'
 import styles from './styles.module.scss'
 
-const AsideBar = ({
-    translateTimeOfHourAM,
-    setCityList,
-    cityList,
-    setDescr,
-}) => {
+const AsideBar = ({ setCityList, cityList, setDescr }) => {
     const [isModalActive, setIsModalActive] = useState(false)
 
     return (
@@ -19,10 +14,7 @@ const AsideBar = ({
                 placeholder={`Search for a city or airport`}
                 setIsModalActive={setIsModalActive}
             />
-            <CardAsideBar
-                translateTimeOfHourAM={translateTimeOfHourAM}
-                setDescr={setDescr}
-            />
+            <CardAsideBar setDescr={setDescr} />
             <Popup
                 cityList={cityList}
                 setCityList={setCityList}

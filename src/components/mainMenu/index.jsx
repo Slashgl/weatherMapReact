@@ -21,55 +21,6 @@ const MainMenu = () => {
         { boards: 'VISIBILITY' },
     ]
 
-    const translateTimeOfHourAM = () => {
-        return new Date().toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-        })
-    }
-
-    const translateTimeOfWeek = (timestamp) => {
-        const daysName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-        const day = new Date()
-        day.setTime(timestamp + '000')
-        const hours = day.getDay()
-        return daysName[hours]
-    }
-
-    const transferTimeOfHours = (timestamp) => {
-        const nameHours = [
-            '12AM',
-            '1AM',
-            '2AM',
-            '3AM',
-            '4AM',
-            '5AM',
-            '6AM',
-            '7AM',
-            '8AM',
-            '9AM',
-            '10AM',
-            '11AM',
-            '12AM',
-            '1PM',
-            '2PM',
-            '3PM',
-            '4PM',
-            '5PM',
-            '6PM',
-            '7PM',
-            '8PM',
-            '9PM',
-            '10PM',
-            '11PM',
-        ]
-        const time = new Date()
-        time.setTime(timestamp + '000')
-        const getHours = time.getHours()
-
-        return nameHours[getHours]
-    }
-
     return (
         <>
             <div className={styles.mainMenu}>
@@ -112,7 +63,9 @@ const MainMenu = () => {
                                                         styles.forecast__week
                                                     }
                                                 >
-                                                    {dayjs(String(day.dt)).format('dd')}
+                                                    {dayjs
+                                                        .unix(day.dt)
+                                                        .format('dd')}
                                                 </div>
                                                 <img
                                                     height="34px"
@@ -194,9 +147,9 @@ const MainMenu = () => {
                                                         styles.today__time
                                                     }
                                                 >
-                                                    {transferTimeOfHours(
-                                                        day.dt
-                                                    )}
+                                                    {dayjs
+                                                        .unix(day.dt)
+                                                        .format(`h A`)}
                                                 </div>
                                                 <div
                                                     className={
@@ -262,9 +215,9 @@ const MainMenu = () => {
                                     sunrise
                                 </div>
                                 <div className={styles.board__time}>
-                                    {translateTimeOfHourAM(
-                                        defaultData[activeIndex]?.time
-                                    )}
+                                    {dayjs
+                                        .unix(defaultData[activeIndex]?.time)
+                                        .format('hh:mm A')}
                                 </div>
                                 <div className={styles.board__imgVector}>
                                     <img
@@ -275,9 +228,9 @@ const MainMenu = () => {
                                 </div>
                                 <div className={styles.board__description}>
                                     Sunrise:{' '}
-                                    {translateTimeOfHourAM(
-                                        defaultData[activeIndex]?.sunrise
-                                    )}
+                                    {dayjs
+                                        .unix(defaultData[activeIndex]?.sunrise)
+                                        .format('hh:mm A')}
                                 </div>
                             </div>
                             <div className={styles.board}>

@@ -1,13 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import dayjs from 'dayjs'
 import { GetCityList } from '../../../store/selectors/CityList'
 import BackgroundVideo from '../backgroundCard'
 import { setActiveIndex, deleteCity } from '../../../store/reducers/CityList'
-import styles from './styles.module.scss'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
+import styles from './styles.module.scss'
 
-const CardAsideBar = ({ translateTimeOfHourAM, setDescr }) => {
+const CardAsideBar = ({ setDescr }) => {
     const cityList = GetCityList()
 
     const dispatch = useDispatch()
@@ -44,7 +45,7 @@ const CardAsideBar = ({ translateTimeOfHourAM, setDescr }) => {
                         <div className={styles.cardsAside__time}>
                             {index === 0
                                 ? city.ipName
-                                : translateTimeOfHourAM(city.time)}
+                                : dayjs.unix(city.time).format('hh:mm A')}
                         </div>
                         <div className={styles.cardsAside__description}>
                             {city.description}
