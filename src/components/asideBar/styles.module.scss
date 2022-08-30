@@ -25,6 +25,7 @@
 
     &__input {
         position: relative;
+
         input {
             cursor: pointer;
             width: 100%;
@@ -66,7 +67,7 @@
         height: 50px;
         z-index: 100;
         background-color: $white;
-        border-radius: 50% 50% 50% 50%;
+        border-radius: 50% 50%;
         border: none;
         @include screenMax1140 {
             display: block;
@@ -78,6 +79,7 @@
     }
 
     @include screenMax1140 {
+
         &__wrapper {
             position: absolute;
             top: 0;
