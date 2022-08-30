@@ -4,3 +4,5 @@ export const GetCityList = () =>
     useSelector((state) => state.cityListReducer.cityList)
 export const GetActiveIndex = () =>
     useSelector((state) => state.cityListReducer.activeIndex)
+export const GetDescription = () =>
+    useSelector((state) => state.cityListReducer.description)

@@ -1,28 +1,27 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
-import { GetCityList } from '../../../store/selectors/CityList'
-import BackgroundVideo from '../backgroundCard'
-import { setActiveIndex, deleteCity } from '../../../store/reducers/CityList'
+import {GetCityList, GetDescription} from 'store/selectors/CityList'
+import BackgroundCard from '../backgroundCard'
+import {setActiveIndex, deleteCity, setDescriptionBackground} from 'store/reducers/CityList'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
 import styles from './styles.module.scss'
 
-const CardAsideBar = ({ setDescr }) => {
+const CardAsideBar = () => {
     const cityList = GetCityList()
-
     const dispatch = useDispatch()
 
     const removeCardAside = (id) => {
         dispatch(deleteCity(id))
     }
 
-    const setWeatherDescription = (city) => {
-        setDescr(city.backgroundDescription)
-    }
-
     const activeIndexData = (index) => {
         dispatch(setActiveIndex(index))
+    }
+
+    const setActiveCity = (city) => {
+        dispatch(setDescriptionBackground(city.backgroundDescription))
     }
 
     return (
@@ -33,10 +32,10 @@ const CardAsideBar = ({ setDescr }) => {
                     className={styles.cardsAside}
                     onClick={() => {
                         activeIndexData(index)
-                        setWeatherDescription(city)
+                        setActiveCity(city)
                     }}
                 >
-                    <BackgroundVideo city={city} />
+                    <BackgroundCard city={city} />
 
                     <div className={styles.cardsAside__left}>
                         <div className={styles.cardsAside__title}>

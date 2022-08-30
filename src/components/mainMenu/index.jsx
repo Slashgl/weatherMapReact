@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetActiveIndex, GetCityList } from '../../store/selectors/CityList'
-import Index from './Header'
+import Header from './Header'
 import Forecast from './Forecast'
 import WeatherToday from './WeatherToday'
 import WeatherBoards from './WeatherBoards'
@@ -13,7 +13,7 @@ const MainMenu = () => {
     return (
         <>
             <div className={styles.mainMenu}>
-                <Index defaultData={defaultData} activeIndex={activeIndex} />
+                <Header defaultData={defaultData} activeIndex={activeIndex} />
                 <div className={styles.table}>
                     <Forecast
                         defaultData={defaultData}

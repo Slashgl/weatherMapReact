@@ -25,7 +25,6 @@ const List = ({ cityList, isHidden, setIsHidden }) => {
                         className={styles.popup__item}
                         onClick={() => {
                             addCity(el)
-                            setIsHidden(false)
                         }}
                     >
                         <div className={styles.popup__name}>{el.name}</div>

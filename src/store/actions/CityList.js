@@ -1,6 +1,7 @@
 export const SET_CITY_LIST = 'cityList/SET_CITY_LIST'
 export const REMOVE_CITY = 'cityList/REMOVE_CITY'
 export const ACTIVE_INDEX = 'cityList/ACTIVE_INDEX'
+export const SET_DESCRIPTION = 'cityList/SET_DESCRIPTION'
 
 export const setCityList = (payload) => ({
     type: SET_CITY_LIST,
@@ -13,5 +14,10 @@ export const removeCity = (payload) => ({
 })
 export const activeIndex = (payload) => ({
     type: ACTIVE_INDEX,
+    payload,
+})
+
+export const setDescription = (payload) => ({
+    type: SET_DESCRIPTION,
     payload,
 })
