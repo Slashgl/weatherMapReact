@@ -21,7 +21,7 @@ const CardAsideBar = () => {
     }
 
     const setActiveCity = (city) => {
-        dispatch(setDescriptionBackground(city.backgroundDescription))
+        dispatch(setDescriptionBackground(city))
     }
 
     return (

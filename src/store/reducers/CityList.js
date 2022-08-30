@@ -13,7 +13,7 @@ import { weatherApi } from 'services'
 const initialState = {
     cityList: [],
     activeIndex: 0,
-    description: []
+    description: null,
 }
 
 export const setCity = (lat, lon, name) => async (dispatch) => {

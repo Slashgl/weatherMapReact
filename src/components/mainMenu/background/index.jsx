@@ -3,6 +3,7 @@ import style from './styles.module.scss'
 import { changeBackground } from 'utils/changeBackground'
 
 const Background = ({ city }) => {
+    console.log(city)
 
     return (
         <video className={style.backgroundMain} autoPlay loop muted>

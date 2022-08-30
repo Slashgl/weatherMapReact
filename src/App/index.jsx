@@ -6,7 +6,7 @@ import MobileInput from 'components/mobileInput'
 import geolocation from 'utils/geolocation'
 import MainMenu from 'components/mainMenu'
 import Background from 'components/mainMenu/background'
-import {GetCityList, GetDescription} from 'store/selectors/CityList'
+import { GetDescription } from 'store/selectors/CityList'
 import styles from './styles.module.scss'
 
 const App = () => {
@@ -14,17 +14,7 @@ const App = () => {
     const [cityList, setCityList] = useState()
 
     const dispatch = useDispatch()
-    const defaultData = GetCityList()
     const description = GetDescription()
-
-    const setBackground = () => {
-       return defaultData.map((city, index) => {
-            if (city.backgroundDescription === description || index === 0) {
-                return city
-            }
-        })
-    }
-
 
     useEffect(() => {
         geolocation(dispatch)
@@ -33,7 +23,7 @@ const App = () => {
     return (
         <>
             <div className={styles.App}>
-                <Background city={setBackground()}/>
+                <Background city={description}/>
                 <MainMenu />
                 <Panel setPanel={setPanel} />
                 <AsideBar

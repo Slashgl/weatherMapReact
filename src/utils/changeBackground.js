@@ -4,6 +4,7 @@ import rain from '../assets/video/Rain.mp4'
 
 export const changeBackground = (city) => {
     const description = city?.backgroundDescription
+    console.log(description)
     switch (description) {
         case 'Clear':
             return clear
