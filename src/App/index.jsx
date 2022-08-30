@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { GetActiveIndex, GetCityList } from 'store/selectors/CityList'
 import AsideBar from 'components/asideBar'
 import Panel from 'components/asideBar/panel'
 import MobileInput from 'components/mobileInput'
 import geolocation from 'utils/geolocation'
 import MainMenu from 'components/mainMenu'
 import Background from 'components/mainMenu/background'
-import { GetDescription } from 'store/selectors/CityList'
 import styles from './styles.module.scss'
 
 const App = () => {
@@ -14,7 +14,8 @@ const App = () => {
     const [cityList, setCityList] = useState()
 
     const dispatch = useDispatch()
-    const description = GetDescription()
+    const defaultData = GetCityList()
+    const activeIndex = GetActiveIndex()
 
     useEffect(() => {
         geolocation(dispatch)
@@ -23,7 +24,7 @@ const App = () => {
     return (
         <>
             <div className={styles.App}>
-                <Background city={description}/>
+                <Background city={defaultData[activeIndex]} />
                 <MainMenu />
                 <Panel setPanel={setPanel} />
                 <AsideBar

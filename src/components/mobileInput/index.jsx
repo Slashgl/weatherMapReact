@@ -10,26 +10,22 @@ const MobileInput = ({
     cityList,
     setCityList,
     setPanel,
-    setDescr,
 }) => {
     const [iHidden, setIsHidden] = useState(false)
 
-    return (
-        isPanel ?
-            <div className={styles.mobile}>
-                <div className={styles.mobile__header}>
-                    <Input setCityList={setCityList} setIsHidden={setIsHidden} />
-                    <CloseButton setIsHidden={setIsHidden} setPanel={setPanel} />
-                </div>
-                <List
-                    cityList={cityList}
-                    isHidden={iHidden}
-                    setIsHidden={setIsHidden}
-                />
-                <CardAsideBar
-                    setDescr={setDescr}
-                />
-            </div> : null
-    )
+    return isPanel ? (
+        <div className={styles.mobile}>
+            <div className={styles.mobile__header}>
+                <Input setCityList={setCityList} setIsHidden={setIsHidden} />
+                <CloseButton setIsHidden={setIsHidden} setPanel={setPanel} />
+            </div>
+            <List
+                cityList={cityList}
+                isHidden={iHidden}
+                setIsHidden={setIsHidden}
+            />
+            <CardAsideBar />
+        </div>
+    ) : null
 }
 export default MobileInput

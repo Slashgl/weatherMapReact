@@ -5,8 +5,6 @@ import {
     REMOVE_CITY,
     activeIndex,
     ACTIVE_INDEX,
-    setDescription,
-    SET_DESCRIPTION,
 } from '../actions/CityList'
 import { weatherApi } from 'services'
 
@@ -50,10 +48,6 @@ export const setActiveIndex =
         dispatch(activeIndex(index))
     }
 
-export const setDescriptionBackground = (city) => (dispatch) => {
-    dispatch(setDescription(city))
-}
-
 export const cityListReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CITY_LIST:
@@ -67,8 +61,6 @@ export const cityListReducer = (state = initialState, action) => {
             }
         case ACTIVE_INDEX:
             return { ...state, activeIndex: action.payload }
-        case SET_DESCRIPTION:
-            return { ...state, description: action.payload }
         default:
             return state
     }

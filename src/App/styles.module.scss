@@ -1,7 +1,6 @@
 @import 'src/assets/mixins/media';
 
-.App,
-.table {
-  display: flex;
-  justify-content: space-between;
+.App {
+    display: flex;
+    justify-content: space-between;
 }

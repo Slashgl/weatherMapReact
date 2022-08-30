@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import dayjs from 'dayjs'
-import {GetCityList, GetDescription} from 'store/selectors/CityList'
+import { GetCityList } from 'store/selectors/CityList'
 import BackgroundCard from '../backgroundCard'
-import {setActiveIndex, deleteCity, setDescriptionBackground} from 'store/reducers/CityList'
+import { setActiveIndex, deleteCity } from 'store/reducers/CityList'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
 import styles from './styles.module.scss'
@@ -20,10 +20,6 @@ const CardAsideBar = () => {
         dispatch(setActiveIndex(index))
     }
 
-    const setActiveCity = (city) => {
-        dispatch(setDescriptionBackground(city))
-    }
-
     return (
         <>
             {cityList?.map((city, index) => (
@@ -32,7 +28,6 @@ const CardAsideBar = () => {
                     className={styles.cardsAside}
                     onClick={() => {
                         activeIndexData(index)
-                        setActiveCity(city)
                     }}
                 >
                     <BackgroundCard city={city} />

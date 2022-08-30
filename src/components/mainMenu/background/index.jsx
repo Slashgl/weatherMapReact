@@ -1,12 +1,22 @@
-import React from 'react'
-import style from './styles.module.scss'
+import React, { useEffect, useRef } from 'react'
 import { changeBackground } from 'utils/changeBackground'
+import style from './styles.module.scss'
 
 const Background = ({ city }) => {
-    console.log(city)
+    const videoRef = useRef()
+
+    useEffect(() => {
+        videoRef.current?.load()
+    }, [city])
 
     return (
-        <video className={style.backgroundMain} autoPlay loop muted>
+        <video
+            ref={videoRef}
+            className={style.backgroundMain}
+            autoPlay
+            loop
+            muted
+        >
             <source src={changeBackground(city)} />
         </video>
     )
