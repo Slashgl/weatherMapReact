@@ -2,7 +2,7 @@ import clear from '../assets/video/bgVideo.mp4'
 import clouds from '../assets/video/Clouds.mp4'
 import rain from '../assets/video/Rain.mp4'
 
-export const changeBackground = (city) => {
+const changeBackground = (city) => {
     const description = city?.backgroundDescription
 
     switch (description) {
@@ -16,3 +16,5 @@ export const changeBackground = (city) => {
             return clear
     }
 }
+
+export default changeBackground

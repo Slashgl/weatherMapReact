@@ -17,13 +17,20 @@
 
     &__close {
         cursor: pointer;
+        position: absolute;
+        right: -45px;
+        top: -25px;
+        height: 45px;
+        width: 35px;
+    }
 
+    &__cross {
         &:after,
         &:before {
             content: '';
             position: absolute;
-            right: -30px;
-            top: -15px;
+            right: 0;
+            top: 25px;
             width: 30px;
             height: 2px;
             background-color: $white;
@@ -62,5 +69,11 @@
         background: $greyBlue;
         border-radius: 31px;
         border: none;
+
+        &:hover {
+            background: $blue;
+        }
     }
 }
+
+

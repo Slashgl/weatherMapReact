@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './styles.module.scss'
-import { changeBackground } from 'utils/changeBackground'
+import { changeBackground } from 'utils'
 
 const BackgroundCard = ({ city }) => {
     return (

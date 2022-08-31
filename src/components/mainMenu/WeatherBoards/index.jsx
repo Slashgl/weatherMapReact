@@ -1,29 +1,45 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import logoUiIndex from 'assets/img/sun.max.fill.svg'
-import logoSunrise from 'assets/img/sunrise.fill.svg'
-import logoVector from 'assets/img/Vector.svg'
+import logoSunrise  from 'assets/img/sunrise.fill.svg'
 import logoWind from 'assets/img/wind.svg'
+import logoVector from 'assets/img/Vector.svg'
+import logoUiIndex from 'assets/img/sun.max.fill.svg'
 import logoCompass from 'assets/img/compass.svg'
 import logoHumidity from 'assets/img/humidity.svg'
 import logoTemp from 'assets/img/thermometer.svg'
 import logoEye from 'assets/img/eye.fill.svg'
 import styles from './styles.module.scss'
+import Header from './Header'
 
 const WeatherBoards = ({ defaultData, activeIndex }) => {
     const nameBoards = [
-        { boards: 'FEELSLIKE' },
-        { boards: 'HUMIDITY' },
-        { boards: 'VISIBILITY' },
+        {
+            boards: 'FEELSLIKE',
+            data: defaultData[activeIndex]?.tempCurrent,
+            img: logoTemp,
+            description: `Similar to the actual temperature`,
+            sign: `°`,
+        },
+        {
+            boards: 'HUMIDITY',
+            data: defaultData[activeIndex]?.humidity,
+            img: logoHumidity,
+            description: `The dew point is 21° right now.`,
+            sign: '%',
+        },
+        {
+            boards: 'VISIBILITY',
+            data: defaultData[activeIndex]?.visibility,
+            img: logoEye,
+            description: `Visibility is good`,
+            sign: ' км',
+        },
     ]
 
     return (
         <div className={styles.boards}>
             <div className={styles.board}>
-                <div className={styles.board__title}>
-                    <img className={styles.logo} src={logoUiIndex} alt="img" />
-                    uv index
-                </div>
+                <Header src={logoUiIndex} name={`uv index`}/>
                 <div className={styles.board__index}>
                     {Math.round(defaultData[activeIndex]?.uvi)}
                 </div>
@@ -41,10 +57,7 @@ const WeatherBoards = ({ defaultData, activeIndex }) => {
                 </div>
             </div>
             <div className={styles.board}>
-                <div className={styles.board__title}>
-                    <img className={styles.logo} src={logoSunrise} alt="img" />
-                    sunrise
-                </div>
+                <Header src={logoSunrise} name={`sunrise`}/>
                 <div className={styles.board__time}>
                     {dayjs
                         .unix(defaultData[activeIndex]?.time)
@@ -65,10 +78,7 @@ const WeatherBoards = ({ defaultData, activeIndex }) => {
                 </div>
             </div>
             <div className={styles.board}>
-                <div className={styles.board__title}>
-                    <img className={styles.logo} src={logoWind} alt="img" />
-                    Wind
-                </div>
+                <Header src={logoWind} name={`wind`}/>
                 <div className={styles.board__imgCompass}>
                     <img
                         className={styles.board__compass}
@@ -77,70 +87,28 @@ const WeatherBoards = ({ defaultData, activeIndex }) => {
                     />
                 </div>
             </div>
-            {nameBoards?.map((el, index) => (
-                <div key={index} className={styles.board}>
-                    {el.boards === 'HUMIDITY' ? (
-                        <>
-                            <div className={styles.board__title}>
-                                <img
-                                    className={styles.logo}
-                                    src={logoHumidity}
-                                    alt="img"
-                                />
-                                {el.boards}
-                            </div>
-
-                            <div className={styles.board__percent}>
-                                {Math.round(defaultData[activeIndex]?.humidity)}
-                                %
-                            </div>
-                            <div className={styles.board__description}>
-                                The dew point is 21° right now.
-                            </div>
-                        </>
-                    ) : el.boards === 'FEELSLIKE' ? (
-                        <>
-                            <div className={styles.board__title}>
-                                <img
-                                    className={styles.logo}
-                                    src={logoTemp}
-                                    alt="img"
-                                />
-                                {el.boards}
-                            </div>
-
-                            <div className={styles.board__degrees}>
-                                {Math.round(defaultData[activeIndex]?.feels)}
-                                &deg;
-                            </div>
-                            <div className={styles.board__description}>
-                                Similar to the actual temperature
-                            </div>
-                        </>
-                    ) : el.boards === 'VISIBILITY' ? (
-                        <>
-                            <div className={styles.board__title}>
-                                <img
-                                    className={styles.logo}
-                                    src={logoEye}
-                                    alt="img"
-                                />
-                                {el.boards}
-                            </div>
-
-                            <div className={styles.board__visibility}>
-                                {String(
-                                    defaultData[activeIndex]?.visibility
-                                ).slice(0, 2)}{' '}
-                                км
-                            </div>
-                            <div className={styles.board__description}>
-                                Visibility is good
-                            </div>
-                        </>
-                    ) : null}
-                </div>
-            ))}
+            {nameBoards?.map((el, index) => {
+                if (
+                    el.boards === 'HUMIDITY' ||
+                    el.boards === 'FEELSLIKE' ||
+                    el.boards === 'VISIBILITY'
+                ) {
+                    return (
+                        <div key={index} className={styles.board}>
+                            <>
+                                <Header src={el.img} name={el.boards} />
+                                <div className={styles.board__percent}>
+                                    {Math.round(el.data)}
+                                    {el.sign}
+                                </div>
+                                <div className={styles.board__description}>
+                                    {el.description}
+                                </div>
+                            </>
+                        </div>
+                    )
+                }
+            })}
         </div>
     )
 }

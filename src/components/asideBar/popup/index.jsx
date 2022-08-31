@@ -10,12 +10,11 @@ const Popup = ({ isActive, setIsActive, setCityList, cityList }) => {
                 className={styles.popup__content}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div
-                    className={styles.popup__close}
-                    onClick={() => {
-                        setIsActive(false)
-                    }}
-                ></div>
+                <div className={styles.popup__close} onClick={() => {
+                    setIsActive(false)
+                }}>
+                    <div className={styles.popup__cross}></div>
+                </div>
                 <Input setCityList={setCityList} />
                 <List cityList={cityList} />
                 <button

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { changeBackground } from 'utils/changeBackground'
+import { changeBackground } from 'utils'
 import style from './styles.module.scss'
 
 const Background = ({ city }) => {

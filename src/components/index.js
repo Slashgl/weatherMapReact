@@ -1,5 +1,4 @@
 import AsideBar from './asideBar'
-import mainMenu from './mainMenu'
-import mobileInput from './asideBar/mobileInput'
+import MainMenu from './mainMenu'
 
-export { AsideBar, mainMenu, mobileInput }
+export { AsideBar, MainMenu }

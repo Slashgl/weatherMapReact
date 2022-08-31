@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { GetActiveIndex, GetCityList } from 'store/selectors/CityList'
-import AsideBar from 'components/asideBar'
+import {AsideBar, MainMenu} from 'components'
 import geolocation from 'utils/geolocation'
-import MainMenu from 'components/mainMenu'
 import Background from 'components/mainMenu/background'
 import styles from './styles.module.scss'
 
