@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
-import Input from '../asideBar/popup/Input'
-import List from '../asideBar/popup/List'
-import CardAsideBar from '../asideBar/cardAsideBar'
+import Input from '../popup/Input'
+import List from '../popup/List'
+import CardAsideBar from '../cardAsideBar'
 import CloseButton from './closeButton'
 import styles from './styles.module.scss'
 
-const MobileInput = ({
-    isPanel,
-    cityList,
-    setCityList,
-    setPanel,
-}) => {
+const MobileInput = ({ isPanel, cityList, setCityList, setPanel }) => {
     const [iHidden, setIsHidden] = useState(false)
 
     return isPanel ? (
