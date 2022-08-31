@@ -54,7 +54,7 @@ const CardAsideBar = () => {
                             {` L:${Math.round(city.tempLow)}`}&deg;
                         </div>
                     </div>
-                    <IconButton
+                    {index === 0 ? null : <IconButton
                         style={{
                             position: 'absolute',
                             color: 'white',
@@ -68,6 +68,7 @@ const CardAsideBar = () => {
                     >
                         <DeleteIcon />
                     </IconButton>
+                    }
                 </div>
             ))}
         </>
