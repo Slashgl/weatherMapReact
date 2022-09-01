@@ -6,7 +6,9 @@ import MobileInput from './mobileInput'
 import Panel from './panel'
 import styles from './styles.module.scss'
 
-const AsideBar = ({ setCityList, cityList, setPanel, isPanel }) => {
+const AsideBar = () => {
+    const [isPanel, setPanel] = useState(false)
+    const [cityList, setCityList] = useState()
     const [isModalActive, setIsModalActive] = useState(false)
 
     return (

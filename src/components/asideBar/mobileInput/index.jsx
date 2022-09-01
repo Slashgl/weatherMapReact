@@ -16,7 +16,7 @@ const MobileInput = ({
     return isPanel ? (
         <div className={styles.mobile}>
             <div className={styles.mobile__header}>
-                <Input setCityList={setCityList} setIsHidden={setIsHidden} />
+                <Input setCityList={setCityList} />
                 <CloseButton
                     setIsHidden={setIsHidden}
                     setPanel={setPanel}

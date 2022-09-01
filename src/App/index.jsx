@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import {AsideBar, MainMenu} from 'components'
-import geolocation from 'utils/geolocation'
-import Background from 'components/mainMenu/background'
+import { AsideBar, MainMenu, Background } from 'components'
+import { geolocation } from 'utils'
 import styles from './styles.module.scss'
 
 const App = () => {
-    const [isPanel, setPanel] = useState(false)
-    const [cityList, setCityList] = useState()
-
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -20,12 +16,7 @@ const App = () => {
             <div className={styles.App}>
                 <Background />
                 <MainMenu />
-                <AsideBar
-                    cityList={cityList}
-                    setCityList={setCityList}
-                    setPanel={setPanel}
-                    isPanel={isPanel}
-                />
+                <AsideBar />
             </div>
         </>
     )

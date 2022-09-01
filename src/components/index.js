@@ -1,4 +1,4 @@
 import AsideBar from './asideBar'
 import MainMenu from './mainMenu'
-
-export { AsideBar, MainMenu }
+import Background from './mainMenu/background'
+export { AsideBar, MainMenu, Background }
