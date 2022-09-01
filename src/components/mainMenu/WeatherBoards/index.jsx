@@ -41,55 +41,59 @@ const WeatherBoards = ({ defaultData, activeIndex }) => {
 
     return (
         <div className={styles.boards}>
-            <div className={styles.board}>
-                <Header src={logoUiIndex} name={`uv index`} />
-                <div className={styles.board__index}>
-                    {Math.round(defaultData[activeIndex]?.uvi)}
-                </div>
-                <div className={styles.board__level}>Middle</div>
-                <div className={styles.board__lvlImg}>
-                    <span
-                        className={styles.board__circle}
-                        style={{
-                            left: `${defaultData[activeIndex]?.uvi}px`,
-                        }}
-                    ></span>
-                </div>
-                <div className={styles.board__description}>
-                    Middle for the rest of the day.
-                </div>
-            </div>
-            <div className={styles.board}>
-                <Header src={logoSunrise} name={`sunrise`} />
-                <div className={styles.board__time}>
-                    {dayjs
-                        .unix(defaultData[activeIndex]?.time)
-                        .format('hh:mm A')}
-                </div>
-                <div className={styles.board__imgVector}>
-                    <img
-                        className={styles.board__vector}
-                        src={logoVector}
-                        alt="img"
-                    />
-                </div>
-                <div className={styles.board__description}>
-                    Sunrise:{' '}
-                    {dayjs
-                        .unix(defaultData[activeIndex]?.sunrise)
-                        .format('hh:mm A')}
-                </div>
-            </div>
-            <div className={styles.board}>
-                <Header src={logoWind} name={`wind`} />
-                <div className={styles.board__imgCompass}>
-                    <img
-                        className={styles.board__compass}
-                        src={logoCompass}
-                        alt="img"
-                    />
-                </div>
-            </div>
+            {defaultData[activeIndex] ? (
+                <>
+                    <div className={styles.board}>
+                        <Header src={logoUiIndex} name={`uv index`} />
+                        <div className={styles.board__index}>
+                            {Math.round(defaultData[activeIndex]?.uvi)}
+                        </div>
+                        <div className={styles.board__level}>Middle</div>
+                        <div className={styles.board__lvlImg}>
+                            <span
+                                className={styles.board__circle}
+                                style={{
+                                    left: `${defaultData[activeIndex]?.uvi}px`,
+                                }}
+                            ></span>
+                        </div>
+                        <div className={styles.board__description}>
+                            Middle for the rest of the day.
+                        </div>
+                    </div>
+                    <div className={styles.board}>
+                        <Header src={logoSunrise} name={`sunrise`} />
+                        <div className={styles.board__time}>
+                            {dayjs
+                                .unix(defaultData[activeIndex]?.time)
+                                .format('hh:mm A')}
+                        </div>
+                        <div className={styles.board__imgVector}>
+                            <img
+                                className={styles.board__vector}
+                                src={logoVector}
+                                alt="img"
+                            />
+                        </div>
+                        <div className={styles.board__description}>
+                            Sunrise:{' '}
+                            {dayjs
+                                .unix(defaultData[activeIndex]?.sunrise)
+                                .format('hh:mm A')}
+                        </div>
+                    </div>
+                    <div className={styles.board}>
+                        <Header src={logoWind} name={`wind`} />
+                        <div className={styles.board__imgCompass}>
+                            <img
+                                className={styles.board__compass}
+                                src={logoCompass}
+                                alt="img"
+                            />
+                        </div>
+                    </div>
+                </>
+            ) : null}
             {nameBoards?.map((el, index) => {
                 if (
                     el.boards === 'HUMIDITY' ||
@@ -101,7 +105,7 @@ const WeatherBoards = ({ defaultData, activeIndex }) => {
                             <>
                                 <Header src={el.img} name={el.boards} />
                                 <div className={styles.board__percent}>
-                                    {Math.round(el.data)}
+                                    {String(el.data).slice(0, 2)}
                                     {el.sign}
                                 </div>
                                 <div className={styles.board__description}>

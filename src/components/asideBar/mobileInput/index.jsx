@@ -10,7 +10,6 @@ const MobileInput = ({
     cityList,
     setCityList,
     setPanel,
-    setIsClearInput,
 }) => {
     const [iHidden, setIsHidden] = useState(false)
 
@@ -21,7 +20,6 @@ const MobileInput = ({
                 <CloseButton
                     setIsHidden={setIsHidden}
                     setPanel={setPanel}
-                    setIsClearInput={setIsClearInput}
                 />
             </div>
             <List

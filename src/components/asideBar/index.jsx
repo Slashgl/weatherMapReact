@@ -8,7 +8,6 @@ import styles from './styles.module.scss'
 
 const AsideBar = ({ setCityList, cityList, setPanel, isPanel }) => {
     const [isModalActive, setIsModalActive] = useState(false)
-    const [isClearInput, setIsClearInput] = useState(false)
 
     return (
         <>
@@ -24,7 +23,6 @@ const AsideBar = ({ setCityList, cityList, setPanel, isPanel }) => {
                     setCityList={setCityList}
                     isActive={isModalActive}
                     setIsActive={setIsModalActive}
-                    isClearInput={isClearInput}
                 />
             </div>
             <MobileInput
@@ -32,7 +30,6 @@ const AsideBar = ({ setCityList, cityList, setPanel, isPanel }) => {
                 setCityList={setCityList}
                 isPanel={isPanel}
                 setPanel={setPanel}
-                setIsClearInput={setIsClearInput}
             />
             <Panel setPanel={setPanel} />
         </>
