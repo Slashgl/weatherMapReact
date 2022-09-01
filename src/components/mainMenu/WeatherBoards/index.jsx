@@ -1,6 +1,7 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import logoSunrise  from 'assets/img/sunrise.fill.svg'
+import Header from './Header'
+import logoSunrise from 'assets/img/sunrise.fill.svg'
 import logoWind from 'assets/img/wind.svg'
 import logoVector from 'assets/img/Vector.svg'
 import logoUiIndex from 'assets/img/sun.max.fill.svg'
@@ -9,7 +10,7 @@ import logoHumidity from 'assets/img/humidity.svg'
 import logoTemp from 'assets/img/thermometer.svg'
 import logoEye from 'assets/img/eye.fill.svg'
 import styles from './styles.module.scss'
-import Header from './Header'
+
 
 const WeatherBoards = ({ defaultData, activeIndex }) => {
     const nameBoards = [
@@ -39,7 +40,7 @@ const WeatherBoards = ({ defaultData, activeIndex }) => {
     return (
         <div className={styles.boards}>
             <div className={styles.board}>
-                <Header src={logoUiIndex} name={`uv index`}/>
+                <Header src={logoUiIndex} name={`uv index`} />
                 <div className={styles.board__index}>
                     {Math.round(defaultData[activeIndex]?.uvi)}
                 </div>
@@ -57,7 +58,7 @@ const WeatherBoards = ({ defaultData, activeIndex }) => {
                 </div>
             </div>
             <div className={styles.board}>
-                <Header src={logoSunrise} name={`sunrise`}/>
+                <Header src={logoSunrise} name={`sunrise`} />
                 <div className={styles.board__time}>
                     {dayjs
                         .unix(defaultData[activeIndex]?.time)
@@ -78,7 +79,7 @@ const WeatherBoards = ({ defaultData, activeIndex }) => {
                 </div>
             </div>
             <div className={styles.board}>
-                <Header src={logoWind} name={`wind`}/>
+                <Header src={logoWind} name={`wind`} />
                 <div className={styles.board__imgCompass}>
                     <img
                         className={styles.board__compass}

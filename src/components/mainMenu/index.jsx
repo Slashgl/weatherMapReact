@@ -15,15 +15,9 @@ const MainMenu = () => {
             <div className={styles.mainMenu}>
                 <Header defaultData={defaultData} activeIndex={activeIndex} />
                 <div className={styles.table}>
-                    <Forecast
-                        defaultData={defaultData}
-                        activeIndex={activeIndex}
-                    />
+                    <Forecast activeIndex={activeIndex} />
                     <div>
-                        <WeatherToday
-                            defaultData={defaultData}
-                            activeIndex={activeIndex}
-                        />
+                        <WeatherToday activeIndex={activeIndex} />
                         <WeatherBoards
                             defaultData={defaultData}
                             activeIndex={activeIndex}

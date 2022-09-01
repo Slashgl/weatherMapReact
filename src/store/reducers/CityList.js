@@ -4,7 +4,7 @@ import {
     removeCity,
     REMOVE_CITY,
     activeIndex,
-    ACTIVE_INDEX,
+    ACTIVE_INDEX, setHourlyList, SET_HOURLY_LIST, setForecastList, SET_FORECAST_LIST,
 } from '../actions/CityList'
 import { weatherApi } from 'services'
 
@@ -12,6 +12,8 @@ const initialState = {
     cityList: [],
     activeIndex: 0,
     description: null,
+    hourlyList: [],
+    forecastList: []
 }
 
 export const setCity = (lat, lon, name) => async (dispatch) => {
@@ -27,15 +29,23 @@ export const setCity = (lat, lon, name) => async (dispatch) => {
         tempCurrent: res.data.current.temp,
         tempHigh: res.data.daily[0].temp.max,
         tempLow: res.data.daily[0].temp.min,
-        forecast: res.data.daily,
-        hourly: res.data.hourly,
         feels: res.data.current.feels_like,
         humidity: res.data.current.humidity,
         sunrise: res.data.current.sunrise,
         uvi: res.data.current.uvi,
         visibility: res.data.current.visibility,
     }
+
+    let hourlyList = {
+        hourly: res.data.hourly.slice(0, 10),
+    }
+
+    let forecastList = {
+        forecast: res.data.daily,
+    }
     dispatch(setCityList(cityData))
+    dispatch(setHourlyList(hourlyList))
+    dispatch(setForecastList(forecastList))
 }
 
 export const deleteCity = (id) => (dispatch) => {
@@ -61,6 +71,10 @@ export const cityListReducer = (state = initialState, action) => {
             }
         case ACTIVE_INDEX:
             return { ...state, activeIndex: action.payload }
+        case SET_HOURLY_LIST:
+            return {...state, hourlyList: [...state.hourlyList, action.payload]}
+        case SET_FORECAST_LIST:
+            return {...state, forecastList: [...state.forecastList, action.payload]}
         default:
             return state
     }

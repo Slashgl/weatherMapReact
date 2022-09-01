@@ -1,14 +1,17 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import styles from './styles.module.scss'
+import { GetForecastList } from '../../../store/selectors/CityList'
 
-const Forecast = ({ defaultData, activeIndex }) => {
+const Forecast = ({ activeIndex }) => {
+    const data = GetForecastList()
+
     return (
         <div className={styles.forecast}>
             <div className={styles.title}>10-DAY FORECAST</div>
             <ul className={styles.forecast__items}>
-                {defaultData[activeIndex] &&
-                    defaultData[activeIndex].forecast.map((day, index) => (
+                {data[activeIndex] &&
+                    data[activeIndex].forecast.map((day, index) => (
                         <li
                             key={`key_${index}`}
                             className={styles.forecast__item}

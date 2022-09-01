@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { setCity } from 'store'
 import { useDispatch } from 'react-redux'
 import styles from './styles.module.scss'
@@ -13,10 +13,12 @@ const List = ({ cityList, isHidden, setIsHidden }) => {
             console.log(e)
         }
     }
+
+
     return (
         <ul
             className={styles.popup__results}
-            style={{ display: isHidden ? 'block' : null }}
+            style={{ display: isHidden ? 'block' : null}}
         >
             {cityList &&
                 cityList.map((el, index) => (
@@ -25,6 +27,7 @@ const List = ({ cityList, isHidden, setIsHidden }) => {
                         className={styles.popup__item}
                         onClick={() => {
                             addCity(el)
+                            setIsHidden(false)
                         }}
                     >
                         <div className={styles.popup__name}>{el.name}</div>

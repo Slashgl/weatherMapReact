@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 
-const CloseButton = ({ setIsHidden, setPanel }) => {
+const CloseButton = ({ setIsHidden, setPanel, setIsClearInput }) => {
     const addScrollBody = () => {
         return (document.body.style.overflowY = 'visible')
     }
@@ -14,6 +14,7 @@ const CloseButton = ({ setIsHidden, setPanel }) => {
                 setIsHidden(false)
                 setPanel(false)
                 addScrollBody()
+                setIsClearInput(true)
             }}
         >
             Отмена
