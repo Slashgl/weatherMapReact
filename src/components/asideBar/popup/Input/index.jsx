@@ -3,7 +3,7 @@ import debounce from 'lodash.debounce'
 import { weatherApi } from 'services'
 import styles from './styles.module.scss'
 
-const Input = ({ setCityList }) => {
+const Input = ({ setCityList, setIsHiddenMobileList, isHiddenMobileList }) => {
     const [cityInput, setCityInput] = useState('')
 
     const updateInput = (e) => setCityInput(e?.target?.value)
@@ -29,6 +29,9 @@ const Input = ({ setCityList }) => {
                 type="text"
                 onChange={debounce(updateInput, 500)}
                 autoFocus
+                onClick={() => {
+                    setIsHiddenMobileList(!isHiddenMobileList)
+                }}
             />
         </label>
     )

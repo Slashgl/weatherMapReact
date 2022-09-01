@@ -20,9 +20,10 @@
         }
 
         @include screenMax1140 {
+            position: relative;
             width: 100%;
-            border-radius: 47px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            border-radius: 27px;
             z-index: 100;
         }
     }

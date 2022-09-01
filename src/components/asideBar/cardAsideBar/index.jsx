@@ -8,7 +8,9 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
 import styles from './styles.module.scss'
 
-const CardAsideBar = () => {
+const CardAsideBar = ({setPanel, isPanel}) => {
+    console.log(isPanel)
+
     const cityList = GetCityList()
     const dispatch = useDispatch()
 
@@ -20,6 +22,10 @@ const CardAsideBar = () => {
         dispatch(setActiveIndex(index))
     }
 
+    const setHidingAsideBar = () => {
+        setPanel(!isPanel)
+    }
+
     return (
         <>
             {cityList?.map((city, index) => (
@@ -28,6 +34,7 @@ const CardAsideBar = () => {
                     className={styles.cardsAside}
                     onClick={() => {
                         activeIndexData(index)
+                        setHidingAsideBar()
                     }}
                 >
                     <BackgroundCard city={city} />

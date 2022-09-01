@@ -10,6 +10,7 @@ const AsideBar = () => {
     const [isPanel, setPanel] = useState(false)
     const [cityList, setCityList] = useState()
     const [isModalActive, setIsModalActive] = useState(false)
+    const [isHiddenMobileList, setIsHiddenMobileList] = useState(false)
 
     return (
         <>
@@ -19,12 +20,14 @@ const AsideBar = () => {
                     placeholder={`Search for a city or airport`}
                     setIsModalActive={setIsModalActive}
                 />
-                <CardAsideBar />
+                <CardAsideBar setPanel={setPanel} isPanel={isPanel}/>
                 <Popup
                     cityList={cityList}
                     setCityList={setCityList}
                     isActive={isModalActive}
                     setIsActive={setIsModalActive}
+                    isHiddenMobileList={isHiddenMobileList}
+                    setIsHiddenMobileList={setIsHiddenMobileList}
                 />
             </div>
             <MobileInput
@@ -32,8 +35,10 @@ const AsideBar = () => {
                 setCityList={setCityList}
                 isPanel={isPanel}
                 setPanel={setPanel}
+                isHiddenMobileList={isHiddenMobileList}
+                setIsHiddenMobileList={setIsHiddenMobileList}
             />
-            <Panel setPanel={setPanel} />
+            <Panel setPanel={setPanel} isPanel={isPanel} />
         </>
     )
 }
