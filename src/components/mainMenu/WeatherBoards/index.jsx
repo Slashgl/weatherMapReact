@@ -1,16 +1,18 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import Header from './Header'
-import logoSunrise from 'assets/img/sunrise.fill.svg'
-import logoWind from 'assets/img/wind.svg'
-import logoVector from 'assets/img/Vector.svg'
-import logoUiIndex from 'assets/img/sun.max.fill.svg'
-import logoCompass from 'assets/img/compass.svg'
-import logoHumidity from 'assets/img/humidity.svg'
-import logoTemp from 'assets/img/thermometer.svg'
-import logoEye from 'assets/img/eye.fill.svg'
-import styles from './styles.module.scss'
+import {
+    logoSunrise,
+    logoWind,
+    logoVector,
+    logoUiIndex,
+    logoCompass,
+    logoHumidity,
+    logoTemp,
+    logoEye,
+} from 'assets'
 
+import styles from './styles.module.scss'
 
 const WeatherBoards = ({ defaultData, activeIndex }) => {
     const nameBoards = [

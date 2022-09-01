@@ -6,7 +6,6 @@ import styles from './styles.module.scss'
 const Input = ({ setCityList, setIsHidden, isClearInput }) => {
     const [cityInput, setCityInput] = useState('')
 
-
     const updateInput = (e) => setCityInput(e?.target?.value)
 
     const searchCity = async (city) => {

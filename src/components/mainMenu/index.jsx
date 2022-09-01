@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetActiveIndex, GetCityList } from '../../store/selectors/CityList'
+import { GetActiveIndex, GetCityList } from 'store'
 import Header from './Header'
 import Forecast from './Forecast'
 import WeatherToday from './WeatherToday'

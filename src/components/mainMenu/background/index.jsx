@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { changeBackground } from 'utils'
-import { GetActiveIndex, GetCityList } from '../../../store/selectors/CityList'
+import { GetActiveIndex, GetCityList } from 'store'
 import style from './styles.module.scss'
 
 const Background = () => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { useDispatch } from 'react-redux'
-import { setActiveIndex, deleteCity } from 'store/reducers/CityList'
-import { GetCityList } from 'store/selectors/CityList'
+import { setActiveIndex, deleteCity } from 'store'
+import { GetCityList } from 'store'
 import BackgroundCard from '../backgroundCard'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
@@ -54,21 +54,22 @@ const CardAsideBar = () => {
                             {` L:${Math.round(city.tempLow)}`}&deg;
                         </div>
                     </div>
-                    {index === 0 ? null : <IconButton
-                        style={{
-                            position: 'absolute',
-                            color: 'white',
-                            right: '0',
-                        }}
-                        aria-label="delete"
-                        onClick={(e) => {
-                            e.stopPropagation()
-                            removeCardAside(city.id)
-                        }}
-                    >
-                        <DeleteIcon />
-                    </IconButton>
-                    }
+                    {index === 0 ? null : (
+                        <IconButton
+                            style={{
+                                position: 'absolute',
+                                color: 'white',
+                                right: '0',
+                            }}
+                            aria-label="delete"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                removeCardAside(city.id)
+                            }}
+                        >
+                            <DeleteIcon />
+                        </IconButton>
+                    )}
                 </div>
             ))}
         </>

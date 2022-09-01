@@ -1,19 +1,17 @@
-import clear from '../assets/video/bgVideo.mp4'
-import clouds from '../assets/video/Clouds.mp4'
-import rain from '../assets/video/Rain.mp4'
+import { videoClouds, videoRain, videoBg } from 'assets'
 
 const changeBackground = (city) => {
     const description = city?.backgroundDescription
 
     switch (description) {
         case 'Clear':
-            return clear
+            return videoBg
         case 'Clouds':
-            return clouds
+            return videoClouds
         case 'Rain':
-            return rain
+            return videoRain
         default:
-            return clear
+            return videoBg
     }
 }
 

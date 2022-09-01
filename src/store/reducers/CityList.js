@@ -4,7 +4,11 @@ import {
     removeCity,
     REMOVE_CITY,
     activeIndex,
-    ACTIVE_INDEX, setHourlyList, SET_HOURLY_LIST, setForecastList, SET_FORECAST_LIST,
+    ACTIVE_INDEX,
+    setHourlyList,
+    SET_HOURLY_LIST,
+    setForecastList,
+    SET_FORECAST_LIST,
 } from '../actions/CityList'
 import { weatherApi } from 'services'
 
@@ -13,7 +17,7 @@ const initialState = {
     activeIndex: 0,
     description: null,
     hourlyList: [],
-    forecastList: []
+    forecastList: [],
 }
 
 export const setCity = (lat, lon, name) => async (dispatch) => {
@@ -72,9 +76,15 @@ export const cityListReducer = (state = initialState, action) => {
         case ACTIVE_INDEX:
             return { ...state, activeIndex: action.payload }
         case SET_HOURLY_LIST:
-            return {...state, hourlyList: [...state.hourlyList, action.payload]}
+            return {
+                ...state,
+                hourlyList: [...state.hourlyList, action.payload],
+            }
         case SET_FORECAST_LIST:
-            return {...state, forecastList: [...state.forecastList, action.payload]}
+            return {
+                ...state,
+                forecastList: [...state.forecastList, action.payload],
+            }
         default:
             return state
     }

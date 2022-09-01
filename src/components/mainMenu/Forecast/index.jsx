@@ -1,7 +1,7 @@
 import React from 'react'
 import dayjs from 'dayjs'
+import { GetForecastList } from 'store'
 import styles from './styles.module.scss'
-import { GetForecastList } from '../../../store/selectors/CityList'
 
 const Forecast = ({ activeIndex }) => {
     const data = GetForecastList()

@@ -1,8 +1,7 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { GetHourlyList } from '../../../store/selectors/CityList'
+import { GetHourlyList } from 'store'
 import styles from './styles.module.scss'
-
 
 const WeatherToday = ({ activeIndex }) => {
     const data = GetHourlyList()
