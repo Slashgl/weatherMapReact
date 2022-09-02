@@ -1,15 +1,16 @@
 import React from 'react'
+import styles from '../styles.module.scss'
 
-const Input = ({ className, placeholder, setIsModalActive }) => {
+const Input = ({ setIsModalActive }) => {
     const openPopup = () => {
         setIsModalActive(true)
     }
 
     return (
-        <label className={className}>
+        <label className={styles.aside__input}>
             <input
                 type="text"
-                placeholder={placeholder}
+                placeholder={`Search for a city or airport`}
                 onClick={() => {
                     openPopup()
                 }}

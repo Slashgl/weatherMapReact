@@ -8,3 +8,4 @@ export const GetHourlyList = () =>
     useSelector((state) => state.cityListReducer.hourlyList)
 export const GetForecastList = () =>
     useSelector((state) => state.cityListReducer.forecastList)
+

@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, {useEffect, useState} from 'react'
 import { useDispatch } from 'react-redux'
 import { AsideBar, MainMenu, Background } from 'components'
 import { geolocation } from 'utils'
 import styles from './styles.module.scss'
 
 const App = () => {
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -16,7 +17,7 @@ const App = () => {
             <div className={styles.App}>
                 <Background />
                 <MainMenu />
-                <AsideBar />
+                <AsideBar/>
             </div>
         </>
     )

@@ -1,17 +1,16 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { useDispatch } from 'react-redux'
-import { setActiveIndex, deleteCity } from 'store'
-import { GetCityList } from 'store'
-import BackgroundCard from '../backgroundCard'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
+import { useDispatch } from 'react-redux'
+import { setActiveIndex, deleteCity, GetCityList } from 'store'
+import BackgroundCard from '../backgroundCard'
+
 import styles from './styles.module.scss'
 
-const CardAsideBar = ({setPanel, isPanel}) => {
-    console.log(isPanel)
+const CardAsideBar = ({ setPanel, isPanel }) => {
+    const defaultData = GetCityList()
 
-    const cityList = GetCityList()
     const dispatch = useDispatch()
 
     const removeCardAside = (id) => {
@@ -28,7 +27,7 @@ const CardAsideBar = ({setPanel, isPanel}) => {
 
     return (
         <>
-            {cityList?.map((city, index) => (
+            {defaultData?.map((city, index) => (
                 <div
                     key={`key_${index}`}
                     className={styles.cardsAside}

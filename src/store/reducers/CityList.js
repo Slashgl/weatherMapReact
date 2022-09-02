@@ -47,6 +47,7 @@ export const setCity = (lat, lon, name) => async (dispatch) => {
     let forecastList = {
         forecast: res.data.daily,
     }
+
     dispatch(setCityList(cityData))
     dispatch(setHourlyList(hourlyList))
     dispatch(setForecastList(forecastList))

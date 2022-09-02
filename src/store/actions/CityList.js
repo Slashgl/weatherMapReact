@@ -19,9 +19,9 @@ export const activeIndex = (payload) => ({
 })
 export const setHourlyList = (payload) => ({
     type: SET_HOURLY_LIST,
-    payload
+    payload,
 })
 export const setForecastList = (payload) => ({
     type: SET_FORECAST_LIST,
-    payload
+    payload,
 })

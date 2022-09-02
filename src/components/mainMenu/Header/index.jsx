@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 
-const Index = ({ defaultData, activeIndex }) => {
+const Header = ({ defaultData, activeIndex }) => {
     return (
         <div className={styles.header}>
             {defaultData[activeIndex] ? (
@@ -28,4 +28,4 @@ const Index = ({ defaultData, activeIndex }) => {
     )
 }
 
-export default Index
+export default Header

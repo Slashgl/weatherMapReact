@@ -16,8 +16,6 @@ const AsideBar = () => {
         <>
             <div className={styles.aside}>
                 <Input
-                    className={styles.aside__input}
-                    placeholder={`Search for a city or airport`}
                     setIsModalActive={setIsModalActive}
                 />
                 <CardAsideBar setPanel={setPanel} isPanel={isPanel}/>

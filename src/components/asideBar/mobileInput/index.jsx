@@ -23,10 +23,7 @@ const MobileInput = ({
                     setIsHiddenMobileList={setIsHiddenMobileList}
                     isHiddenMobileList={isHiddenMobileList}
                 />
-                <CloseButton
-                    setIsHidden={setIsHidden}
-                    setPanel={setPanel}
-                />
+                <CloseButton setIsHidden={setIsHidden} setPanel={setPanel} />
             </div>
             <List
                 cityList={cityList}
@@ -35,7 +32,7 @@ const MobileInput = ({
                 isHiddenMobileList={isHiddenMobileList}
                 setIsHiddenMobileList={setIsHiddenMobileList}
             />
-            <CardAsideBar setPanel={setPanel} isPanel={isPanel}/>
+            <CardAsideBar setPanel={setPanel} isPanel={isPanel} />
         </div>
     ) : null
 }
