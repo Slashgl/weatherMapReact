@@ -38,8 +38,8 @@ const WeatherBoardsFooter = ({ defaultData, activeIndex }) => {
                 el.boards === 'VISIBILITY'
             ) {
                 return (
-                    <Board>
-                        <Header src={el.img} name={`uv index`} />
+                    <Board key={index}>
+                        <Header src={el.img} name={el.boards} />
                         <div className={styles.board__percent}>
                             {String(el.data).slice(0, 2)}
                             {el.sign}

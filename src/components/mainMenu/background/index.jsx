@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { changeBackground } from 'utils'
 import { GetActiveIndex, GetCityList } from 'store'
-import style from './styles.module.scss'
+import styles from './styles.module.scss'
 
 const Background = () => {
     const defaultData = GetCityList()
@@ -16,12 +16,12 @@ const Background = () => {
     return (
         <video
             ref={videoRef}
-            className={style.backgroundMain}
-            autoPlay
+            className={styles.backgroundMain}
             loop
+            autoPlay
             muted
         >
-            <source src={changeBackground(defaultData[activeIndex])} />
+            <source src={changeBackground(defaultData[activeIndex])}/>
         </video>
     )
 }

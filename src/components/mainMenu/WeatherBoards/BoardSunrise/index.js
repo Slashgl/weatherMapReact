@@ -8,7 +8,7 @@ import styles from '../styles.module.scss'
 const BoardsSunrise = ({ defaultData, activeIndex }) => {
     return (
         <Board>
-            <Header src={logoSunrise} name={`uv index`} />
+            <Header src={logoSunrise} name={`sunrise`} />
             <div className={styles.board__time}>
                 {dayjs.unix(defaultData[activeIndex]?.time).format('hh:mm A')}
             </div>

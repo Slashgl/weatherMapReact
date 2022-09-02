@@ -1,11 +1,11 @@
 import React from 'react'
 import { changeBackground } from 'utils'
-import style from './styles.module.scss'
+import styles from './styles.module.scss'
 
 const BackgroundCard = ({ city }) => {
     return (
-        <video className={style.background} autoPlay loop muted>
-            <source src={changeBackground(city)} />
+        <video className={styles.background} width='100%' height='100%' muted loop autoPlay>
+            <source src={changeBackground(city)}/>
         </video>
     )
 }

@@ -7,7 +7,7 @@ import styles from '../styles.module.scss'
 const BoardsCompass = () => {
     return (
         <Board>
-            <Header src={logoWind} name={`uv index`} />
+            <Header src={logoWind} name={`wind`} />
             <div className={styles.board__imgCompass}>
                 <img
                     className={styles.board__compass}
