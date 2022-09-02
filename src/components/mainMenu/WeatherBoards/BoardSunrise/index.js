@@ -1,13 +1,14 @@
 import React from 'react'
 import dayjs from 'dayjs'
+import Board from '../Board'
 import Header from '../Header'
 import { logoSunrise, logoVector } from 'assets'
 import styles from '../styles.module.scss'
 
 const BoardsSunrise = ({ defaultData, activeIndex }) => {
     return (
-        <div className={styles.board}>
-            <Header src={logoSunrise} name={`sunrise`} />
+        <Board>
+            <Header src={logoSunrise} name={`uv index`} />
             <div className={styles.board__time}>
                 {dayjs.unix(defaultData[activeIndex]?.time).format('hh:mm A')}
             </div>
@@ -24,7 +25,7 @@ const BoardsSunrise = ({ defaultData, activeIndex }) => {
                     .unix(defaultData[activeIndex]?.sunrise)
                     .format('hh:mm A')}
             </div>
-        </div>
+        </Board>
     )
 }
 

@@ -1,12 +1,13 @@
 import React from 'react'
+import Board from '../Board'
 import Header from '../Header'
 import { logoCompass, logoWind } from 'assets'
 import styles from '../styles.module.scss'
 
 const BoardsCompass = () => {
     return (
-        <div className={styles.board}>
-            <Header src={logoWind} name={`wind`} />
+        <Board>
+            <Header src={logoWind} name={`uv index`} />
             <div className={styles.board__imgCompass}>
                 <img
                     className={styles.board__compass}
@@ -14,7 +15,7 @@ const BoardsCompass = () => {
                     alt="img"
                 />
             </div>
-        </div>
+        </Board>
     )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../Header'
+import Board from '../Board'
 import { logoEye, logoHumidity, logoTemp } from 'assets'
 import styles from '../styles.module.scss'
 
@@ -37,18 +38,16 @@ const WeatherBoardsFooter = ({ defaultData, activeIndex }) => {
                 el.boards === 'VISIBILITY'
             ) {
                 return (
-                    <div key={index} className={styles.board}>
-                        <>
-                            <Header src={el.img} name={el.boards} />
-                            <div className={styles.board__percent}>
-                                {String(el.data).slice(0, 2)}
-                                {el.sign}
-                            </div>
-                            <div className={styles.board__description}>
-                                {el.description}
-                            </div>
-                        </>
-                    </div>
+                    <Board>
+                        <Header src={el.img} name={`uv index`} />
+                        <div className={styles.board__percent}>
+                            {String(el.data).slice(0, 2)}
+                            {el.sign}
+                        </div>
+                        <div className={styles.board__description}>
+                            {el.description}
+                        </div>
+                    </Board>
                 )
             }
         })
