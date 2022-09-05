@@ -23,4 +23,8 @@
         display: flex;
         justify-content: space-between;
     }
+
+    &__close {
+        display: none;
+    }
 }

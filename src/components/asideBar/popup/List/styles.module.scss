@@ -2,7 +2,12 @@
 @import 'src/assets/mixins/media';
 
 .popup {
+    &__wrapper {
+        display: flex;
+    }
+
     &__results {
+        width: 100%;
         padding: 17px 17px;
         margin: 0;
         background: $white;

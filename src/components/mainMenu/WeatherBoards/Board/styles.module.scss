@@ -16,7 +16,7 @@
     border-radius: 18px;
 
     @include screen576 {
-        margin-right: 20px;
+        margin: auto 0 0 0;
     }
 
     @include screen1680 {

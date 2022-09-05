@@ -24,6 +24,10 @@ const CardAsideBar = ({ setPanel, isPanel }) => {
         setPanel(!isPanel)
     }
 
+    const activeScrollBody = () => {
+        document.body.style.overflowY = 'visible'
+    }
+
     return (
         <>
             {defaultData?.map((city, index) => (
@@ -33,6 +37,7 @@ const CardAsideBar = ({ setPanel, isPanel }) => {
                     onClick={() => {
                         activeIndexData(index)
                         setHidingAsideBar()
+                        activeScrollBody()
                     }}
                 >
                     <BackgroundCard city={city} />

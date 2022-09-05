@@ -11,10 +11,10 @@
 
     @include screen1680 {
         width: 700px;
-        margin: 0 0 50px 37px;
     }
 
     @include screen576 {
-        width: 600px;
+        margin: 0 auto;
+        width: 576px;
     }
 }
