@@ -2,14 +2,6 @@
 
 .board {
     border: none;
-    &__header {
-        display: flex;
-        align-content: center;
-
-        img {
-            margin: 10px 10px 0 0;
-        }
-    }
 
     &__index {
         font-weight: 400;
@@ -33,8 +25,9 @@
     }
 
     &__description {
+        position: absolute;
         max-width: 166px;
-        margin-top: auto;
+        bottom: 5px;
         font-weight: 400;
         font-size: 20px;
     }
@@ -88,13 +81,7 @@
         transform: translateY(-40%);
     }
 
-    &__title {
-        margin: 15px 0 5px;
-        font-weight: 500;
-        font-size: 18px;
-        text-transform: uppercase;
-        opacity: 0.3;
-    }
+
 
     &__logo {
         margin-right: 8px;

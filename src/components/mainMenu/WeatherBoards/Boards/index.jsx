@@ -68,13 +68,7 @@ const Boards = ({ defaultData, activeIndex }) => {
         nameBoards?.map((el, index) => {
             if (el.id === index) {
                 return (
-                    <Board key={index}>
-                        <div className={styles.board__header}>
-                            <img src={el.img} alt="img" />
-                            <div className={styles.board__title}>
-                                {el.boards}
-                            </div>
-                        </div>
+                    <Board key={index} imgSrc={el.img} boards={el.boards}>
                         <div className={styles.board__index}>{el.uvi}</div>
                         {el.boards === 'UV INDEX' ? (
                             <>
