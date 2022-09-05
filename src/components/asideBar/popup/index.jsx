@@ -10,6 +10,7 @@ const Popup = ({
     cityList,
     setIsHiddenMobileList,
     isHiddenMobileList,
+    setIsClickInput
 }) => {
     return isActive ? (
         <div className={styles.popup} onClick={() => setIsActive(!isActive)}>
@@ -29,11 +30,13 @@ const Popup = ({
                     setCityList={setCityList}
                     setIsHiddenMobileList={setIsHiddenMobileList}
                     isHiddenMobileList={isHiddenMobileList}
+                    setIsClickInput={setIsClickInput}
                 />
                 <List
                     cityList={cityList}
                     setIsHiddenMobileList={setIsHiddenMobileList}
                     isHiddenMobileList={isHiddenMobileList}
+                    setIsClickInput={setIsClickInput}
                 />
                 <button
                     type="button"

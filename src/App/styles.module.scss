@@ -1,6 +1,10 @@
 @import 'src/assets/mixins/media';
 
 .App {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    @include screenMax1140 {
+        grid-template-columns: 1fr;
+    }
 }

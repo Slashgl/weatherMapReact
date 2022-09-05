@@ -1,22 +1,14 @@
 @import 'src/assets/mixins/media';
 
 .table {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 38px 0 0 40px;
 }
 
 @include screen1680 {
     .table {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
     }
-}
-
-@include screenMax1140 {
-    .table {
-        flex-direction: column;
-    }
-}
-
-.mainMenu {
-    margin: 0 auto;
 }

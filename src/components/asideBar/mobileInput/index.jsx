@@ -12,9 +12,11 @@ const MobileInput = ({
     setPanel,
     setIsHiddenMobileList,
     isHiddenMobileList,
+    setIsClickInput,
+    isClickInput
 }) => {
     const [iHidden, setIsHidden] = useState(false)
-    const [isClickInput, setIsClickInput] = useState(false)
+
 
     return isPanel ? (
         <div className={styles.mobile}>

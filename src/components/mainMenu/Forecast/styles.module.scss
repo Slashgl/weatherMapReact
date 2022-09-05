@@ -3,8 +3,7 @@
 @import 'src/assets/mixins/media';
 
 .forecast {
-    width: 535px;
-    margin: 35px 0 0 40px;
+    height: 700px;
     padding: 0 25px 0 17px;
     list-style: none;
     background: $RgbaLightGrey;
@@ -13,21 +12,8 @@
     outline: none;
 
     @include screen1680 {
-        width: 700px;
+        margin: 0 20px 53px 0;
         height: 670px;
-    }
-
-    @include screen1280 {
-        width: 700px;
-    }
-
-    @include screen768 {
-        width: 700px;
-    }
-
-    @include screen576 {
-        width: 576px;
-        margin-left: 30px;
     }
 
     &__item {

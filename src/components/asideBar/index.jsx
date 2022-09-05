@@ -11,6 +11,7 @@ const AsideBar = () => {
     const [cityList, setCityList] = useState()
     const [isModalActive, setIsModalActive] = useState(false)
     const [isHiddenMobileList, setIsHiddenMobileList] = useState(false)
+    const [isClickInput, setIsClickInput] = useState(false)
 
     return (
         <>
@@ -26,6 +27,7 @@ const AsideBar = () => {
                     setIsActive={setIsModalActive}
                     isHiddenMobileList={isHiddenMobileList}
                     setIsHiddenMobileList={setIsHiddenMobileList}
+                    setIsClickInput={setIsClickInput}
                 />
             </div>
             <MobileInput
@@ -35,6 +37,8 @@ const AsideBar = () => {
                 setPanel={setPanel}
                 isHiddenMobileList={isHiddenMobileList}
                 setIsHiddenMobileList={setIsHiddenMobileList}
+                setIsClickInput={setIsClickInput}
+                isClickInput={isClickInput}
             />
             <Panel setPanel={setPanel} isPanel={isPanel} />
         </>
