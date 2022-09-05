@@ -5,7 +5,6 @@ import IconButton from '@mui/material/IconButton'
 import { useDispatch } from 'react-redux'
 import { setActiveIndex, deleteCity, GetCityList } from 'store'
 import BackgroundCard from '../backgroundCard'
-
 import styles from './styles.module.scss'
 
 const CardAsideBar = ({ setPanel, isPanel }) => {

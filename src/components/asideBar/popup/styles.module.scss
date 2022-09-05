@@ -11,10 +11,6 @@
     background: $RgbaLightBlue;
     backdrop-filter: blur(16px);
 
-    @include screenMax1140 {
-
-    }
-
     &__close {
         cursor: pointer;
         position: absolute;

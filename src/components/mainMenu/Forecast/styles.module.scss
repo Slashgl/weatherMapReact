@@ -54,6 +54,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 250px;
     }
 
     &__week {
@@ -75,7 +76,7 @@
 
     &__line {
         position: relative;
-        width: 165px;
+        width: 200px;
         height: 4px;
         margin: 0 20px;
         background-color: $black;
@@ -87,10 +88,10 @@
         height: 4px;
         background: linear-gradient(
             90deg,
-            #96d0a8 0%,
-            #b5cf79 22.81%,
-            #f8d74a 54.18%,
-            #ef8835 99%
+            $lightMint 0%,
+            $LightGreen 22%,
+            $Yellow 54%,
+            $orange 99%
         );
         border-radius: 44px;
     }

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import { AsideBar, MainMenu, Background } from 'components'
 import { geolocation } from 'utils'
@@ -13,13 +13,11 @@ const App = () => {
     }, [dispatch])
 
     return (
-        <>
-            <div className={styles.App}>
-                <Background />
-                <MainMenu />
-                <AsideBar/>
-            </div>
-        </>
+        <div className={styles.App}>
+            <Background />
+            <MainMenu />
+            <AsideBar/>
+        </div>
     )
 }
 

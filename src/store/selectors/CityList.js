@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux'
 
-export const GetCityList = () =>
+const GetCityList = () =>
     useSelector((state) => state.cityListReducer.cityList)
-export const GetActiveIndex = () =>
+const GetActiveIndex = () =>
     useSelector((state) => state.cityListReducer.activeIndex)
-export const GetHourlyList = () =>
+const GetHourlyList = () =>
     useSelector((state) => state.cityListReducer.hourlyList)
-export const GetForecastList = () =>
+const GetForecastList = () =>
     useSelector((state) => state.cityListReducer.forecastList)
 
+export {GetCityList, GetActiveIndex, GetHourlyList, GetForecastList}

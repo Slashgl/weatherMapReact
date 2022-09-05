@@ -7,8 +7,8 @@ const BackgroundCard = ({ city }) => {
         <>
             <video className={styles.background} width='100%' height='100%' poster={changeBackground(city)}>
             </video>
-            <video className={styles.back} width='100%' height='100%' autoPlay muted loop>
-                <source className={styles.source} src={changeBackground(city)}/>
+            <video className={styles.back} width='100%' height='100%'>
+                <source src={changeBackground(city)}/>
             </video>
         </>
     )

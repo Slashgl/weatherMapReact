@@ -53,17 +53,17 @@
         margin-top: 8px;
         background: linear-gradient(
             90deg,
-            #65db7c 1.17%,
-            #f5e753 24.98%,
-            #e63a52 77.89%,
-            #b55de0 99.24%
+            $Mint 1%,
+            $LightYellow 25%,
+            $LightRaspberry 78%,
+            $purple 99%
         );
     }
 
     &__circle {
         position: absolute;
-        width: 4.94px;
-        height: 4.85px;
+        width: 5px;
+        height: 5px;
         background: $white;
     }
 

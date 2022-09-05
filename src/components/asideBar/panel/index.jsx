@@ -9,6 +9,7 @@ const Panel = ({ setPanel, isPanel }) => {
     const setOpeningAndClosingAsideBar = () => {
         setPanel(!isPanel)
     }
+
     return (
         <div className={styles.panel}>
             <div className={styles.panel__wrapper}>

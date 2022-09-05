@@ -3,6 +3,7 @@
 .backgroundMain {
     position: fixed;
     z-index: -1000;
+
     @include screen768 {
         height: 100%;
     }

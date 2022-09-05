@@ -20,7 +20,7 @@ const initialState = {
     forecastList: [],
 }
 
-export const setCity = (lat, lon, name) => async (dispatch) => {
+const setCity = (lat, lon, name) => async (dispatch) => {
     const res = await weatherApi.getDataWeather(lat, lon)
 
     let cityData = {
@@ -53,17 +53,17 @@ export const setCity = (lat, lon, name) => async (dispatch) => {
     dispatch(setForecastList(forecastList))
 }
 
-export const deleteCity = (id) => (dispatch) => {
+const deleteCity = (id) => (dispatch) => {
     dispatch(removeCity(id))
 }
 
-export const setActiveIndex =
+const setActiveIndex =
     (index = initialState.activeIndex) =>
     (dispatch) => {
         dispatch(activeIndex(index))
     }
 
-export const cityListReducer = (state = initialState, action) => {
+const cityListReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CITY_LIST:
             return { ...state, cityList: [...state.cityList, action.payload] }
@@ -90,3 +90,5 @@ export const cityListReducer = (state = initialState, action) => {
             return state
     }
 }
+
+export {deleteCity, setActiveIndex, cityListReducer, setCity}

@@ -49,6 +49,7 @@
             @include screenMax1140 {
                 width: 600px;
             }
+
             @include screen576 {
                 width: 400px;
             }
@@ -69,6 +70,7 @@
         background-color: $white;
         border-radius: 50% 50%;
         border: none;
+
         @include screenMax1140 {
             display: block;
         }
