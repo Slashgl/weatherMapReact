@@ -13,8 +13,11 @@
         width: 700px;
     }
 
+    @include screenMax1140 {
+        margin: 0 auto 60px auto;
+    }
+
     @include screen576 {
-        margin: 0 auto;
         width: 576px;
     }
 }
