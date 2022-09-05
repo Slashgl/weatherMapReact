@@ -20,6 +20,7 @@ const Background = () => {
             loop
             autoPlay
             muted
+            controls={false}
         >
             <source src={changeBackground(defaultData[activeIndex])}/>
         </video>
