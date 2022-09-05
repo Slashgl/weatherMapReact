@@ -1,0 +1,26 @@
+@import 'src/assets/variables/colors';
+@import 'src/assets/mixins/media';
+
+.board {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    min-height: 200px;
+    margin-top: 40px;
+    padding-left: 20px;
+    background: $RgbaLightGrey;
+    border: 1px solid $RgbaLightWhite;
+    backdrop-filter: blur(290px);
+    border-radius: 18px;
+
+    @include screen576 {
+        margin-right: 20px;
+    }
+
+    @include screen1680 {
+        margin-top: 40px;
+    }
+
+}

@@ -11,21 +11,19 @@ const MainMenu = () => {
     const activeIndex = GetActiveIndex()
 
     return (
-        <>
-            <div className={styles.mainMenu}>
-                <Header defaultData={defaultData} activeIndex={activeIndex} />
-                <div className={styles.table}>
-                    <Forecast activeIndex={activeIndex} />
-                    <div>
-                        <WeatherToday activeIndex={activeIndex} />
-                        <WeatherBoards
-                            defaultData={defaultData}
-                            activeIndex={activeIndex}
-                        />
-                    </div>
+        <div className={styles.mainMenu}>
+            <Header defaultData={defaultData} activeIndex={activeIndex} />
+            <div className={styles.table}>
+                <Forecast activeIndex={activeIndex} />
+                <div>
+                    <WeatherToday activeIndex={activeIndex} />
+                    <WeatherBoards
+                        defaultData={defaultData}
+                        activeIndex={activeIndex}
+                    />
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 export default MainMenu
