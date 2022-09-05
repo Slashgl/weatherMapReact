@@ -11,7 +11,7 @@
     background: $RgbaLightGrey;
     backdrop-filter: blur(290px);
     border-radius: 15px;
-    border: none;
+    outline: none;
 
     @include screen1680 {
         width: 700px;
