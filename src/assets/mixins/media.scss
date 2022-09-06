@@ -28,3 +28,8 @@
  }
 }
 
+@mixin screen475 {
+ @media (max-width: 475px) {
+  @content
+ }
+}

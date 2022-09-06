@@ -26,8 +26,8 @@
     @include screen768 {
         grid-template-columns: 1fr 1fr;
     }
-    
-    @media (max-width: 473px) {
+
+    @include screen475 {
         grid-template-columns: 1fr;
     }
 }
