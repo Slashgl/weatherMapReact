@@ -34,6 +34,12 @@
         justify-content: space-between;
         align-items: center;
         width: 100px;
+        min-height: 60px;
+
+        @media (max-width: 475px) {
+            justify-content: normal;
+            width: 0;
+        }
     }
 
     &__right {
@@ -41,35 +47,28 @@
         justify-content: space-between;
         align-items: center;
         width: 250px;
+
+        @media (max-width: 475px) {
+            justify-content: right;
+            width: 150px;
+        }
     }
 
     &__week {
         font-weight: 500;
-        margin-right: 20px;
         font-size: 22px;
-
-        @include screen576 {
-            font-size: 28px;
-        }
+        width: 35px;
     }
 
     &__min {
         font-weight: 500;
         font-size: 22px;
         text-align: center;
-
-        @include screen576 {
-            font-size: 28px;
-        }
     }
 
     &__max {
         font-weight: 500;
         font-size: 22px;
-
-        @include screen576 {
-            font-size: 28px;
-        }
     }
 
     &__line {
@@ -79,6 +78,10 @@
         margin: 0 20px;
         background-color: $black;
         border-radius: 44px;
+
+        @media (max-width: 475px) {
+            width: 100px;
+        }
     }
 
     &__range {

@@ -16,6 +16,10 @@
         margin: 0 20px 53px 0;
     }
 
+    @include screen576 {
+        height: 465px;
+    }
+
     &:before {
         @include line(60px);
     }
@@ -23,8 +27,12 @@
     &__title {
         width: 340px;
         padding: 10px 0 0 10px;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
+
+        @include screen576 {
+            width: 100%;
+        }
     }
 
     &__items {
@@ -33,6 +41,10 @@
         list-style: none;
         height: 122px;
         margin: 16px 17px 0 10px;
+
+        @include screen576 {
+            flex-direction: column;
+        }
     }
 
     &__item {
@@ -40,6 +52,10 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
+        @include screen576 {
+            flex-direction: row;
+        }
     }
 
     &__time {

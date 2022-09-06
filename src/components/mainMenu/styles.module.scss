@@ -3,6 +3,7 @@
 .table {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     margin: 38px 0 0 40px;
 }
 
@@ -11,4 +12,9 @@
         display: grid;
         grid-template-columns: 1fr;
     }
+}
+
+.mainMenu {
+    display: flex;
+    flex-direction: column;
 }

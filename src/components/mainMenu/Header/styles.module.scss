@@ -8,10 +8,6 @@
     width: 100%;
     text-align: center;
 
-    @include screen576 {
-        width: 630px;
-    }
-
     &__title {
         font-weight: 400;
         font-size: 37px;
