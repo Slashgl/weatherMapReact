@@ -2,22 +2,38 @@ import React from 'react'
 import dayjs from 'dayjs'
 import Board from '../Board'
 import {
-    logoCompass,
     logoEye,
     logoHumidity,
     logoSunrise,
     logoTemp,
     logoUiIndex,
-    logoVector,
     logoWind,
 } from 'assets'
+import {
+    GetHumidity,
+    GetSunrise,
+    GetTempCurrent,
+    GetTime,
+    GetUvIndex,
+    GetVisibility,
+} from 'store'
+import BoardIndex from '../BoardIndex'
+import BoardSunrise from '../BoardSunrise'
+import BoardWind from '../BoardWind'
 import styles from './styles.module.scss'
 
-const Boards = ({ defaultData, activeIndex }) => {
+const Boards = () => {
+    const index = GetUvIndex()
+    const sunrise = GetSunrise()
+    const time = GetTime()
+    const tempCurrent = GetTempCurrent()
+    const humidity = GetHumidity()
+    const visibility = GetVisibility()
+
     const nameBoards = [
         {
             boards: 'UV INDEX',
-            uvi: Math.floor(defaultData[activeIndex].uvi),
+            uvi: Math.floor(index),
             level: 'Middle',
             img: logoUiIndex,
             description: `Middle for the rest of the day.`,
@@ -25,10 +41,8 @@ const Boards = ({ defaultData, activeIndex }) => {
         },
         {
             boards: 'SUNRISE',
-            sunrise: dayjs
-                .unix(defaultData[activeIndex]?.sunrise)
-                .format('h:mm A'),
-            time: dayjs.unix(defaultData[activeIndex]?.time).format('h:mm A'),
+            sunrise: dayjs.unix(sunrise).format('h:mm A'),
+            time: dayjs.unix(time).format('h:mm A'),
             img: logoSunrise,
             id: 1,
         },
@@ -39,7 +53,7 @@ const Boards = ({ defaultData, activeIndex }) => {
         },
         {
             boards: 'FEELSLIKE',
-            data: Math.floor(defaultData[activeIndex]?.tempCurrent),
+            data: Math.floor(tempCurrent),
             img: logoTemp,
             description: `Similar to the actual temperature`,
             sign: `°`,
@@ -47,7 +61,7 @@ const Boards = ({ defaultData, activeIndex }) => {
         },
         {
             boards: 'HUMIDITY',
-            data: defaultData[activeIndex]?.humidity,
+            data: humidity,
             img: logoHumidity,
             description: `The dew point is 21° right now.`,
             sign: '%',
@@ -55,7 +69,7 @@ const Boards = ({ defaultData, activeIndex }) => {
         },
         {
             boards: 'VISIBILITY',
-            data: String(defaultData[activeIndex]?.visibility).slice(0, 2),
+            data: String(visibility).slice(0, 2),
             img: logoEye,
             description: `Visibility is good`,
             sign: ' км',
@@ -63,65 +77,22 @@ const Boards = ({ defaultData, activeIndex }) => {
         },
     ]
 
-    return (
-        nameBoards &&
-        nameBoards?.map((el, index) => {
-            if (el.id === index) {
-                return (
-                    <Board key={index} imgSrc={el.img} boards={el.boards}>
-                        <div className={styles.board__index}>{el.uvi}</div>
-                        {el.boards === 'UV INDEX' ? (
-                            <>
-                                <div className={styles.board__level}>
-                                    {el.level}
-                                </div>
-                                <div className={styles.board__lvlImg}>
-                                    <span
-                                        className={styles.board__circle}
-                                        style={{
-                                            left: `${defaultData[activeIndex]?.uvi}px`,
-                                        }}
-                                    />
-                                </div>
-                            </>
-                        ) : null}
-                        <div className={styles.board__time}>{el.time}</div>
-                        {el.boards === 'SUNRISE' ? (
-                            <>
-                                <div className={styles.board__imgVector}>
-                                    <img
-                                        className={styles.board__vector}
-                                        src={logoVector}
-                                        alt="img"
-                                    />
-                                </div>
-                                <div className={styles.board__sunrise}>
-                                    Sunrise:
-                                    {el.sunrise}
-                                </div>
-                            </>
-                        ) : null}
-                        {el.boards === 'WIND' ? (
-                            <div className={styles.board__imgCompass}>
-                                <img
-                                    className={styles.board__compass}
-                                    src={logoCompass}
-                                    alt="img"
-                                />
-                            </div>
-                        ) : null}
-                        <div className={styles.board__degrees}>
-                            {el.data}
-                            {el.sign}
-                        </div>
-                        <div className={styles.board__description}>
-                            {el.description}
-                        </div>
-                    </Board>
-                )
-            }
-        })
-    )
+    return nameBoards?.map((el, index) => (
+        <Board key={index} imgSrc={el.img} boards={el.boards}>
+            <BoardIndex uvi={el.uvi} level={el.level} boards={el.boards} />
+            <BoardSunrise
+                sunrise={el.sunrise}
+                time={el.time}
+                boards={el.boards}
+            />
+            <BoardWind boards={el.boards} img={el.img} />
+            <div className={styles.board__degrees}>
+                {el.data}
+                {el.sign}
+            </div>
+            <div className={styles.board__description}>{el.description}</div>
+        </Board>
+    ))
 }
 
 export default Boards

@@ -1,17 +1,16 @@
 import React, { useEffect, useRef } from 'react'
 import { changeBackground } from 'utils'
-import { GetActiveIndex, GetCityList } from 'store'
+import {GetActiveCity} from 'store'
 import styles from './styles.module.scss'
 
 const Background = () => {
-    const defaultData = GetCityList()
-    const activeIndex = GetActiveIndex()
+    const activeCity = GetActiveCity()
 
     const videoRef = useRef()
 
     useEffect(() => {
         videoRef.current?.load()
-    }, [defaultData[activeIndex]])
+    }, [activeCity])
 
     return (
         <video
@@ -22,7 +21,7 @@ const Background = () => {
             muted
             controls={false}
         >
-            <source src={changeBackground(defaultData[activeIndex])}/>
+            <source src={changeBackground(activeCity)}/>
         </video>
     )
 }

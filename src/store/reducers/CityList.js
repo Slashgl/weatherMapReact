@@ -3,21 +3,17 @@ import {
     SET_CITY_LIST,
     removeCity,
     REMOVE_CITY,
-    activeIndex,
-    ACTIVE_INDEX,
-    setHourlyList,
-    SET_HOURLY_LIST,
-    setForecastList,
-    SET_FORECAST_LIST,
+    setActiveCity,
+    SET_ACTIVE_CITY,
 } from '../actions/CityList'
 import { weatherApi } from 'services'
 
 const initialState = {
     cityList: [],
-    activeIndex: 0,
     description: null,
     hourlyList: [],
     forecastList: [],
+    activeCity: {},
 }
 
 const setCity = (lat, lon, name) => async (dispatch) => {
@@ -30,6 +26,8 @@ const setCity = (lat, lon, name) => async (dispatch) => {
         ipName: ip.data.city,
         backgroundDescription: res.data.current.weather[0].main,
         name: name,
+        hourly: res.data.hourly.slice(0, 10),
+        forecast: res.data.daily,
         time: res.data.current.dt,
         description: res.data.current.weather[0].description,
         tempCurrent: res.data.current.temp,
@@ -42,28 +40,17 @@ const setCity = (lat, lon, name) => async (dispatch) => {
         visibility: res.data.current.visibility,
     }
 
-    let hourlyList = {
-        hourly: res.data.hourly.slice(0, 10),
-    }
-
-    let forecastList = {
-        forecast: res.data.daily,
-    }
-
     dispatch(setCityList(cityData))
-    dispatch(setHourlyList(hourlyList))
-    dispatch(setForecastList(forecastList))
+    dispatch(setActiveCity(cityData))
 }
 
 const deleteCity = (id) => (dispatch) => {
     dispatch(removeCity(id))
 }
 
-const setActiveIndex =
-    (index = initialState.activeIndex) =>
-    (dispatch) => {
-        dispatch(activeIndex(index))
-    }
+const fixActiveCity = (city) => (dispatch) => {
+    dispatch(setActiveCity(city))
+}
 
 const cityListReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -76,21 +63,14 @@ const cityListReducer = (state = initialState, action) => {
                     (city) => city.id !== action.payload
                 ),
             }
-        case ACTIVE_INDEX:
-            return { ...state, activeIndex: action.payload }
-        case SET_HOURLY_LIST:
+        case SET_ACTIVE_CITY:
             return {
                 ...state,
-                hourlyList: [...state.hourlyList, action.payload],
-            }
-        case SET_FORECAST_LIST:
-            return {
-                ...state,
-                forecastList: [...state.forecastList, action.payload],
+                activeCity: action.payload,
             }
         default:
             return state
     }
 }
 
-export {deleteCity, setActiveIndex, cityListReducer, setCity}
+export { deleteCity, cityListReducer, setCity, fixActiveCity }

@@ -1,0 +1,23 @@
+.board {
+    &__time {
+        font-weight: 400;
+        font-size: 40px;
+    }
+
+    &__sunrise {
+        margin-top: 75px;
+        font-weight: 400;
+        font-size: 22px;
+    }
+
+    &__vector {
+        width: 100%;
+    }
+
+    &__imgVector {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        margin-top: 11px;
+    }
+}

@@ -1,0 +1,12 @@
+.board {
+    &__compass {
+        transform: translateX(20%);
+    }
+
+    &__imgCompass {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-40%);
+    }
+}

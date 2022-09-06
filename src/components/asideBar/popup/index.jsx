@@ -12,6 +12,7 @@ const Popup = ({
     isHiddenMobileList,
     setIsClickInput
 }) => {
+
     return isActive ? (
         <div className={styles.popup} onClick={() => setIsActive(!isActive)}>
             <div

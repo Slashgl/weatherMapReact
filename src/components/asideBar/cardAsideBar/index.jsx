@@ -3,12 +3,12 @@ import dayjs from 'dayjs'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
 import { useDispatch } from 'react-redux'
-import { setActiveIndex, deleteCity, GetCityList } from 'store'
+import { deleteCity, GetCityList, fixActiveCity } from 'store'
 import BackgroundCard from '../backgroundCard'
 import styles from './styles.module.scss'
 
 const CardAsideBar = ({ setPanel, isPanel }) => {
-    const defaultData = GetCityList()
+    const cityList = GetCityList()
 
     const dispatch = useDispatch()
 
@@ -16,8 +16,8 @@ const CardAsideBar = ({ setPanel, isPanel }) => {
         dispatch(deleteCity(id))
     }
 
-    const activeIndexData = (index) => {
-        dispatch(setActiveIndex(index))
+    const activeCity = (city) => {
+        dispatch(fixActiveCity(city))
     }
 
     const setHidingAsideBar = () => {
@@ -30,14 +30,14 @@ const CardAsideBar = ({ setPanel, isPanel }) => {
 
     return (
         <>
-            {defaultData?.map((city, index) => (
+            {cityList?.map((city, index) => (
                 <div
                     key={`key_${index}`}
                     className={styles.cardsAside}
                     onClick={() => {
-                        activeIndexData(index)
                         setHidingAsideBar()
                         activeScrollBody()
+                        activeCity(city)
                     }}
                 >
                     <BackgroundCard city={city} />

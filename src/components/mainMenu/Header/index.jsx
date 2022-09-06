@@ -1,26 +1,40 @@
 import React from 'react'
+import {
+    GetActiveCity,
+    GetDescription,
+    GetIpNameCity,
+    GetNameCity,
+    GetTempCurrent,
+    GetTempHigh,
+    GetTempLow,
+} from 'store'
 import styles from './styles.module.scss'
 
-const Header = ({ defaultData, activeIndex }) => {
+const Header = () => {
+    const activeCity = GetActiveCity()
+    const tempHigh = GetTempHigh()
+    const tempLow = GetTempLow()
+    const description = GetDescription()
+    const tempCurrent = GetTempCurrent()
+    const nameCity = GetNameCity()
+    const ipNameCity = GetIpNameCity()
 
     return (
         <div className={styles.header}>
-            {defaultData[activeIndex] ? (
+            {activeCity ? (
                 <>
                     <div className={styles.header__title}>
-                        {defaultData[activeIndex]?.name ||
-                            defaultData[activeIndex]?.ipName}
+                        {nameCity || ipNameCity}
                     </div>
                     <div className={styles.header__degrees}>
-                        {Math.round(defaultData[activeIndex]?.tempCurrent)}&deg;
+                        {Math.round(tempCurrent)}&deg;
                     </div>
                     <div className={styles.header__description}>
-                        {defaultData[activeIndex]?.description}
+                        {description}
                     </div>
                     <div className={styles.header__coordinates}>
-                        {`H:${Math.round(defaultData[activeIndex]?.tempHigh)}`}
-                        &deg;{' '}
-                        {`L:${Math.round(defaultData[activeIndex]?.tempLow)}`}
+                        {`H:${Math.round(tempHigh)}`}
+                        &deg; {`L:${Math.round(tempLow)}`}
                         &deg;
                     </div>
                 </>

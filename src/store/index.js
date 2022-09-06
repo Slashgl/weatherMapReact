@@ -1,19 +1,41 @@
 import store from './Store'
-import { setCity, deleteCity, setActiveIndex } from './reducers/CityList'
+import { setCity, deleteCity, fixActiveCity} from './reducers/CityList'
 import {
     GetCityList,
     GetForecastList,
     GetHourlyList,
-    GetActiveIndex,
+    GetTempHigh,
+    GetTempLow,
+    GetDescription,
+    GetTempCurrent,
+    GetNameCity,
+    GetIpNameCity,
+    GetUvIndex,
+    GetSunrise,
+    GetTime,
+    GetHumidity,
+    GetVisibility,
+    GetActiveCity,
 } from './selectors/CityList'
 
 export {
     store,
     setCity,
     deleteCity,
-    setActiveIndex,
     GetCityList,
     GetForecastList,
     GetHourlyList,
-    GetActiveIndex,
+    GetTempHigh,
+    GetTempLow,
+    GetDescription,
+    GetTempCurrent,
+    GetNameCity,
+    GetIpNameCity,
+    GetUvIndex,
+    GetSunrise,
+    GetTime,
+    GetHumidity,
+    GetVisibility,
+    GetActiveCity,
+    fixActiveCity
 }

@@ -27,6 +27,7 @@ const List = ({
     const hiddenButtonClose = () => {
         setIsClickInput(!isClickInput)
     }
+
     return (
         <div className={styles.popup__wrapper}>
             <ul

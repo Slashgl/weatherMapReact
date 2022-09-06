@@ -4,6 +4,7 @@
 
 .input {
     flex: auto;
+
     input {
         cursor: pointer;
         width: 100%;
@@ -30,6 +31,7 @@
     }
 
     &:before {
+
         @include magnifier(15px, 20px);
 
         @include screenMax1140 {
