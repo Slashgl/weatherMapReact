@@ -17,7 +17,7 @@
     }
 
     @include screen576 {
-        height: 465px;
+        height: 500px;
     }
 
     &__title {
@@ -51,6 +51,7 @@
     }
 
     &__item {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -58,6 +59,14 @@
 
         @include screen576 {
             flex-direction: row;
+            &:after{
+                content: '';
+                position: absolute;
+                top: 35px;
+                width: 100%;
+                opacity: 0.5;
+                border: 0.2px solid $greyBlack;
+            }
         }
     }
 
@@ -77,5 +86,10 @@
     &__degrees {
         font-weight: 500;
         font-size: 22px;
+
+        @include screen576 {
+            width: 70px;
+            text-align: end;
+        }
     }
 }

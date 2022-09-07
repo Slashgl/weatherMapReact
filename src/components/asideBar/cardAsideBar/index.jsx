@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
 import { useDispatch } from 'react-redux'
 import { deleteCity, GetCityList, fixActiveCity } from 'store'
-import BackgroundCard from '../backgroundCard'
+import BackgroundCard from './backgroundCard'
 import styles from './styles.module.scss'
 
 const CardAsideBar = ({ setPanel, isPanel }) => {

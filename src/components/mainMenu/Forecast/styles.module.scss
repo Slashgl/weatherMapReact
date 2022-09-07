@@ -38,7 +38,11 @@
 
         @include screen475 {
             justify-content: normal;
-            width: 0;
+            width: 100px;
+
+            img {
+                margin-left: 10px;
+            }
         }
     }
 
@@ -61,27 +65,29 @@
     }
 
     &__min {
+        margin-right: 10px;
         font-weight: 500;
         font-size: 22px;
         text-align: center;
     }
 
     &__max {
+        width: 50px;
+        text-align: end;
         font-weight: 500;
         font-size: 22px;
+        z-index: 20;
     }
 
     &__line {
         position: relative;
-        width: 200px;
         height: 4px;
-        margin: 0 20px;
+        width: 100%;
         background-color: $black;
         border-radius: 44px;
 
         @include screen475 {
             width: 100px;
-            margin: 0 10px;
         }
     }
 
@@ -96,6 +102,7 @@
             $orange 99%
         );
         border-radius: 44px;
+        z-index: 5;
     }
 }
 

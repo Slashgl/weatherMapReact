@@ -16,30 +16,32 @@ const AsideBar = () => {
     return (
         <>
             <div className={styles.aside}>
-                <Input
-                    setIsModalActive={setIsModalActive}
-                />
-                <CardAsideBar setPanel={setPanel} isPanel={isPanel}/>
-                <Popup
+                <Input setIsModalActive={setIsModalActive} />
+                <CardAsideBar setPanel={setPanel} isPanel={isPanel} />
+                {isModalActive ? (
+                    <Popup
+                        cityList={cityList}
+                        setCityList={setCityList}
+                        isModalActive={isModalActive}
+                        setIsModalActive={setIsModalActive}
+                        isHiddenMobileList={isHiddenMobileList}
+                        setIsHiddenMobileList={setIsHiddenMobileList}
+                        setIsClickInput={setIsClickInput}
+                    />
+                ) : null}
+            </div>
+            {isPanel ? (
+                <MobileInput
                     cityList={cityList}
                     setCityList={setCityList}
-                    isActive={isModalActive}
-                    setIsActive={setIsModalActive}
+                    isPanel={isPanel}
+                    setPanel={setPanel}
                     isHiddenMobileList={isHiddenMobileList}
                     setIsHiddenMobileList={setIsHiddenMobileList}
                     setIsClickInput={setIsClickInput}
+                    isClickInput={isClickInput}
                 />
-            </div>
-            <MobileInput
-                cityList={cityList}
-                setCityList={setCityList}
-                isPanel={isPanel}
-                setPanel={setPanel}
-                isHiddenMobileList={isHiddenMobileList}
-                setIsHiddenMobileList={setIsHiddenMobileList}
-                setIsClickInput={setIsClickInput}
-                isClickInput={isClickInput}
-            />
+            ) : null}
             <Panel setPanel={setPanel} isPanel={isPanel} />
         </>
     )

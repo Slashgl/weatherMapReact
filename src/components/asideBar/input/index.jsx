@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles.module.scss'
+import styles from './styles.module.scss'
 
 const Input = ({ setIsModalActive }) => {
     const openPopup = () => {
@@ -7,7 +7,7 @@ const Input = ({ setIsModalActive }) => {
     }
 
     return (
-        <label className={styles.aside__input}>
+        <label className={styles.input}>
             <input
                 type="text"
                 placeholder={`Search for a city or airport`}

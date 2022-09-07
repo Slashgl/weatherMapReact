@@ -4,17 +4,19 @@ import Input from './Input'
 import styles from './styles.module.scss'
 
 const Popup = ({
-    isActive,
-    setIsActive,
+    isModalActive,
+    setIsModalActive,
     setCityList,
     cityList,
     setIsHiddenMobileList,
     isHiddenMobileList,
-    setIsClickInput
+    setIsClickInput,
 }) => {
-
-    return isActive ? (
-        <div className={styles.popup} onClick={() => setIsActive(!isActive)}>
+    return (
+        <div
+            className={styles.popup}
+            onClick={() => setIsModalActive(!isModalActive)}
+        >
             <div
                 className={styles.popup__content}
                 onClick={(e) => e.stopPropagation()}
@@ -22,7 +24,7 @@ const Popup = ({
                 <div
                     className={styles.popup__close}
                     onClick={() => {
-                        setIsActive(false)
+                        setIsModalActive(false)
                     }}
                 >
                     <div className={styles.popup__cross}></div>
@@ -42,12 +44,12 @@ const Popup = ({
                 <button
                     type="button"
                     className={styles.popup__button}
-                    onClick={() => setIsActive(false)}
+                    onClick={() => setIsModalActive(false)}
                 >
                     OK
                 </button>
             </div>
         </div>
-    ) : null
+    )
 }
 export default Popup
