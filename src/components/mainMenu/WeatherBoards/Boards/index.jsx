@@ -1,6 +1,6 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import Board from '../Board'
+import Board from './Board'
 import {
     logoEye,
     logoHumidity,
