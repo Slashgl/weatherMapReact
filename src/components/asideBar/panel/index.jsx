@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
+import Line from './Line'
 
 const Panel = ({ setPanel, isPanel }) => {
     const stopScrollBody = () => {
@@ -20,9 +21,7 @@ const Panel = ({ setPanel, isPanel }) => {
                         stopScrollBody()
                     }}
                 >
-                    <div className={styles.panel__line}></div>
-                    <div className={styles.panel__line}></div>
-                    <div className={styles.panel__line}></div>
+                    <Line />
                 </div>
             </div>
         </div>
