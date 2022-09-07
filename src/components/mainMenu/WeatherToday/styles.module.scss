@@ -20,18 +20,21 @@
         height: 465px;
     }
 
-    &:before {
-        @include line(60px);
-    }
-
     &__title {
-        width: 340px;
-        padding: 10px 0 0 10px;
-        font-size: 16px;
-        font-weight: 400;
+        position: relative;
+        div {
+            padding: 10px 0 0 10px;
+            width: 340px;
+            font-size: 16px;
+            font-weight: 400;
 
-        @include screen576 {
-            width: 100%;
+            @include screen576 {
+                width: 100%;
+            }
+        }
+
+        &:before {
+            @include line(-10px);
         }
     }
 
@@ -61,6 +64,10 @@
     &__time {
         font-weight: 500;
         font-size: 17px;
+
+        @include screen576 {
+            width: 70px;
+        }
     }
 
     &__img {

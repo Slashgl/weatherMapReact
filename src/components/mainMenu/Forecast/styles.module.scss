@@ -25,7 +25,7 @@
         height: 70px;
 
         &:before {
-            @include line(65px);
+            @include line(0);
         }
     }
 

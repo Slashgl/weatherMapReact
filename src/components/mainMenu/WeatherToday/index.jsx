@@ -9,18 +9,20 @@ const WeatherToday = () => {
     return (
         <div className={styles.today}>
             <div className={styles.today__title}>
-                Cloudy conditions from 1AM-9AM, with showers expected at 9AM.
+                <div>
+                    Cloudy conditions from 1AM-9AM, with showers expected at
+                    9AM.
+                </div>
             </div>
             <ul className={styles.today__items}>
                 {data?.map((day, index) => (
                     <li key={index} className={styles.today__item}>
-                        {index === 0 ? (
-                            'Now'
-                        ) : (
-                            <div className={styles.today__time}>
-                                {dayjs.unix(day.dt).format(`h A`)}
-                            </div>
-                        )}
+                        <div className={styles.today__time}>
+                            {index === 0
+                                ? 'Now'
+                                : dayjs.unix(day.dt).format(`h A`)}
+                        </div>
+
                         <div className={styles.today__img}>
                             <img
                                 width="34px"

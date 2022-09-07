@@ -26,7 +26,7 @@ const setCity = (lat, lon, name) => async (dispatch) => {
         ipName: ip.data.city,
         backgroundDescription: res.data.current.weather[0].main,
         name: name,
-        hourly: res.data.hourly.slice(0, 10),
+        hourly: res.data.hourly.slice(0, 11),
         forecast: res.data.daily,
         time: res.data.current.dt,
         description: res.data.current.weather[0].description,
