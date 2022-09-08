@@ -2,8 +2,8 @@ import React from 'react'
 import { logoVector } from 'assets'
 import styles from './styles.module.scss'
 
-
 const BoardSunrise = ({ time, sunrise, boards }) => {
+
     return boards === 'SUNRISE' ? (
         <>
             <div className={styles.board__time}>{time}</div>

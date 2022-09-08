@@ -38,7 +38,7 @@ const CardAsideBar = ({ setPanel, isPanel }) => {
                     <BackgroundCard city={city} />
 
                     <div className={styles.cardsAside__left}>
-                        <div className={styles.cardsAside__title}>
+                        <div className={styles.cardsAside__title} style={{fontSize: String(city.name).length > 9 ? '25px' : null}}>
                             {index === 0 ? city.geoName : city.name}
                         </div>
                         <div className={styles.cardsAside__time}>

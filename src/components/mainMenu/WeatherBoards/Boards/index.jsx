@@ -1,6 +1,5 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import Board from './Board'
 import {
     logoEye,
     logoHumidity,
@@ -17,6 +16,7 @@ import {
     GetUvIndex,
     GetVisibility,
 } from 'store'
+import Board from './Board'
 import BoardIndex from '../BoardIndex'
 import BoardSunrise from '../BoardSunrise'
 import BoardWind from '../BoardWind'
@@ -37,19 +37,16 @@ const Boards = () => {
             level: 'Middle',
             img: logoUiIndex,
             description: `Middle for the rest of the day.`,
-            id: 0,
         },
         {
             boards: 'SUNRISE',
             sunrise: dayjs.unix(sunrise).format('h:mm A'),
             time: dayjs.unix(time).format('h:mm A'),
             img: logoSunrise,
-            id: 1,
         },
         {
             boards: 'WIND',
             img: logoWind,
-            id: 2,
         },
         {
             boards: 'FEELSLIKE',
@@ -57,7 +54,6 @@ const Boards = () => {
             img: logoTemp,
             description: `Similar to the actual temperature`,
             sign: `°`,
-            id: 3,
         },
         {
             boards: 'HUMIDITY',
@@ -65,7 +61,6 @@ const Boards = () => {
             img: logoHumidity,
             description: `The dew point is 21° right now.`,
             sign: '%',
-            id: 4,
         },
         {
             boards: 'VISIBILITY',
@@ -73,7 +68,6 @@ const Boards = () => {
             img: logoEye,
             description: `Visibility is good`,
             sign: ' км',
-            id: 5,
         },
     ]
 
