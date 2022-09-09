@@ -1,11 +1,24 @@
 import React from 'react'
+import {
+    GetDescriptionUvi,
+    GetImgUvi,
+    GetLevelUvi,
+    GetNameUvi,
+    GetUvIndex,
+} from 'store'
 import Board from '../Board'
 import styles from './styles.module.scss'
 
-const BoardIndex = ({ uvi, level, title, imgSrc, description }) => {
+const BoardIndex = () => {
+    const nameUvi = GetNameUvi()
+    const imgUvi = GetImgUvi()
+    const uvi = GetUvIndex()
+    const level = GetLevelUvi()
+    const description = GetDescriptionUvi()
+
     return (
-        <Board imgSrc={imgSrc} title={title}>
-            <div className={styles.board__index}>{uvi}</div>
+        <Board imgSrc={imgUvi} title={nameUvi}>
+            <div className={styles.board__index}>{Math.floor(uvi)}</div>
             <div className={styles.board__level}>{level}</div>
             <div className={styles.board__lvlImg}>
                 <span

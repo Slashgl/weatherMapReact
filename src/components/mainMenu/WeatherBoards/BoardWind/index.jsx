@@ -1,15 +1,19 @@
 import React from 'react'
+import { GetImgCompass, GetImgWind, GetNameWind } from 'store'
 import Board from '../Board'
-import { logoCompass } from 'assets'
 import styles from './styles.module.scss'
 
-const BoardWind = ({ title, imgSrc }) => {
+const BoardWind = () => {
+    const title = GetNameWind()
+    const imgSrc = GetImgWind()
+    const imgCompass = GetImgCompass()
+
     return (
         <Board imgSrc={imgSrc} title={title}>
             <div className={styles.board__imgCompass}>
                 <img
                     className={styles.board__compass}
-                    src={logoCompass}
+                    src={imgCompass}
                     alt="img"
                 />
             </div>

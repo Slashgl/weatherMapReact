@@ -9,7 +9,7 @@ const weatherApi = {
         api.get(
             `data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`
         ),
-    getIp: () => ip.get(''),
+    getCityFromIp: () => ip.get(''),
 }
 
 export default weatherApi

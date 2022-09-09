@@ -25,7 +25,7 @@ const Popup = ({
                     className={styles.popup__close}
                     onClick={() => setIsModalActive(false)}
                 >
-                    <div className={styles.popup__cross}></div>
+                    <div className={styles.popup__cross} />
                 </div>
                 <Input
                     setCityList={setCityList}

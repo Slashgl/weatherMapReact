@@ -6,6 +6,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
     display: none;
     overflow-y: scroll;
     width: 100%;
@@ -14,7 +15,6 @@
     color: $white;
     background: $RgbaDarkBlue;
     backdrop-filter: blur(340px);
-    z-index: 10;
 
     @include screenMax1140 {
         display: block;

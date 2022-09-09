@@ -22,16 +22,15 @@
 
         @include screenMax1140 {
             position: relative;
+            z-index: 100;
             width: 100%;
             margin-bottom: 30px;
             font-size: 20px;
             border-radius: 27px;
-            z-index: 100;
         }
     }
 
     &:before {
-
         @include magnifier(15px, 20px);
 
         @include screenMax1140 {

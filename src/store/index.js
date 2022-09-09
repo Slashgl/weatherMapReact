@@ -1,5 +1,5 @@
 import store from './Store'
-import { setCity, deleteCity, fixActiveCity} from './reducers/CityList'
+import { setCity, deleteCity, fixActiveCity } from './reducers/cityList'
 import {
     GetCityList,
     GetForecastList,
@@ -16,6 +16,27 @@ import {
     GetHumidity,
     GetVisibility,
     GetActiveCity,
+    GetNameUvi,
+    GetImgUvi,
+    GetDescriptionUvi,
+    GetNameSunrise,
+    GetNameHumidity,
+    GetNameWind,
+    GetNameVisibility,
+    GetLevelUvi,
+    GetImgSunrise,
+    GetImgWind,
+    GetImgCompass,
+    GetNameFeelsLike,
+    GetImgFeelsLike,
+    GetSignFeelsLike,
+    GetDescriptionFeelsLike,
+    GetImgVisibility,
+    GetDescriptionVisibility,
+    GetSignVisibility,
+    GetImgHumidity,
+    GetDescriptionHumidity,
+    GetSignHumidity
 } from './selectors/CityList'
 
 export {
@@ -38,4 +59,25 @@ export {
     GetVisibility,
     GetActiveCity,
     fixActiveCity,
+    GetNameUvi,
+    GetImgUvi,
+    GetDescriptionUvi,
+    GetNameSunrise,
+    GetNameHumidity,
+    GetNameWind,
+    GetNameVisibility,
+    GetLevelUvi,
+    GetImgSunrise,
+    GetImgWind,
+    GetImgCompass,
+    GetNameFeelsLike,
+    GetImgFeelsLike,
+    GetSignFeelsLike,
+    GetDescriptionFeelsLike,
+    GetImgVisibility,
+    GetDescriptionVisibility,
+    GetSignVisibility,
+    GetImgHumidity,
+    GetDescriptionHumidity,
+    GetSignHumidity
 }

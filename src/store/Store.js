@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import { cityListReducer } from './reducers/CityList'
+import { cityListReducer } from './reducers/cityList'
 
 const rootReducer = combineReducers({
     cityListReducer,

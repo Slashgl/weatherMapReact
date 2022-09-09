@@ -27,6 +27,11 @@ const Input = ({ setCityList, setIsHiddenMobileList, isHiddenMobileList, setIsCl
         setIsClickInput(!isClickInput)
     }
 
+    const handlerClick = () => {
+        setHidingMobileList()
+        setClickInput()
+    }
+
     useEffect(() => {
         searchCity(cityInput)
     }, [cityInput])
@@ -36,10 +41,7 @@ const Input = ({ setCityList, setIsHiddenMobileList, isHiddenMobileList, setIsCl
             <input
                 type="text"
                 onChange={debounce(updateInput, 500)}
-                onClick={() => {
-                    setHidingMobileList()
-                    setClickInput()
-                }}
+                onClick={() => handlerClick()}
             />
         </label>
     )
