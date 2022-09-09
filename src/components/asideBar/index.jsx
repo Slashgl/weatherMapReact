@@ -18,7 +18,7 @@ const AsideBar = () => {
             <div className={styles.aside}>
                 <Input setIsModalActive={setIsModalActive} />
                 <CardAsideBar setPanel={setPanel} isPanel={isPanel} />
-                {isModalActive ? (
+                {isModalActive && (
                     <Popup
                         cityList={cityList}
                         setCityList={setCityList}
@@ -28,9 +28,9 @@ const AsideBar = () => {
                         setIsHiddenMobileList={setIsHiddenMobileList}
                         setIsClickInput={setIsClickInput}
                     />
-                ) : null}
+                )}
             </div>
-            {isPanel ? (
+            {isPanel && (
                 <MobileInput
                     cityList={cityList}
                     setCityList={setCityList}
@@ -41,7 +41,7 @@ const AsideBar = () => {
                     setIsClickInput={setIsClickInput}
                     isClickInput={isClickInput}
                 />
-            ) : null}
+            )}
             <Panel setPanel={setPanel} isPanel={isPanel} />
         </>
     )

@@ -1,11 +1,11 @@
 import React from 'react'
-import Board from '../Boards/Board'
+import Board from '../Board'
 import { logoVector } from 'assets'
 import styles from './styles.module.scss'
 
-const BoardSunrise = ({ time, sunrise, imgSrc, boards }) => {
+const BoardSunrise = ({ time, sunrise, imgSrc, title }) => {
     return (
-        <Board imgSrc={imgSrc} boards={boards}>
+        <Board imgSrc={imgSrc} title={title}>
             <div className={styles.board__time}>{time}</div>
             <div className={styles.board__imgVector}>
                 <img

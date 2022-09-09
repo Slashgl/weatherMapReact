@@ -17,6 +17,11 @@ const MobileInput = ({
 }) => {
     const [iHidden, setIsHidden] = useState(false)
 
+    const handlerClick = () => {
+        setIsHiddenMobileList(!isHiddenMobileList)
+        setIsClickInput(!isClickInput)
+    }
+
     return (
         <div className={styles.mobile}>
             <div className={styles.mobile__header}>
@@ -35,10 +40,7 @@ const MobileInput = ({
                             height: '45px',
                             marginLeft: '15px',
                         }}
-                        onClick={() => {
-                            setIsHiddenMobileList(!isHiddenMobileList)
-                            setIsClickInput(!isClickInput)
-                        }}
+                        onClick={() => handlerClick()}
                     >
                         Cancel
                     </Button>

@@ -1,6 +1,6 @@
-@import '../../../assets/variables/colors';
-@import '../../../assets/mixins/media';
-@import '../../../assets/mixins/magnifier';
+@import 'src/assets/variables/colors';
+@import 'src/assets/mixins/media';
+@import 'src/assets/mixins/magnifier';
 
 .mobile {
     position: fixed;

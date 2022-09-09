@@ -10,7 +10,8 @@ const Forecast = () => {
         <div className={styles.forecast}>
             <div className={styles.title}>10-DAY FORECAST</div>
             <ul className={styles.forecast__items}>
-                {data?.map((day, index) => (
+                {data &&
+                    data.map((day, index) => (
                     <li key={`key_${index}`} className={styles.forecast__item}>
                         <div className={styles.forecast__left}>
                             <div className={styles.forecast__week}>

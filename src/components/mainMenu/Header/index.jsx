@@ -21,7 +21,7 @@ const Header = () => {
 
     return (
         <div className={styles.header}>
-            {activeCity ? (
+            {activeCity && (
                 <>
                     <div className={styles.header__title}>
                         {nameCity || ipNameCity}
@@ -38,7 +38,7 @@ const Header = () => {
                         &deg;
                     </div>
                 </>
-            ) : null}
+            )}
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
-import { setCity } from 'store'
 import { useDispatch } from 'react-redux'
+import { setCity } from 'store'
 import styles from './styles.module.scss'
 
 const List = ({
@@ -28,6 +28,11 @@ const List = ({
         setIsClickInput(!isClickInput)
     }
 
+    const handlerClick = (el) => {
+        addCity(el)
+        hiddenWrapperAsideBar()
+        hiddenButtonClose()
+    }
     return (
         <div className={styles.popup__wrapper}>
             {
@@ -39,11 +44,7 @@ const List = ({
                             <li
                                 key={index}
                                 className={styles.popup__item}
-                                onClick={() => {
-                                    addCity(el)
-                                    hiddenWrapperAsideBar()
-                                    hiddenButtonClose()
-                                }}
+                                onClick={() => handlerClick(el)}
                             >
                                 <div className={styles.popup__name}>{el.name}</div>
                                 <div className={styles.popup__country}>

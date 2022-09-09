@@ -2,11 +2,11 @@ import React from 'react'
 import Header from './Header'
 import styles from './styles.module.scss'
 
-const Board = ({ children, imgSrc, boards }) => {
+const Board = ({ children, imgSrc, title }) => {
 
     return (
         <div className={styles.board}>
-            <Header imgSrc={imgSrc} boards={boards} />
+            <Header imgSrc={imgSrc} title={title} />
             {children}
         </div>
     )

@@ -1,12 +1,12 @@
 import React from "react";
 import styles from './styles.module.scss'
 
-const Header = ({imgSrc, boards}) => {
+const Header = ({imgSrc, title}) => {
     return (
         <div className={styles.header}>
             <img src={imgSrc} alt="img" />
             <div className={styles.title}>
-                {boards}
+                {title}
             </div>
         </div>
     )

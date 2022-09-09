@@ -15,7 +15,8 @@ const WeatherToday = () => {
                 </div>
             </div>
             <ul className={styles.today__items}>
-                {data?.map((day, index) => (
+                {data &&
+                    data.map((day, index) => (
                     <li key={index} className={styles.today__item}>
                         <div className={styles.today__time}>
                             {index === 0

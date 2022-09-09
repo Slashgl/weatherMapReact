@@ -23,9 +23,7 @@ const Popup = ({
             >
                 <div
                     className={styles.popup__close}
-                    onClick={() => {
-                        setIsModalActive(false)
-                    }}
+                    onClick={() => setIsModalActive(false)}
                 >
                     <div className={styles.popup__cross}></div>
                 </div>
