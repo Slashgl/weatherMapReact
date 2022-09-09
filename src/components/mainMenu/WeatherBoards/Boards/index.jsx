@@ -9,6 +9,7 @@ import {
     logoWind,
 } from 'assets'
 import {
+    GetActiveCity,
     GetHumidity,
     GetSunrise,
     GetTempCurrent,
@@ -16,11 +17,10 @@ import {
     GetUvIndex,
     GetVisibility,
 } from 'store'
-import Board from './Board'
 import BoardIndex from '../BoardIndex'
 import BoardSunrise from '../BoardSunrise'
 import BoardWind from '../BoardWind'
-import styles from './styles.module.scss'
+import BoardsFooter from '../BoardsFooter'
 
 const Boards = () => {
     const index = GetUvIndex()
@@ -30,63 +30,69 @@ const Boards = () => {
     const humidity = GetHumidity()
     const visibility = GetVisibility()
 
-    const nameBoards = [
-        {
-            boards: 'UV INDEX',
-            uvi: Math.floor(index),
-            level: 'Middle',
-            img: logoUiIndex,
-            description: `Middle for the rest of the day.`,
-        },
-        {
-            boards: 'SUNRISE',
-            sunrise: dayjs.unix(sunrise).format('h:mm A'),
-            time: dayjs.unix(time).format('h:mm A'),
-            img: logoSunrise,
-        },
-        {
-            boards: 'WIND',
-            img: logoWind,
-        },
-        {
-            boards: 'FEELSLIKE',
-            data: Math.floor(tempCurrent),
-            img: logoTemp,
-            description: `Similar to the actual temperature`,
-            sign: `°`,
-        },
-        {
-            boards: 'HUMIDITY',
-            data: humidity,
-            img: logoHumidity,
-            description: `The dew point is 21° right now.`,
-            sign: '%',
-        },
-        {
-            boards: 'VISIBILITY',
-            data: String(visibility).slice(0, 2),
-            img: logoEye,
-            description: `Visibility is good`,
-            sign: ' км',
-        },
-    ]
+    const nameBoards = {
+        boardUvi: 'UV INDEX',
+        imgUvi: logoUiIndex,
+        uvi: Math.floor(index) || null,
+        level: 'Middle',
+        descriptionUvi: `Middle for the rest of the day.`,
 
-    return nameBoards?.map((el, index) => (
-        <Board key={index} imgSrc={el.img} boards={el.boards}>
-            <BoardIndex uvi={el.uvi} level={el.level} boards={el.boards} />
-            <BoardSunrise
-                sunrise={el.sunrise}
-                time={el.time}
-                boards={el.boards}
+        boardSunrise: 'SUNRISE',
+        imgSunrise: logoSunrise,
+        sunrise: dayjs.unix(sunrise).format('h:mm A'),
+        time: dayjs.unix(time).format('h:mm A'),
+
+        boardWind: 'WIND',
+        imgWind: logoWind,
+
+        boardFooter: [
+            {
+                board: 'FEELSLIKE',
+                img: logoTemp,
+                data: Math.floor(tempCurrent),
+                description: `Similar to the actual temperature`,
+                sign: `°`,
+            },
+            {
+                board: 'HUMIDITY',
+                img: logoHumidity,
+                data: humidity,
+                description: `The dew point is 21° right now.`,
+                sign: '%',
+            },
+            {
+                board: 'VISIBILITY',
+                img: logoEye,
+                data: String(visibility).slice(0, 2),
+                description: `Visibility is good`,
+                sign: ' км',
+            },
+        ],
+    }
+
+    return (
+        <>
+            <BoardIndex
+                boards={nameBoards.boardUvi}
+                imgSrc={nameBoards.imgUvi}
+                uvi={nameBoards.uvi}
+                level={nameBoards.level}
+                description={nameBoards.descriptionUvi}
             />
-            <BoardWind boards={el.boards} img={el.img} />
-            <div className={styles.board__degrees}>
-                {el.data}
-                {el.sign}
-            </div>
-            <div className={styles.board__description}>{el.description}</div>
-        </Board>
-    ))
+
+            <BoardSunrise
+                boards={nameBoards.boardSunrise}
+                imgSrc={nameBoards.imgSunrise}
+                sunrise={nameBoards.sunrise}
+                time={nameBoards.time}
+            />
+            <BoardWind
+                boards={nameBoards.boardWind}
+                imgSrc={nameBoards.imgWind}
+            />
+            <BoardsFooter boardFooter={nameBoards.boardFooter} />
+        </>
+    )
 }
 
 export default Boards

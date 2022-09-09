@@ -1,11 +1,11 @@
 import React from 'react'
+import Board from '../Boards/Board'
 import { logoVector } from 'assets'
 import styles from './styles.module.scss'
 
-const BoardSunrise = ({ time, sunrise, boards }) => {
-
-    return boards === 'SUNRISE' ? (
-        <>
+const BoardSunrise = ({ time, sunrise, imgSrc, boards }) => {
+    return (
+        <Board imgSrc={imgSrc} boards={boards}>
             <div className={styles.board__time}>{time}</div>
             <div className={styles.board__imgVector}>
                 <img
@@ -18,8 +18,8 @@ const BoardSunrise = ({ time, sunrise, boards }) => {
                 Sunrise:
                 {sunrise}
             </div>
-        </>
-    ) : null
+        </Board>
+    )
 }
 
 export default BoardSunrise

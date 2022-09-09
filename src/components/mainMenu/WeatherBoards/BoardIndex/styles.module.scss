@@ -31,4 +31,10 @@
         height: 5px;
         background: $white;
     }
+    &__description {
+        width: 166px;
+        font-weight: 400;
+        font-size: 22px;
+        color: $darkBlack;
+    }
 }
