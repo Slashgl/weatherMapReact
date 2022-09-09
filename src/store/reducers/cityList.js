@@ -24,12 +24,17 @@ const initialState = {
 
 const setCity = (lat, lon, name) => async (dispatch) => {
     const res = await weatherApi.getDataWeather(lat, lon)
-    const cityFromIp = await weatherApi.getCityFromIp()
+    let cityFromIp
+    try {
+        cityFromIp = await weatherApi.getCityFromIp()
+    } catch (e) {
+        console.log(e)
+    }
 
     let cityData = {
         id: Date.now(),
         geoName: 'My Location',
-        ipName: cityFromIp.data.city,
+        ipName: cityFromIp?.data.city,
         backgroundDescription: res.data.current.weather[0].main,
         name: name,
         hourly: res.data.hourly.slice(0, 11),
