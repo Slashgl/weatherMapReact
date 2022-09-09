@@ -4,7 +4,7 @@ import {
     removeCity,
     REMOVE_CITY,
     setActiveCity,
-    SET_ACTIVE_CITY, SE_OPENING_AND_CLOSING_ASIDE_BAR, setOpeningAndClosingAsideBar,
+    SET_ACTIVE_CITY,
 } from '../actions/CityList'
 import { weatherApi } from 'services'
 
@@ -48,10 +48,6 @@ const fixActiveCity = (city) => (dispatch) => {
     dispatch(setActiveCity(city))
 }
 
-const setOpeningAndClosing = () => (dispatch) => {
-    dispatch(setOpeningAndClosingAsideBar())
-}
-
 const cityListReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CITY_LIST:
@@ -68,14 +64,9 @@ const cityListReducer = (state = initialState, action) => {
                 ...state,
                 activeCity: action.payload,
             }
-        case SE_OPENING_AND_CLOSING_ASIDE_BAR:
-            return {
-                ...state,
-                setOpeningAndClosingAsideBar: !setOpeningAndClosingAsideBar
-            }
         default:
             return state
     }
 }
 
-export { deleteCity, cityListReducer, setCity, fixActiveCity, setOpeningAndClosing }
+export { deleteCity, cityListReducer, setCity, fixActiveCity }

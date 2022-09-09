@@ -9,7 +9,6 @@ import {
     logoWind,
 } from 'assets'
 import {
-    GetActiveCity,
     GetHumidity,
     GetSunrise,
     GetTempCurrent,

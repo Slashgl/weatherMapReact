@@ -1,5 +1,5 @@
 import store from './Store'
-import { setCity, deleteCity, fixActiveCity, setOpeningAndClosing} from './reducers/CityList'
+import { setCity, deleteCity, fixActiveCity} from './reducers/CityList'
 import {
     GetCityList,
     GetForecastList,
