@@ -30,28 +30,29 @@ const List = ({
 
     return (
         <div className={styles.popup__wrapper}>
-            <ul
-                className={styles.popup__results}
-                style={{ display: isHiddenMobileList ? 'block' : null }}
-            >
-                {cityList &&
-                    cityList.map((el, index) => (
-                        <li
-                            key={index}
-                            className={styles.popup__item}
-                            onClick={() => {
-                                addCity(el)
-                                hiddenWrapperAsideBar()
-                                hiddenButtonClose()
-                            }}
-                        >
-                            <div className={styles.popup__name}>{el.name}</div>
-                            <div className={styles.popup__country}>
-                                {el.state}
-                            </div>
-                        </li>
-                    ))}
-            </ul>
+            {
+                isHiddenMobileList && <ul
+                    className={styles.popup__results}
+                >
+                    {cityList &&
+                        cityList.map((el, index) => (
+                            <li
+                                key={index}
+                                className={styles.popup__item}
+                                onClick={() => {
+                                    addCity(el)
+                                    hiddenWrapperAsideBar()
+                                    hiddenButtonClose()
+                                }}
+                            >
+                                <div className={styles.popup__name}>{el.name}</div>
+                                <div className={styles.popup__country}>
+                                    {el.state}
+                                </div>
+                            </li>
+                        ))}
+                </ul>
+            }
         </div>
     )
 }

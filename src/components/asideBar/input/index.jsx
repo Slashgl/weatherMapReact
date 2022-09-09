@@ -11,9 +11,7 @@ const Input = ({ setIsModalActive }) => {
             <input
                 type="text"
                 placeholder={`Search for a city or airport`}
-                onClick={() => {
-                    openPopup()
-                }}
+                onClick={openPopup}
             />
         </label>
     )

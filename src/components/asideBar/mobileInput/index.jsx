@@ -27,7 +27,7 @@ const MobileInput = ({
                     setIsClickInput={setIsClickInput}
                     isClickInput={isClickInput}
                 />
-                {isClickInput ? (
+                {isClickInput && (
                     <Button
                         variant="outlined"
                         style={{
@@ -40,9 +40,9 @@ const MobileInput = ({
                             setIsClickInput(!isClickInput)
                         }}
                     >
-                        Отмена
+                        Cancel
                     </Button>
-                ) : null}
+                )}
             </div>
 
             <List
