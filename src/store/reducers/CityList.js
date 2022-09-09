@@ -4,7 +4,7 @@ import {
     removeCity,
     REMOVE_CITY,
     setActiveCity,
-    SET_ACTIVE_CITY,
+    SET_ACTIVE_CITY, SE_OPENING_AND_CLOSING_ASIDE_BAR, setOpeningAndClosingAsideBar,
 } from '../actions/CityList'
 import { weatherApi } from 'services'
 
@@ -14,14 +14,17 @@ const initialState = {
     hourlyList: [],
     forecastList: [],
     activeCity: {},
+    setOpeningAndClosingAsideBar: false,
 }
 
 const setCity = (lat, lon, name) => async (dispatch) => {
     const res = await weatherApi.getDataWeather(lat, lon)
+    const ip = await weatherApi.getIp()
 
     let cityData = {
         id: Date.now(),
         geoName: 'My Location',
+        ipName: ip.data.city,
         backgroundDescription: res.data.current.weather[0].main,
         name: name,
         hourly: res.data.hourly.slice(0, 11),
@@ -50,6 +53,10 @@ const fixActiveCity = (city) => (dispatch) => {
     dispatch(setActiveCity(city))
 }
 
+const setOpeningAndClosing = () => (dispatch) => {
+    dispatch(setOpeningAndClosingAsideBar())
+}
+
 const cityListReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CITY_LIST:
@@ -66,9 +73,14 @@ const cityListReducer = (state = initialState, action) => {
                 ...state,
                 activeCity: action.payload,
             }
+        case SE_OPENING_AND_CLOSING_ASIDE_BAR:
+            return {
+                ...state,
+                setOpeningAndClosingAsideBar: !setOpeningAndClosingAsideBar
+            }
         default:
             return state
     }
 }
 
-export { deleteCity, cityListReducer, setCity, fixActiveCity }
+export { deleteCity, cityListReducer, setCity, fixActiveCity, setOpeningAndClosing }
