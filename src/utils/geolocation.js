@@ -1,4 +1,4 @@
-import { setCity } from '../store'
+import { setCity } from 'store'
 
 const geolocation = (dispatch) => {
     const getCoordsCurrent = (position) => {

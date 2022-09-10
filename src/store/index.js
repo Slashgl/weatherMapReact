@@ -1,7 +1,8 @@
 import store from './Store'
-import { setCity, deleteCity, fixActiveCity } from './reducers/cityList'
+import { setCity, deleteCity } from './reducers/cityList'
+import { fixActiveCity } from './reducers/activeCity'
+import { GetCityList } from './selectors/CityList'
 import {
-    GetCityList,
     GetForecastList,
     GetHourlyList,
     GetTempHigh,
@@ -36,8 +37,8 @@ import {
     GetSignVisibility,
     GetImgHumidity,
     GetDescriptionHumidity,
-    GetSignHumidity
-} from './selectors/CityList'
+    GetSignHumidity,
+} from './selectors/activeCity'
 
 export {
     store,
@@ -79,5 +80,5 @@ export {
     GetSignVisibility,
     GetImgHumidity,
     GetDescriptionHumidity,
-    GetSignHumidity
+    GetSignHumidity,
 }

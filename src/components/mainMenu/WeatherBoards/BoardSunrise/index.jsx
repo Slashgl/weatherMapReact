@@ -1,5 +1,5 @@
 import React from 'react'
-import dayjs from 'dayjs'
+import { DateFormat } from 'utils'
 import { GetImgSunrise, GetNameSunrise, GetSunrise, GetTime } from 'store'
 import Board from '../Board'
 import { logoVector } from 'assets'
@@ -14,7 +14,7 @@ const BoardSunrise = () => {
     return (
         <Board imgSrc={imgSrc} title={title}>
             <div className={styles.board__time}>
-                {dayjs.unix(time).format('h:mm A')}
+                {DateFormat.formatTime(time)}
             </div>
             <div className={styles.board__imgVector}>
                 <img
@@ -25,7 +25,7 @@ const BoardSunrise = () => {
             </div>
             <div className={styles.board__sunrise}>
                 Sunrise:
-                {dayjs.unix(sunrise).format('h:mm A')}
+                {DateFormat.formatTime(sunrise)}
             </div>
         </Board>
     )

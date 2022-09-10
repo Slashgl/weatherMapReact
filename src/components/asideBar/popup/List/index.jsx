@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setCity } from 'store'
+import {setCity} from 'store'
 import styles from './styles.module.scss'
 
 const List = ({

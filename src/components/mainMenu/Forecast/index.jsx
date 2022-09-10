@@ -1,5 +1,5 @@
 import React from 'react'
-import dayjs from 'dayjs'
+import {DateFormat} from "utils";
 import { GetForecastList } from 'store'
 import styles from './styles.module.scss'
 
@@ -15,7 +15,7 @@ const Forecast = () => {
                     <li key={`key_${index}`} className={styles.forecast__item}>
                         <div className={styles.forecast__left}>
                             <div className={styles.forecast__week}>
-                                {dayjs.unix(day.dt).format('dd')}
+                                {DateFormat.formatWeek(day.dt)}
                             </div>
                             <img
                                 height="34px"

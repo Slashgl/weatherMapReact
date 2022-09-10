@@ -1,5 +1,5 @@
 import React from 'react'
-import dayjs from 'dayjs'
+import { DateFormat } from 'utils'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
 import { useDispatch } from 'react-redux'
@@ -46,7 +46,7 @@ const CardAsideBar = ({ setPanel, isPanel }) => {
                     <div className={styles.cardsAside__time}>
                         {index === 0
                             ? city.ipName
-                            : dayjs.unix(city.time).format('hh:mm A')}
+                            : DateFormat.formatWeek(city.time)}
                     </div>
                     <div className={styles.cardsAside__description}>
                         {city.description}
