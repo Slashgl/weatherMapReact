@@ -21,8 +21,7 @@
     }
 
     &__cross {
-        &:after,
-        &:before {
+        &:after {
             content: '';
             position: absolute;
             right: 0;
@@ -34,6 +33,13 @@
         }
 
         &:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 25px;
+            width: 30px;
+            height: 2px;
+            background-color: $white;
             transform: rotate(135deg);
         }
     }
@@ -71,5 +77,3 @@
         }
     }
 }
-
-

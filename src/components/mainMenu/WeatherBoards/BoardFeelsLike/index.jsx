@@ -1,26 +1,23 @@
 import React from 'react'
 import {
     GetDescriptionFeelsLike,
-    GetImgFeelsLike,
     GetNameFeelsLike,
-    GetSignFeelsLike,
     GetTempCurrent,
 } from 'store'
 import Board from '../Board'
+import {logoTemp} from 'assets'
 import styles from './styles.module.scss'
 
 const BoardFeelsLike = () => {
     const title = GetNameFeelsLike()
-    const imgFeelsLike = GetImgFeelsLike()
-    const temp = GetTempCurrent()
+    const temp = GetTempCurrent() || 10
     const descriptionFeelsLike = GetDescriptionFeelsLike()
-    const signFeelsLike = GetSignFeelsLike()
 
     return (
-        <Board title={title} imgSrc={imgFeelsLike}>
+        <Board title={title} imgSrc={logoTemp}>
             <div className={styles.degrees}>
                 {Math.floor(temp)}
-                {signFeelsLike}
+                &deg;
             </div>
             <div className={styles.description}>{descriptionFeelsLike}</div>
         </Board>

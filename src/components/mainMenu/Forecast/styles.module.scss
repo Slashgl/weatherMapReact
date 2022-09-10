@@ -21,8 +21,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 10px;
         height: 70px;
+        margin-bottom: 10px;
 
         &:before {
             @include line(0);
@@ -91,10 +91,11 @@
 
     &__range {
         position: absolute;
+        z-index: 5;
         height: 4px;
         background: $gradientRange;
         border-radius: 44px;
-        z-index: 5;
+
     }
 }
 

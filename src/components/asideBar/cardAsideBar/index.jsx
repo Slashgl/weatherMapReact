@@ -1,27 +1,23 @@
 import React from 'react'
-import { DateFormat } from 'utils'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
 import { useDispatch } from 'react-redux'
 import { deleteCity, GetCityList, fixActiveCity } from 'store'
-import BackgroundCard from './backgroundCard'
+import { DateFormat } from 'utils'
+import BackgroundCard from './background'
 import styles from './styles.module.scss'
 
 const CardAsideBar = ({ setPanel, isPanel }) => {
     const cityList = GetCityList()
-
     const dispatch = useDispatch()
 
-    const removeCardAside = (id) => {
-        dispatch(deleteCity(id))
-    }
+    const removeCardAside = (id) => dispatch(deleteCity(id))
+    const activeCity = (city) => dispatch(fixActiveCity(city))
+    const setHidingAsideBar = () => setPanel(!isPanel)
 
-    const activeCity = (city) => {
-        dispatch(fixActiveCity(city))
-    }
-
-    const setHidingAsideBar = () => {
-        setPanel(!isPanel)
+    const removeCards = (e, city) => {
+        e.stopPropagation()
+        removeCardAside(city.id)
     }
 
     const handleClick = (city) => {
@@ -69,10 +65,7 @@ const CardAsideBar = ({ setPanel, isPanel }) => {
                             right: '0',
                         }}
                         aria-label="delete"
-                        onClick={(e) => {
-                            e.stopPropagation()
-                            removeCardAside(city.id)
-                        }}
+                        onClick={(e) => removeCards(e, city)}
                     >
                         <DeleteIcon />
                     </IconButton>

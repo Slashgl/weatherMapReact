@@ -5,7 +5,6 @@ import { geolocation } from 'utils'
 import styles from './styles.module.scss'
 
 const App = () => {
-
     const dispatch = useDispatch()
 
     useEffect(() => {

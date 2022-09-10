@@ -5,7 +5,6 @@ import styles from './styles.module.scss'
 
 const Background = () => {
     const activeCity = GetActiveCity()
-
     const videoRef = useRef()
 
     useEffect(() => {

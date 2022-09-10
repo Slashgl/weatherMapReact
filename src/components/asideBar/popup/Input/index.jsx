@@ -3,29 +3,30 @@ import debounce from 'lodash.debounce'
 import { weatherApi } from 'services'
 import styles from './styles.module.scss'
 
-const Input = ({ setCityList, setIsHiddenMobileList, isHiddenMobileList, setIsClickInput, isClickInput }) => {
+const Input = ({
+    setCityList,
+    setIsHiddenMobileList,
+    isHiddenMobileList,
+    setIsClickInput,
+    isClickInput,
+}) => {
     const [cityInput, setCityInput] = useState('')
 
     const updateInput = (e) => setCityInput(e?.target?.value)
 
     const searchCity = async (city) => {
-        if (cityInput) {
-            try {
+        try {
+            if (cityInput) {
                 const citySuggestion = await weatherApi.getListCountry(city)
                 setCityList(citySuggestion.data)
-            } catch (e) {
-                console.log(e)
             }
+        } catch (e) {
+            console.log(e)
         }
     }
 
-    const setHidingMobileList = () => {
-        setIsHiddenMobileList(!isHiddenMobileList)
-    }
-
-    const setClickInput = () => {
-        setIsClickInput(!isClickInput)
-    }
+    const setHidingMobileList = () => setIsHiddenMobileList(!isHiddenMobileList)
+    const setClickInput = () => setIsClickInput(!isClickInput)
 
     const handlerClick = () => {
         setHidingMobileList()

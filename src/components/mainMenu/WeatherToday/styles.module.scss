@@ -7,9 +7,9 @@
     height: 200px;
     margin: 0 19px 0 37px;
     color: $darkGrey;
+    border-radius: 15px;
     background: $RgbaLightGrey;
     backdrop-filter: blur(290px);
-    border-radius: 15px;
     outline: none;
 
     @include screen1680 {
@@ -22,6 +22,7 @@
 
     &__title {
         position: relative;
+
         div {
             padding: 10px 0 0 10px;
             width: 340px;
@@ -59,6 +60,7 @@
 
         @include screen576 {
             flex-direction: row;
+
             &:after{
                 content: '';
                 position: absolute;

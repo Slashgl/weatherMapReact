@@ -3,9 +3,7 @@ import Line from './Line'
 import styles from './styles.module.scss'
 
 const Panel = ({ setPanel, isPanel }) => {
-    const setOpeningAndClosingAsideBar = () => {
-        setPanel(!isPanel)
-    }
+    const setOpeningAndClosingAsideBar = () => setPanel(!isPanel)
 
     return (
         <div className={styles.panel}>

@@ -20,19 +20,14 @@ const List = ({
         }
     }
 
-    const hiddenWrapperAsideBar = () => {
-        setIsHiddenMobileList(!isHiddenMobileList)
-    }
-
-    const hiddenButtonClose = () => {
-        setIsClickInput(!isClickInput)
-    }
-
+    const hiddenWrapperAsideBar = () => setIsHiddenMobileList(!isHiddenMobileList)
+    const hiddenButtonClose = () => setIsClickInput(!isClickInput)
     const handlerClick = (el) => {
         addCity(el)
         hiddenWrapperAsideBar()
         hiddenButtonClose()
     }
+
     return (
         <div className={styles.popup__wrapper}>
             {

@@ -72,10 +72,8 @@
 
     &__wrapper {
         display: none;
-    }
 
-    @include screenMax1140 {
-        &__wrapper {
+        @include screenMax1140 {
             position: absolute;
             top: 0;
             left: 0;

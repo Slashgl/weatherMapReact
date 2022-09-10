@@ -2,7 +2,7 @@ import React from 'react'
 import { changeBackground } from 'utils'
 import styles from './styles.module.scss'
 
-const BackgroundCard = ({ city }) => {
+const Background = ({ city }) => {
     return (
         <>
             <video className={styles.background}  width='100%' height='100%' poster={changeBackground(city)}>
@@ -14,4 +14,4 @@ const BackgroundCard = ({ city }) => {
     )
 }
 
-export default BackgroundCard
+export default Background

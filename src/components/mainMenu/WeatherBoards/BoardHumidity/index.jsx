@@ -2,25 +2,22 @@ import React from 'react'
 import {
     GetDescriptionHumidity,
     GetHumidity,
-    GetImgHumidity,
     GetNameHumidity,
-    GetSignHumidity,
 } from 'store'
 import Board from '../Board'
+import {logoHumidity} from 'assets'
 import styles from './styles.module.scss'
 
 const BoardHumidity = () => {
     const title = GetNameHumidity()
-    const imgHumidity = GetImgHumidity()
-    const humidity = GetHumidity()
-    const signHumidity = GetSignHumidity()
+    const humidity = GetHumidity() || 45
     const descriptionHumidity = GetDescriptionHumidity()
 
     return (
-        <Board title={title} imgSrc={imgHumidity}>
+        <Board title={title} imgSrc={logoHumidity}>
             <div className={styles.humidity}>
                 {humidity}
-                {signHumidity}
+                %
             </div>
             <div className={styles.description}>{descriptionHumidity}</div>
         </Board>

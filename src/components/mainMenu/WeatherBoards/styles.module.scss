@@ -10,17 +10,12 @@
     outline: none;
 
     @include screen1680 {
-        grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
         margin: 53px 15px 0 0;
     }
 
     @include screenMax1140 {
         margin-bottom: 80px;
-    }
-
-    @include screen576 {
-        grid-template-columns: 1fr 1fr;
     }
 
     @include screen768 {

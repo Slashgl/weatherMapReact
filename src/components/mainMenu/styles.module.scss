@@ -7,7 +7,6 @@
     margin: 38px 0 0 15px;
 
     @include screen1680 {
-        display: grid;
         grid-template-columns: 1fr;
     }
 }

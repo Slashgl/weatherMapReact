@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-export const api = axios.create({
+export const weatherApiCity = axios.create({
     baseURL: `https://api.openweathermap.org`,
 })
 
-export const ip = axios.create({
+export const ipCity = axios.create({
     baseURL: 'https://json.geoiplookup.io/',
 })

@@ -1,20 +1,19 @@
 import React from 'react'
 import { DateFormat } from 'utils'
-import { GetImgSunrise, GetNameSunrise, GetSunrise, GetTime } from 'store'
+import { GetNameSunrise, GetSunrise, GetTime } from 'store'
 import Board from '../Board'
-import { logoVector } from 'assets'
+import { logoVector,logoSunrise } from 'assets'
 import styles from './styles.module.scss'
 
 const BoardSunrise = () => {
-    const imgSrc = GetImgSunrise()
     const title = GetNameSunrise()
-    const time = GetTime()
-    const sunrise = GetSunrise()
+    const time = GetTime() || 10
+    const sunrise = GetSunrise() || 10
 
     return (
-        <Board imgSrc={imgSrc} title={title}>
+        <Board imgSrc={logoSunrise} title={title}>
             <div className={styles.board__time}>
-                {DateFormat.formatTime(time)}
+                {time && DateFormat.formatTime(time)}
             </div>
             <div className={styles.board__imgVector}>
                 <img
