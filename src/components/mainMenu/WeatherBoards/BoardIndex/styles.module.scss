@@ -16,13 +16,7 @@
         width: 165px;
         height: 5px;
         margin-top: 8px;
-        background: linear-gradient(
-            90deg,
-            $Mint 1%,
-            $LightYellow 25%,
-            $LightRaspberry 78%,
-            $purple 99%
-        );
+        background: $gradientUviIndex;
     }
 
     &__circle {

@@ -21,4 +21,19 @@ $Mint: #65db7c;
 $LightYellow: #f5e753;
 $LightRaspberry: #e63a52;
 $purple: #b55de0;
-$darkBlack: #3C3C3C;
+$darkBlack: #3c3c3c;
+$gradientRange: linear-gradient(
+    90deg,
+    $lightMint 0%,
+    $LightGreen 22%,
+    $Yellow 54%,
+    $orange 99%
+);
+$gradientCards: linear-gradient(0deg, $RgbBlack, $RgbBlack);
+$gradientUviIndex: linear-gradient(
+    90deg,
+    $Mint 1%,
+    $LightYellow 25%,
+    $LightRaspberry 78%,
+    $purple 99%
+);

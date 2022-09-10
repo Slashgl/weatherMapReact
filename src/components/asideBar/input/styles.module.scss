@@ -10,14 +10,10 @@
     width: 100%;
     height: 44px;
     margin-bottom: 30px;
+    padding: 0 46px;
     border-radius: 47px;
     border: none;
-    padding: 0 46px;
-
-    &:hover {
-      background: linear-gradient(to right, $blue 0%, $greyBlue 100%);
-      transform: rotate(0deg);
-    }
+    outline: none;
 
     &::placeholder {
       font-weight: 400;

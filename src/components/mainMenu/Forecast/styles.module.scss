@@ -38,8 +38,6 @@
 
         @include screen475 {
             justify-content: normal;
-            width: 100px;
-
             img {
                 margin-left: 10px;
             }
@@ -94,13 +92,7 @@
     &__range {
         position: absolute;
         height: 4px;
-        background: linear-gradient(
-            90deg,
-            $lightMint 0%,
-            $LightGreen 22%,
-            $Yellow 54%,
-            $orange 99%
-        );
+        background: $gradientRange;
         border-radius: 44px;
         z-index: 5;
     }

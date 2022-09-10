@@ -35,11 +35,6 @@
             outline: none;
             padding: 0 46px;
 
-            &:hover {
-                background: linear-gradient(to right, $blue 0%, $greyBlue 100%);
-                transform: rotate(0deg);
-            }
-
             &::placeholder {
                 font-weight: 400;
                 font-size: 17px;

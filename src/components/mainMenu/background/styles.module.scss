@@ -4,7 +4,11 @@
     position: fixed;
     z-index: -1000;
 
-    @include screen768 {
-        height: 100%;
+    @media screen {
+        width: 100%;
+    }
+
+    @include screen1680 {
+        width: auto;
     }
 }
