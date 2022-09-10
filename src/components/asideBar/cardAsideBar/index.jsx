@@ -42,7 +42,7 @@ const CardAsideBar = ({ setPanel, isPanel }) => {
                     <div className={styles.cardsAside__time}>
                         {index === 0
                             ? city.ipName
-                            : DateFormat.formatWeek(city.time)}
+                            : DateFormat.formatTime(city.time)}
                     </div>
                     <div className={styles.cardsAside__description}>
                         {city.description}
