@@ -23,8 +23,10 @@ const List = ({
     const hiddenWrapperAsideBar = () => setIsHiddenMobileList(!isHiddenMobileList)
     const hiddenButtonClose = () => setIsClickInput(!isClickInput)
     const handlerClick = (el) => {
+        if(window.screen.availWidth <= 1140) {
+            hiddenWrapperAsideBar()
+        }
         addCity(el)
-        hiddenWrapperAsideBar()
         hiddenButtonClose()
     }
 
