@@ -3,31 +3,20 @@ import { changeBackground } from 'utils'
 import styles from './styles.module.scss'
 
 const Background = ({ city }) => {
-    return (
-        <>
-            <video
-                className={styles.background}
-                width="100%"
-                height="100%"
-                poster={changeBackground(city)}
-            ></video>
-            {window.screen.availWidth <= 1140 ? (
-                <video className={styles.back} width="100%" height="100%">
-                    <source src={changeBackground(city)} />
-                </video>
-            ) : (
-                <video
-                    className={styles.back}
-                    autoPlay
-                    muted
-                    loop
-                    width="100%"
-                    height="100%"
-                >
-                    <source src={changeBackground(city)} />
-                </video>
-            )}
-        </>
+
+    return window.screen.width <= 1140 ? (
+        <video className={styles.background}>
+            <source src={changeBackground(city)}/>
+        </video>
+    ) : (
+        <video
+            className={styles.background}
+            autoPlay
+            muted
+            loop
+        >
+            <source src={changeBackground(city)}/>
+        </video>
     )
 }
 
